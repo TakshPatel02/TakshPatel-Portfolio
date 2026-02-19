@@ -3,6 +3,7 @@
 
 export const blogsData = [
     {
+        
         id: 1,
         slug: "javascript-part-1-introduction-to-javascript",
         title: "JavaScript Part 1: Introduction to JavaScript",
