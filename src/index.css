@@ -1,0 +1,123 @@
+@import "tailwindcss";
+
+/* ── Font Configuration ── */
+:root {
+  --font-display: "Inter Tight", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, sans-serif;
+  --color-bg-primary: #ffffff;
+  --color-bg-secondary: #f4f4f5;
+  --color-bg-card: #ffffff;
+  --color-text-primary: #09090b;
+  --color-text-secondary: #52525b;
+  --color-text-muted: #71717a;
+  --color-border: rgba(23, 22, 22, 0.1);
+  --color-divider-pattern: rgba(0, 0, 0, 0.035);
+  --color-hover-bg: rgba(0, 0, 0, 0.04);
+  --color-btn-bg: rgba(0, 0, 0, 0.05);
+  --color-tag-bg: rgba(0, 0, 0, 0.06);
+  --color-tag-text: #3f3f46;
+  --color-dot-pattern: rgba(0, 0, 0, 0.12);
+  --color-hero-overlay: rgba(0, 0, 0, 0.03);
+}
+
+/* ── Dark theme ── */
+.dark {
+  --color-bg-primary: #09090b;
+  --color-bg-secondary: #18181b;
+  --color-bg-card: #09090b;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #a1a1aa;
+  --color-text-muted: #71717a;
+  --color-border: rgba(255, 255, 255, 0.08);
+  --color-divider-pattern: rgba(255, 255, 255, 0.035);
+  --color-hover-bg: rgba(255, 255, 255, 0.05);
+  --color-btn-bg: rgba(255, 255, 255, 0.05);
+  --color-tag-bg: rgba(255, 255, 255, 0.10);
+  --color-tag-text: #d4d4d8;
+  --color-dot-pattern: rgba(255, 255, 255, 0.18);
+  --color-hero-overlay: rgba(255, 255, 255, 0.03);
+}
+
+@theme inline {
+  --color-bg-primary: var(--color-bg-primary);
+  --color-bg-secondary: var(--color-bg-secondary);
+  --color-bg-card: var(--color-bg-card);
+  --color-text-primary: var(--color-text-primary);
+  --color-text-secondary: var(--color-text-secondary);
+  --color-text-muted: var(--color-text-muted);
+  --color-border: var(--color-border);
+  --color-divider-pattern: var(--color-divider-pattern);
+  --color-hover-bg: var(--color-hover-bg);
+  --color-btn-bg: var(--color-btn-bg);
+  --color-tag-bg: var(--color-tag-bg);
+  --color-tag-text: var(--color-tag-text);
+  --color-dot-pattern: var(--color-dot-pattern);
+  --color-hero-overlay: var(--color-hero-overlay);
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+}
+
+body {
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* Typography Hierarchy */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+p {
+  font-family: var(--font-body);
+  line-height: 1.7;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-body {
+  font-family: var(--font-body);
+}
+
+/* Smooth transitions for theme changes and interactive elements */
+button,
+a {
+  transition: all 0.3s ease-out;
+  transition-property: background-color, border-color, color, transform;
+}
+
+button:active {
+  transform: scale(0.98);
+}
