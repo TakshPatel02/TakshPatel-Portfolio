@@ -19,7 +19,7 @@ const Footer = () => {
               <Github className="h-4 w-4" />
             </a>
             <a
-              href="https://linkedin.com/in/takshpatel"
+              href="https://www.linkedin.com/in/taksh-patel20"
               target="_blank"
               rel="noopener noreferrer"
               className="rounded-full bg-btn-bg p-2.5 text-text-muted transition hover:bg-hover-bg hover:text-text-primary"

@@ -164,7 +164,7 @@ const ProjectDetailPage = () => {
               </div>
 
               {/* Title & Description */}
-              <h1 className="font-display text-4xl font-bold text-text-primary sm:text-5xl lg:text-6xl">
+              <h1 className="font-display text-2xl font-bold text-text-primary sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl">
                 {project.title}
               </h1>
               <p className="mt-4 text-lg text-text-secondary sm:text-xl">

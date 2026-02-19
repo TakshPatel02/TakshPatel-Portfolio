@@ -125,8 +125,12 @@ const BlogDetailPage = () => {
             <div className="px-4 sm:px-8">
               {/* Article Header */}
               <header className="mb-8 border-b border-border pb-8">
-                <img src={post.image} alt={post.title} className="w-full rounded-lg mb-4" />
-                <h1 className="font-display text-3xl font-bold text-text-primary sm:text-4xl lg:text-5xl">
+                <img
+                  src={post.image}
+                  alt={post.title}
+                  className="w-full rounded-lg mb-4"
+                />
+                <h1 className="font-display text-lg font-bold text-text-primary sm:text-2xl md:text-4xl lg:text-5xl">
                   {post.title}
                 </h1>
 

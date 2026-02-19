@@ -38,7 +38,7 @@ export const projectsData = [
         website: "https://takshpatel.vercel.app/",
         github: "https://github.com/TakshPatel02/takshpatel-portfolio",
         markdownUrl: "https://res.cloudinary.com/portfolioblog/raw/upload/v1771491101/portfolio_lucwgv.md",
-        image: "/projects/portfolio.png",
+        image: "https://res.cloudinary.com/portfolioblog/image/upload/v1771520978/personal_portfolio_upsuug.png",
     },
     {
         id: 2,
@@ -77,7 +77,7 @@ export const projectsData = [
         github: "https://github.com/TakshPatel02/TaskMaster",
         markdownUrl:
             "https://res.cloudinary.com/portfolioblog/raw/upload/v1771481947/TaskMaster_ro0nug.md",
-        image: "/projects/task-master.png",
+        image: "https://res.cloudinary.com/portfolioblog/image/upload/v1771520979/taskmaster_tpncaj.png",
     },
     {
         id: 3,
@@ -151,7 +151,7 @@ export const projectsData = [
         github: "https://github.com/TakshPatel02/Furnish-Hub",
         markdownUrl:
             "https://res.cloudinary.com/portfolioblog/raw/upload/v1771481946/FurnishHub_hqu07a.md",
-        image: "/projects/furnishhub.png",
+        image: "https://res.cloudinary.com/portfolioblog/image/upload/v1771520979/furnishhub1_sbwrwj.png",
     },
     {
         id: 5,
@@ -221,6 +221,6 @@ export const projectsData = [
         github: "https://github.com/TakshPatel02/GTA-VI-Animated-Landing",
         markdownUrl:
             "https://res.cloudinary.com/portfolioblog/raw/upload/v1771481946/gta_tx8jzx.md",
-        image: "/projects/gta-vi.png",
+        image: "https://res.cloudinary.com/portfolioblog/image/upload/v1771520976/gta_qi09vt.png",
     },
 ];

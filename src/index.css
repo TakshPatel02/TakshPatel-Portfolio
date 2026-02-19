@@ -82,9 +82,33 @@ h6 {
 }
 
 h1 {
-  font-size: 3.5rem;
+  font-size: 2rem;
   font-weight: 700;
   letter-spacing: -0.02em;
+}
+
+@media (min-width: 640px) {
+  h1 {
+    font-size: 2.25rem;
+  }
+}
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: 2.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  h1 {
+    font-size: 3rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  h1 {
+    font-size: 3.5rem;
+  }
 }
 
 h2 {

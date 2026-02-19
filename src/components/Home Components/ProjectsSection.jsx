@@ -33,20 +33,36 @@ const ProjectCard = ({ project }) => (
         </p>
       </Link>
       <div className="flex shrink-0 items-center gap-2 text-text-muted">
-        <button
-          type="button"
-          className="rounded-full bg-btn-bg p-2 transition hover:bg-hover-bg hover:text-text-primary"
-          aria-label="Open live site"
-        >
-          <Globe className="h-4 w-4" />
-        </button>
-        <button
-          type="button"
-          className="rounded-full bg-btn-bg p-2 transition hover:bg-hover-bg hover:text-text-primary"
-          aria-label="Open source"
-        >
-          <Github className="h-4 w-4" />
-        </button>
+        {project.website && (
+          <button
+            type="button"
+            className="rounded-full bg-btn-bg p-2 transition hover:bg-hover-bg hover:text-text-primary"
+            aria-label="Open live site"
+          >
+            <Link
+              to={`${project.website}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Globe className="h-4 w-4" />
+            </Link>
+          </button>
+        )}
+        {project.github && (
+          <button
+            type="button"
+            className="rounded-full bg-btn-bg p-2 transition hover:bg-hover-bg hover:text-text-primary"
+            aria-label="Open source"
+          >
+            <Link
+              to={`${project.github}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Github className="h-4 w-4" />
+            </Link>
+          </button>
+        )}
       </div>
     </div>
 
