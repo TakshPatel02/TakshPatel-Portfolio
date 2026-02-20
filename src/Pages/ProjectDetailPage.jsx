@@ -202,7 +202,7 @@ const ProjectDetailPage = () => {
                     Status
                   </p>
                   <p className="mt-1 font-semibold text-text-primary">
-                    {project.status === "working" ? "Live" : "In Progress"}
+                    {project.status === "operational" ? "Live" : "In Progress"}
                   </p>
                 </div>
               </div>

@@ -7,11 +7,11 @@ export const blogsData = [
         id: 1,
         slug: "javascript-part-1-introduction-to-javascript",
         title: "JavaScript Part 1: Introduction to JavaScript",
-        date: "24.07.2025",
+        date: "20.12.2025",
         readTime: "1 hour read",
         image: "https://res.cloudinary.com/portfolioblog/image/upload/v1771492581/js-part-1_r6c4iu.png",
         markdownUrl:
-            "https://res.cloudinary.com/portfolioblog/raw/upload/v1770360560/i3ec3ycgtswn9gxp9qq0.md",
+            "https://res.cloudinary.com/portfolioblog/raw/upload/v1771564417/01_Blog_bxwykj.md",
         isNew: false,
     },
     {

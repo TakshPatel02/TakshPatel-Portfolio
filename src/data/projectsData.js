@@ -8,9 +8,9 @@ export const projectsData = [
         title: "Modern Portfolio Website",
         description:
             "A modern, responsive personal portfolio website featuring dark/light theme support, project showcase, blog integration, and centralized content management.",
-        status: "Completed",
+        status: "building",
         accent: "from-blue-200 via-purple-200 to-pink-200",
-        timeline: "2 months",
+        timeline: "2 week",
         tech: "Frontend",
         role: "Full Stack Developer",
         technologies: [
@@ -85,9 +85,9 @@ export const projectsData = [
         title: "Studio Minimal Portfolio",
         description:
             "Modern portfolio website with GSAP animations and responsive design",
-        status: "working",
+        status: "operational",
         accent: "from-teal-200 via-sky-200 to-violet-200",
-        timeline: "3 months",
+        timeline: "1 week",
         tech: "Frontend",
         role: "Developer",
         technologies: [
@@ -120,9 +120,9 @@ export const projectsData = [
         title: "FurnishHub - Modern Furniture Showcase",
         description:
             "A responsive furniture e-commerce platform featuring categorized collections, new arrivals, and trending items with an elegant user interface.",
-        status: "Completed",
+        status: "operational",
         accent: "from-emerald-200 via-lime-200 to-amber-200",
-        timeline: "1 month",
+        timeline: "1 week",
         tech: "Frontend",
         role: "Frontend Developer",
         technologies: [
@@ -159,9 +159,9 @@ export const projectsData = [
         title: "Terminal Portfolio v3.1.0",
         description:
             "Interactive terminal-style portfolio with command-based navigation and smooth animations",
-        status: "Completed",
+        status: "operational",
         accent: "from-green-300 via-emerald-300 to-teal-300",
-        timeline: "2 months",
+        timeline: "1 week",
         tech: "Frontend",
         role: "Frontend Developer",
         technologies: [
@@ -190,9 +190,9 @@ export const projectsData = [
         title: "GTA VI Parallax Landing Page",
         description:
             "Immersive animated landing page with parallax effects and GSAP animations, inspired by Grand Theft Auto VI",
-        status: "Active",
+        status: "operational",
         accent: "from-red-600 via-purple-600 to-blue-600",
-        timeline: "1 month",
+        timeline: "4 days",
         tech: "Frontend",
         role: "Full Stack Developer",
         technologies: [

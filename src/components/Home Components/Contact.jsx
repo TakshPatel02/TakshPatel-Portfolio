@@ -3,7 +3,7 @@ const Contact = () => {
     <section className="w-full border-b border-border">
       <div className="mx-auto w-full max-w-4xl px-4 sm:px-6">
         <div className="border-x border-border bg-bg-card">
-          <div className="py-3">
+          <div className="py-3 p-2">
             <p className="font-display text-sm font-semibold text-text-primary sm:text-lg">
               Want to work together or see more details about my experience?
             </p>

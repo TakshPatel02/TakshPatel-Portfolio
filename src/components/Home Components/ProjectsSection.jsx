@@ -85,12 +85,12 @@ const ProjectCard = ({ project }) => (
     <div className="mt-4 flex items-center justify-between">
       <span
         className={`rounded-full px-3 py-1 text-xs font-semibold ${
-          project.status === "Operational"
-            ? "bg-emerald-500/15 text-emerald-600 dark:text-emerald-300"
+          project.status === "operational"
+            ? "bg-emerald-500/15 text-emerald-600 dark:text-emerald-600"
             : "bg-amber-500/15 text-amber-600 dark:text-amber-300"
         }`}
       >
-        {project.status === "Operational"
+        {project.status === "operational"
           ? "All Systems Operational"
           : "Building"}
       </span>
@@ -118,7 +118,7 @@ const ProjectsSection = () => {
       {/* Header */}
       <div className="w-full border-b border-border">
         <div className="mx-auto w-full max-w-4xl px-4 sm:px-6">
-          <div className="border-x border-border bg-bg-card py-4">
+          <div className="border-x border-border bg-bg-card py-4 p-2">
             <span className="text-xs font-semibold uppercase tracking-widest text-text-muted">
               Featured
             </span>

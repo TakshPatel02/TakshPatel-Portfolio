@@ -1,9 +1,6 @@
 import { Search } from "lucide-react";
-import { useState } from "react";
 
-const BlogHeader = ({ postCount }) => {
-  const [searchQuery, setSearchQuery] = useState("");
-
+const BlogHeader = ({ postCount, searchQuery, setSearchQuery }) => {
   return (
     <div className="w-full">
       {/* Title Section */}
@@ -38,13 +35,13 @@ const BlogHeader = ({ postCount }) => {
           <div className="border-x border-border bg-bg-card">
             <div className="p-2">
               <div className="relative">
-                <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-text-muted" />
+                <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-text-muted pointer-events-none" />
                 <input
                   type="text"
                   placeholder="Search Blog..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full rounded-lg border border-border bg-bg-secondary px-10 py-3 text-sm text-text-primary placeholder:text-text-muted focus:border-text-muted focus:outline-none focus:ring-1 focus:ring-text-muted"
+                  className="w-full rounded-lg border-2 border-border bg-bg-secondary px-10 py-3 text-sm text-text-primary placeholder:text-text-muted transition-colors duration-200 focus:border-text-primary focus:outline-none focus:ring-0 cursor-text"
                 />
               </div>
             </div>
