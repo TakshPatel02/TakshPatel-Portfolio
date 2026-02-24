@@ -11,7 +11,7 @@ import Footer from "./components/Footer";
 const App = () => {
   return (
     <ThemeProvider>
-      <div className="min-h-screen bg-bg-primary text-text-primary transition-colors duration-300">
+      <div className="min-h-screen bg-bg-primary text-text-primary">
         <Navbar />
         <Routes>
           <Route path="/" element={<HomePage />} />
