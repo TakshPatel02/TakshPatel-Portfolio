@@ -12,13 +12,13 @@ const Contact = () => {
             <div className="grid grid-cols-1 divide-y divide-border sm:grid-cols-2 sm:divide-x sm:divide-y-0">
               <a
                 href="/resume.pdf"
-                className="font-display py-3 px-6 text-center text-xs font-semibold uppercase tracking-widest text-text-primary transition hover:bg-hover-bg rounded-lg sm:text-sm"
+                className="font-display py-3 px-6 text-center text-xs font-semibold uppercase tracking-widest text-text-primary transition hover:bg-hover-bg sm:text-sm"
               >
                 Resume / CV
               </a>
               <a
                 href="mailto:hello@ncdai.dev"
-                className="font-display py-3 px-6 text-center text-xs font-semibold uppercase tracking-widest text-text-primary transition hover:bg-hover-bg rounded-lg sm:text-sm"
+                className="font-display py-3 px-6 text-center text-xs font-semibold uppercase tracking-widest text-text-primary transition hover:bg-hover-bg sm:text-sm"
               >
                 Get in Touch
               </a>
