@@ -17,11 +17,11 @@ export const blogsData = [
     {
         id: 2,
         slug: "Why-Building-Projects-Changed-Everything",
-        title: "Why Building Projects Changed Everything",
-        date: "Expected 22.02.2026",
-        readTime: "3 min read",
-        image: "/blog/shadcn-follow.png",
-        markdownUrl: null,
-        isNew: false,
+        title: "My Web Development Learning Journey: From Tutorial Hell to Independent Developer",
+        date: "26.02.2026",
+        readTime: "5 min read",
+        image: "https://res.cloudinary.com/portfolioblog/image/upload/v1772034346/tutorial_hell_blog_s6othq.png",
+        markdownUrl: "https://res.cloudinary.com/portfolioblog/raw/upload/v1772034421/personal_roadmap_byylz5.md",
+        isNew: true,
     },
 ];
