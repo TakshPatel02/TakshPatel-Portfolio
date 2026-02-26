@@ -18,6 +18,8 @@ const BlogCard = ({ post }) => (
         <img
           src={post.image}
           alt={post.title}
+          loading="lazy"
+          decoding="async"
           className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
           onError={(e) => {
             e.target.style.display = "none";

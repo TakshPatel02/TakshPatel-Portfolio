@@ -25,6 +25,7 @@ const ProjectCard = ({ project }) => {
               src={project.image}
               alt={project.title}
               className="h-full w-full object-cover"
+              loading="lazy"
             />
           ) : (
             <div className="absolute bottom-4 left-4 rounded-xl bg-white/70 px-3 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-zinc-800">

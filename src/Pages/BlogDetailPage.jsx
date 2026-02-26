@@ -128,6 +128,7 @@ const BlogDetailPage = () => {
                 <img
                   src={post.image}
                   alt={post.title}
+                  loading="lazy"
                   className="w-full rounded-lg mb-4"
                 />
                 <h1 className="font-display text-lg font-bold text-text-primary sm:text-2xl md:text-4xl lg:text-5xl">

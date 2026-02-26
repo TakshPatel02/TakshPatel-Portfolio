@@ -15,7 +15,7 @@ const ProjectCard = ({ project }) => (
         whileHover={{ scale: 1.02 }}
         transition={{ duration: 0.3 }}
       >
-        <img src={project.image} alt={project.title} />
+        <img src={project.image} alt={project.title} loading="lazy" decoding="async"/>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.65)_0,_transparent_55%)]"></div>
         <div className="absolute bottom-4 left-4 rounded-xl bg-white/70 px-3 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-zinc-800">
           Preview

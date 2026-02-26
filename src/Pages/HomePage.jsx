@@ -1,13 +1,17 @@
+import { lazy, Suspense } from "react";
 import HeroPanel from "../components/Home Components/HeroPanel";
 import InfoCard from "../components/Home Components/InfoCard";
 import Bio from "../components/Home Components/Bio";
 import SectionDivider from "../components/SectionDivider";
 import Contact from "../components/Home Components/Contact";
 import ProjectsSection from "../components/Home Components/ProjectsSection";
-import AboutSection from "../components/Home Components/AboutSection";
+const AboutSection = lazy(
+  () => import("../components/Home Components/AboutSection"),
+);
 import GithubActivity from "../components/Home Components/GithubActivity";
-import BlogSection from "../components/Home Components/BlogSection";
-import Footer from "../components/Footer";
+const BlogSection = lazy(
+  () => import("../components/Home Components/BlogSection"),
+);
 
 const HomePage = () => {
   return (
@@ -20,12 +24,11 @@ const HomePage = () => {
       <SectionDivider />
       <ProjectsSection />
       <SectionDivider />
-      <AboutSection />
+      <Suspense fallback={<h3>Loading ...</h3>}><AboutSection /></Suspense>
       {/* <GithubActivity /> */}
       <SectionDivider />
-      <BlogSection />
+      <Suspense fallback={<h3>Loading ...</h3>}><BlogSection /></Suspense>
       <SectionDivider />
-
     </div>
   );
 };

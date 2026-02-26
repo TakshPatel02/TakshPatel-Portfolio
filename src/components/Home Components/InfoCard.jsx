@@ -9,6 +9,7 @@ const InfoCard = () => {
               <img
                 src="https://res.cloudinary.com/portfolioblog/image/upload/v1771491501/ghibli_q2zccw.png"
                 alt="Taksh Patel"
+                fetchPriority="high"
                 className="h-[125px] w-[125px] flex-shrink-0 rounded-full border border-border object-cover sm:h-[150px] sm:w-[150px]"
               />
             </div>
