@@ -21,7 +21,7 @@ const AboutSection = () => {
               <div className="flex h-full w-full items-center justify-center px-6 py-10">
                 <div className="flex h-40 w-40 items-center justify-center rounded-md border border-border bg-bg-secondary text-xs uppercase tracking-[0.2em] text-text-muted sm:h-48 sm:w-48 overflow-hidden">
                   <img
-                    src="https://res.cloudinary.com/portfolioblog/image/upload/v1771491501/ghibli_q2zccw.png"
+                    src="https://res.cloudinary.com/portfolioblog/image/upload/v1772124137/ghibli_by7gu7.webp"
                     alt=""
                     className="object-cover"
                   />

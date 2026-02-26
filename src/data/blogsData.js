@@ -9,7 +9,7 @@ export const blogsData = [
         title: "JavaScript Part 1: Introduction to JavaScript",
         date: "20.12.2025",
         readTime: "1 hour read",
-        image: "https://res.cloudinary.com/portfolioblog/image/upload/v1771492581/js-part-1_r6c4iu.png",
+        image: "https://res.cloudinary.com/portfolioblog/image/upload/v1772124139/js-part-1_teto1t.webp",
         markdownUrl:
             "https://res.cloudinary.com/portfolioblog/raw/upload/v1771564417/01_Blog_bxwykj.md",
         isNew: false,
@@ -20,7 +20,7 @@ export const blogsData = [
         title: "My Web Development Learning Journey: From Tutorial Hell to Independent Developer",
         date: "26.02.2026",
         readTime: "5 min read",
-        image: "https://res.cloudinary.com/portfolioblog/image/upload/v1772034346/tutorial_hell_blog_s6othq.png",
+        image: "https://res.cloudinary.com/portfolioblog/image/upload/v1772124125/tutorial_hell_blog_crubrt.webp",
         markdownUrl: "https://res.cloudinary.com/portfolioblog/raw/upload/v1772034421/personal_roadmap_byylz5.md",
         isNew: true,
     },

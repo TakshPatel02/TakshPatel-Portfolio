@@ -38,7 +38,7 @@ export const projectsData = [
         website: "https://takshpatel.vercel.app/",
         github: "https://github.com/TakshPatel02/takshpatel-portfolio",
         markdownUrl: "https://res.cloudinary.com/portfolioblog/raw/upload/v1771491101/portfolio_lucwgv.md",
-        image: "https://res.cloudinary.com/portfolioblog/image/upload/v1771520978/personal_portfolio_upsuug.png",
+        image: "https://res.cloudinary.com/portfolioblog/image/upload/v1772124140/personal_portfolio_ajeuzb.webp",
     },
     {
         id: 2,
@@ -77,7 +77,7 @@ export const projectsData = [
         github: "https://github.com/TakshPatel02/TaskMaster",
         markdownUrl:
             "https://res.cloudinary.com/portfolioblog/raw/upload/v1771481947/TaskMaster_ro0nug.md",
-        image: "https://res.cloudinary.com/portfolioblog/image/upload/v1771520979/taskmaster_tpncaj.png",
+        image: "https://res.cloudinary.com/portfolioblog/image/upload/v1772124141/taskmaster_obhvmm.webp",
     },
     {
         id: 3,
@@ -112,7 +112,7 @@ export const projectsData = [
         github: "https://github.com/TakshPatel02/Studio-Minimal",
         markdownUrl:
             "https://res.cloudinary.com/portfolioblog/raw/upload/v1771481946/studioMinimal_bmoixj.md",
-        image: "https://res.cloudinary.com/portfolioblog/image/upload/v1771493903/studio-minimal_gxzkki.png",
+        image: "https://res.cloudinary.com/portfolioblog/image/upload/v1772124140/studio-minimal_jr0pcl.webp",
     },
     {
         id: 4,
@@ -151,7 +151,7 @@ export const projectsData = [
         github: "https://github.com/TakshPatel02/Furnish-Hub",
         markdownUrl:
             "https://res.cloudinary.com/portfolioblog/raw/upload/v1771481946/FurnishHub_hqu07a.md",
-        image: "https://res.cloudinary.com/portfolioblog/image/upload/v1771520979/furnishhub1_sbwrwj.png",
+        image: "https://res.cloudinary.com/portfolioblog/image/upload/v1772124141/furnishhub1_tcs3ud.webp",
     },
     {
         id: 5,
@@ -182,7 +182,7 @@ export const projectsData = [
         github: "https://github.com/TakshPatel02/Terminal-Portfolio",
         markdownUrl:
             "https://res.cloudinary.com/portfolioblog/raw/upload/v1771481946/terminalPortfolio_igqdho.md",
-        image: "https://res.cloudinary.com/portfolioblog/image/upload/v1771493903/terminal-portfolio_twwndt.png",
+        image: "https://res.cloudinary.com/portfolioblog/image/upload/v1772124140/terminal-portfolio_ndupul.webp",
     },
     {
         id: 6,
@@ -221,6 +221,6 @@ export const projectsData = [
         github: "https://github.com/TakshPatel02/GTA-VI-Animated-Landing",
         markdownUrl:
             "https://res.cloudinary.com/portfolioblog/raw/upload/v1771481946/gta_tx8jzx.md",
-        image: "https://res.cloudinary.com/portfolioblog/image/upload/v1771520976/gta_qi09vt.png",
+        image: "https://res.cloudinary.com/portfolioblog/image/upload/v1772124141/gta_kos5ph.webp",
     },
 ];
