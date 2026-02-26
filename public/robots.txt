@@ -1,0 +1,18 @@
+User-agent: *
+Allow: /
+Allow: /project
+Allow: /blog
+Disallow: /admin
+Disallow: /private
+
+Sitemap: https://takshpatel.vercel.app/sitemap.xml
+
+# Crawl delay
+Crawl-delay: 1
+
+# Fast bots
+User-agent: Googlebot
+Crawl-delay: 0
+
+User-agent: Bingbot
+Crawl-delay: 0
