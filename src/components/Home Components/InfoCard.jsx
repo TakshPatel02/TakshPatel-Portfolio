@@ -1,3 +1,5 @@
+import { motion} from 'motion/react'
+
 const InfoCard = () => {
   return (
     <section className="w-full border-b border-border">
@@ -18,8 +20,8 @@ const InfoCard = () => {
             <div className="flex flex-1 flex-col mt-8 sm:mt-20">
               {/* Name */}
               <div className="flex items-center gap-2 border-y border-border">
-                <h2 className="font-display text-lg font-bold text-text-primary sm:text-2xl lg:text-3xl">
-                  Taksh Patel
+                <h2 className="font-display text-lg font-bold text-text-primary sm:text-2xl lg:text-4xl py-2">
+                  <FlipLink>Taksh Patel</FlipLink>
                 </h2>
               </div>
 
@@ -32,6 +34,69 @@ const InfoCard = () => {
         </div>
       </div>
     </section>
+  );
+};
+
+const DURATION = 0.25;
+const STAGGER = 0.025;
+
+const FlipLink = ({ children }) => {
+  return (
+    <motion.h2
+      initial="initial"
+      whileHover="hovered"
+      className="relative block overflow-hidden whitespace-nowrap text-xl font-bold sm:text-2xl lg:text-4xl"
+      style={{
+        lineHeight: 0.75,
+      }}
+    >
+      <div>
+        {children.split("").map((l, i) => (
+          <motion.span
+            variants={{
+              initial: {
+                y: 0,
+              },
+              hovered: {
+                y: "-100%",
+              },
+            }}
+            transition={{
+              duration: DURATION,
+              ease: "easeInOut",
+              delay: STAGGER * i,
+            }}
+            className="inline-block"
+            key={i}
+          >
+            {l}
+          </motion.span>
+        ))}
+      </div>
+      <div className="absolute inset-0">
+        {children.split("").map((l, i) => (
+          <motion.span
+            variants={{
+              initial: {
+                y: "100%",
+              },
+              hovered: {
+                y: 0,
+              },
+            }}
+            transition={{
+              duration: DURATION,
+              ease: "easeInOut",
+              delay: STAGGER * i,
+            }}
+            className="inline-block"
+            key={i}
+          >
+            {l}
+          </motion.span>
+        ))}
+      </div>
+    </motion.h2>
   );
 };
 

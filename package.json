@@ -15,7 +15,7 @@
     "axios": "^1.13.5",
     "gsap": "^3.14.2",
     "lucide-react": "^0.564.0",
-    "motion": "^12.34.0",
+    "motion": "^12.34.3",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-markdown": "^10.1.0",
