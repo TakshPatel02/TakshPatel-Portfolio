@@ -103,6 +103,54 @@ const ProjectHeader = ({
                 >
                   Working ({projectCounts.operational})
                 </motion.button>
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={() => setActiveFilter("fullstack")}
+                  className={`rounded-full px-4 py-2 text-sm font-medium transition ${
+                    activeFilter === "fullstack"
+                      ? "bg-text-primary text-bg-primary"
+                      : "bg-btn-bg text-text-secondary hover:bg-hover-bg"
+                  }`}
+                >
+                  Full Stack ({projectCounts.fullstack})
+                </motion.button>
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={() => setActiveFilter("frontend")}
+                  className={`rounded-full px-4 py-2 text-sm font-medium transition ${
+                    activeFilter === "frontend"
+                      ? "bg-text-primary text-bg-primary"
+                      : "bg-btn-bg text-text-secondary hover:bg-hover-bg"
+                  }`}
+                >
+                  Frontend ({projectCounts.frontend})
+                </motion.button>
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={() => setActiveFilter("backend")}
+                  className={`rounded-full px-4 py-2 text-sm font-medium transition ${
+                    activeFilter === "backend"
+                      ? "bg-text-primary text-bg-primary"
+                      : "bg-btn-bg text-text-secondary hover:bg-hover-bg"
+                  }`}
+                >
+                  Backend ({projectCounts.backend})
+                </motion.button>
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={() => setActiveFilter("animated")}
+                  className={`rounded-full px-4 py-2 text-sm font-medium transition ${
+                    activeFilter === "animated"
+                      ? "bg-text-primary text-bg-primary"
+                      : "bg-btn-bg text-text-secondary hover:bg-hover-bg"
+                  }`}
+                >
+                  Animated ({projectCounts.animated})
+                </motion.button>
               </div>
             </div>
           </div>
