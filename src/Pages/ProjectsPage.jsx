@@ -29,7 +29,7 @@ const ProjectsPage = () => {
   // Calculate project counts (based on status filter only)
   const projectCounts = {
     all: projectsData.length,
-    working: projectsData.filter((p) => p.status === "working").length,
+    operational: projectsData.filter((p) => p.status === "operational").length,
     building: projectsData.filter((p) => p.status === "building").length,
     filtered: filteredProjects.length,
   };

@@ -1,5 +1,11 @@
 @import "tailwindcss";
 
+@layer components {
+  .font-space-mono {
+    font-family: "Space Mono", monospace;
+  }
+}
+
 /* ── Font Configuration ── */
 :root {
   --font-display: "Inter Tight", system-ui, sans-serif;
