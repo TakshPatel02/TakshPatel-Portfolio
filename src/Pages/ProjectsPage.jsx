@@ -4,7 +4,7 @@ import ProjectHeader from "../components/Project Components/ProjectHeader";
 import ProjectGrid from "../components/Project Components/ProjectGrid";
 import SectionDivider from "../components/SectionDivider";
 // import { projectsData } from "../data/projectsData";
-import { getDatabase, ref, get } from "firebase/database";
+import { getDatabase, ref, get, set, push } from "firebase/database";
 
 const ProjectsPage = () => {
   const [activeFilter, setActiveFilter] = useState("all");

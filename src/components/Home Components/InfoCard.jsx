@@ -42,7 +42,7 @@ const STAGGER = 0.025;
 
 const FlipLink = ({ children }) => {
   return (
-    <motion.h2
+    <motion.div
       initial="initial"
       whileHover="hovered"
       className="relative block overflow-hidden whitespace-nowrap text-xl font-bold sm:text-2xl lg:text-4xl"
@@ -96,7 +96,7 @@ const FlipLink = ({ children }) => {
           </motion.span>
         ))}
       </div>
-    </motion.h2>
+    </motion.div>
   );
 };
 

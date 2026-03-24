@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import BlogHeader from "../components/Blog Components/BlogHeader";
 import BlogGrid from "../components/Blog Components/BlogGrid";
 // import { blogsData } from "../data/blogsData";
-import { getDatabase, ref, get } from "firebase/database";
+import { getDatabase, ref, get, set, push } from "firebase/database";
 import app from "../FireBaseConfig.js";
 
 const BlogPage = () => {
@@ -13,6 +13,7 @@ const BlogPage = () => {
   const filteredPosts = blogsData.filter((post) =>
     post.title.toLowerCase().includes(searchQuery.toLowerCase()),
   );
+
 
   useEffect(() => {
     const fetchBlogs = async () => {

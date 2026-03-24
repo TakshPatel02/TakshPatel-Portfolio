@@ -3,6 +3,49 @@
 
 export const projectsData = [
     {
+        id: 0,
+        slug: "ai-code-reviewer",
+        title: "AI Code Reviewer",
+        description: "An AI-powered code review tool that analyzes code quality, identifies potential issues, and provides actionable feedback to developers.",
+        status: "Operational",
+        type: "fullstack",
+        animated: false,
+        accent: "from-purple-200 via-pink-200 to-red-200",
+        timeline: "1 week",
+        tech: "Full Stack",
+        role: "Full Stack Developer",
+        technologies: [
+            {
+                name: "React JS",
+                icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+            },
+            {
+                name: "Node JS",
+                icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+            },
+            {
+                name: "Express JS",
+                icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
+            },
+            {
+                name: "MongoDB",
+                icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
+            },
+            {
+                name: "Tailwind CSS",
+                icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg",
+            },
+            {
+                name: "Gemini API",
+                icon: "https://img.shields.io/badge/-Gemini-4285F4?logo=google&logoColor=white&style=flat",
+            }
+        ],
+        website: "https://ai-code-reviewer-eight-smoky.vercel.app/",
+        github: "https://github.com/TakshPatel02/AI-Code-Reviewer",
+        markdownUrl: "https://res.cloudinary.com/portfolioblog/raw/upload/v1774335139/code-review_m3r3wo.md",
+        image: "https://res.cloudinary.com/portfolioblog/image/upload/v1774334225/ai-code-reviewer_dw6rnk.webp"
+    },
+    {
         id: 1,
         slug: "link-shortener",
         title: "Link Shortener",
@@ -14,11 +57,32 @@ export const projectsData = [
         timeline: "1 week",
         tech: "Full Stack",
         role: "Full Stack Developer",
-        technologies: [],
+        technologies: [
+            {
+                name: "React JS",
+                icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+            },
+            {
+                name: "Node JS",
+                icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+            },
+            {
+                name: "Express JS",
+                icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
+            },
+            {
+                name: "PostgreSQL",
+                icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
+            },
+            {
+                name: "Tailwind CSS",
+                icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg",
+            }
+        ],
         website: null,
         github: "https://github.com/TakshPatel02/Link-Shortener",
-        markdownUrl:"",
-        image: ""
+        markdownUrl: "https://res.cloudinary.com/portfolioblog/raw/upload/v1774335139/linkshortener_nl3stn.md",
+        image: "https://res.cloudinary.com/portfolioblog/image/upload/v1774334225/link-shortener_qbhjwb.webp"
     },
     {
         id: 2,
@@ -32,11 +96,24 @@ export const projectsData = [
         timeline: "1 week",
         tech: "Backend",
         role: "Backend Developer",
-        technologies: [],
+        technologies: [
+            {
+                name: "Node JS",
+                icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg",
+            },
+            {
+                name: "Express JS",
+                icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg",
+            },
+            {
+                name: "PostgreSQL",
+                icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
+            }
+        ],
         website: null,
         github: "https://github.com/TakshPatel02/BookStore-Inventory-Orders-API",
-        markdownUrl: "",
-        image: ""
+        markdownUrl: "https://res.cloudinary.com/portfolioblog/raw/upload/v1774335139/bookstore_mgysti.md",
+        image: "https://res.cloudinary.com/portfolioblog/image/upload/v1774334225/book-store-api_gmkdjb.webp"
     },
     {
         id: 3,
@@ -78,43 +155,6 @@ export const projectsData = [
         markdownUrl:
             "https://res.cloudinary.com/portfolioblog/raw/upload/v1771481947/TaskMaster_ro0nug.md",
         image: "https://res.cloudinary.com/portfolioblog/image/upload/v1772124141/taskmaster_obhvmm.webp",
-    },
-    {
-        id: 4,
-        slug: "studio-minimal-portfolio",
-        title: "Studio Minimal Portfolio",
-        description:
-            "Modern portfolio website with GSAP animations and responsive design",
-        status: "operational",
-        type: "frontend",
-        animated: true,
-        accent: "from-teal-200 via-sky-200 to-violet-200",
-        timeline: "1 week",
-        tech: "Frontend",
-        role: "Developer",
-        technologies: [
-            {
-                name: "React",
-                icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
-            },
-            {
-                name: "Vite",
-                icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vitejs/vitejs-original.svg",
-            },
-            {
-                name: "GSAP",
-                icon: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/greensock.svg",
-            },
-            {
-                name: "Tailwind CSS",
-                icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg",
-            },
-        ],
-        website: "https://studio-minimal.vercel.app/",
-        github: "https://github.com/TakshPatel02/Studio-Minimal",
-        markdownUrl:
-            "https://res.cloudinary.com/portfolioblog/raw/upload/v1771481946/studioMinimal_bmoixj.md",
-        image: "https://res.cloudinary.com/portfolioblog/image/upload/v1772124140/studio-minimal_jr0pcl.webp",
     },
     {
         id: 5,
@@ -244,11 +284,24 @@ export const projectsData = [
         tech: "Frontend",
         animated: false,
         role: "Frontend Developer",
-        technologies: [],
+        technologies: [
+            {
+                name: "React",
+                icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+            },
+            {
+                name: "Tailwind CSS",
+                icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg",
+            },
+            {
+                name: "Chart.js",
+                icon: "https://img.shields.io/badge/-Chart.js-FF6384?logo=chart.js&logoColor=white&style=flat",
+            }
+        ],
         website: "https://fin-flow-dashboard.vercel.app",
         github: "https://github.com/TakshPatel02/FinFlow-Dashboard",
-        markdownUrl: "",
-        image: ""
+        markdownUrl: "https://res.cloudinary.com/portfolioblog/raw/upload/v1774335414/dashboard_h9w1fg.md",
+        image: "https://res.cloudinary.com/portfolioblog/image/upload/v1774335503/dashboard_fw4jum.webp"
     },
     {
         id: 9,
@@ -262,46 +315,23 @@ export const projectsData = [
         timeline: "1 week",
         tech: "Frontend",
         role: "Frontend Developer",
-        technologies: [],
+        technologies: [
+            {
+                name: "React",
+                icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+            },
+            {
+                name: "Tailwind CSS",
+                icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg",
+            },
+            {
+                name: "TMDB API",
+                icon: "https://img.shields.io/badge/-TMDB-01D277?logo=themoviedatabase&logoColor=white&style=flat",
+            }
+        ],
         website: "https://movie-app-react-phi.vercel.app",
         github: "https://github.com/TakshPatel02/Movies-App-React",
-        markdownUrl: "",
-        image: ""
+        markdownUrl: "https://res.cloudinary.com/portfolioblog/raw/upload/v1774335139/movieapp_yh974o.md",
+        image: "https://res.cloudinary.com/portfolioblog/image/upload/v1774334232/cinero_l7oqk8.webp"
     },
-    {
-        id: 10,
-        slug: "task-sphere",
-        title: "Task Sphere - To-Do List App",
-        description: "A modern, beautiful task management application built with React and Vite, featuring a stunning glassmorphism UI design.",
-        status: "operational",
-        type: "frontend",
-        animated: false,
-        accent: "from-green-300 via-emerald-300 to-teal-300",
-        timeline: "1 week",
-        tech: "Frontend",
-        role: "Frontend Developer",
-        technologies: [],
-        website: "https://task-sphere-iota.vercel.app/",
-        github: "https://github.com/TakshPatel02/TaskSphere",
-        markdownUrl: "",
-        image: ""
-    },
-    {
-        id: 11,
-        slug: "skyline-shrink",
-        title: "Skyline Shrink",
-        description: "A stunning scroll-based animation project built with React, GSAP, and Tailwind CSS. Features a dynamic grid of images that scale down with randomized transform origins as you scroll through the page, creating an engaging visual experience.",
-        status: "operational",
-        type: "frontend",
-        animated: true,
-        accent: "from-blue-300 via-sky-300 to-indigo-300",
-        timeline: "4 days",
-        tech: "Frontend",
-        role: "Frontend Developer",
-        technologies: [],
-        website: "",
-        github: "https://github.com/TakshPatel02/SkyLine-Shrink",
-        markdownUrl: "",
-        image: ""
-    }
 ];

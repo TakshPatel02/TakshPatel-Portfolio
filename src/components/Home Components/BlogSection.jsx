@@ -2,6 +2,9 @@ import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { blogsData } from "../../data/blogsData";
+import { useEffect, useState } from "react";
+import { getDatabase, ref, get } from "firebase/database";
+import app from "../../FireBaseConfig.js";
 
 const BlogCard = ({ post }) => (
   <Link to={`/blog/${post.slug}`} className="h-full">
@@ -43,6 +46,44 @@ const BlogCard = ({ post }) => (
 );
 
 const BlogSection = () => {
+  const [blogsData, setBlogsData] = useState([]);
+  useEffect(() => {
+    const fetchProjects = async () => {
+      try {
+        const db = getDatabase(app);
+        const projectsRef = ref(db, "projects");
+        const snapshot = await get(projectsRef);
+
+        if (snapshot.exists()) {
+          const rawData = snapshot.val();
+
+          const values = Object.values(rawData);
+          let projectsArray = [];
+
+          if (values.length === 1 && Array.isArray(values[0])) {
+            projectsArray = values[0];
+          } else if (
+            values.length === 1 &&
+            values[0] &&
+            typeof values[0] === "object"
+          ) {
+            projectsArray = Object.values(values[0]);
+          } else {
+            projectsArray = values;
+          }
+
+          setBlogsData(projectsArray.filter(Boolean));
+        } else {
+          console.log("No project data available");
+        }
+      } catch (err) {
+        console.error("Fetch error:", err);
+      }
+    };
+
+    fetchProjects();
+  }, []);
+
   const rows = [];
   for (let i = 0; i < blogsData.length; i += 2) {
     rows.push(blogsData.slice(i, i + 2));
