@@ -101,7 +101,7 @@ const ProjectHeader = ({
                       : "bg-btn-bg text-text-secondary hover:bg-hover-bg"
                   }`}
                 >
-                  Working ({projectCounts.operational})
+                  Operational ({projectCounts.operational})
                 </motion.button>
                 <motion.button
                   whileHover={{ scale: 1.05 }}

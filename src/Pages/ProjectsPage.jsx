@@ -1,12 +1,44 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import app from "../FireBaseConfig.js";
 import ProjectHeader from "../components/Project Components/ProjectHeader";
 import ProjectGrid from "../components/Project Components/ProjectGrid";
 import SectionDivider from "../components/SectionDivider";
-import { projectsData } from "../data/projectsData";
+// import { projectsData } from "../data/projectsData";
+import { getDatabase, ref, get } from "firebase/database";
 
 const ProjectsPage = () => {
   const [activeFilter, setActiveFilter] = useState("all");
   const [searchQuery, setSearchQuery] = useState("");
+  const [projectsData, setProjectData] = useState([]);
+
+  useEffect(() => {
+    const fetchProjects = async () => {
+      try {
+        const db = getDatabase(app);
+        const projectsRef = ref(db, "projects");
+        const snapshot = await get(projectsRef);
+
+        if (snapshot.exists()) {
+          const rawData = snapshot.val();
+
+          // STEP 1: get the inner object (push id)
+          const projectGroup = Object.values(rawData)[0];
+
+          // STEP 2: convert numeric keys to array
+          const projectsArray = Object.values(projectGroup);
+
+          setProjectData(projectsArray);
+          console.log("Fetched projects data:", projectsArray);
+        } else {
+          console.log("No project data available");
+        }
+      } catch (err) {
+        console.error("Fetch error:", err);
+      }
+    };
+
+    fetchProjects();
+  }, []);
 
   const filterProjects = (project) => {
     if (activeFilter === "all") {
@@ -17,7 +49,11 @@ const ProjectsPage = () => {
       return project.status === activeFilter;
     }
 
-    if (activeFilter === "frontend" || activeFilter === "backend" || activeFilter === "fullstack") {
+    if (
+      activeFilter === "frontend" ||
+      activeFilter === "backend" ||
+      activeFilter === "fullstack"
+    ) {
       return project.type === activeFilter;
     }
 

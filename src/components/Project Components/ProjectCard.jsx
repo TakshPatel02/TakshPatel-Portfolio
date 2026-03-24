@@ -3,6 +3,10 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
 const ProjectCard = ({ project }) => {
+  const technologies = Array.isArray(project?.technologies)
+    ? project.technologies
+    : [];
+
   return (
     <motion.div
       className="group p-4 sm:p-5 flex flex-col h-full"
@@ -84,17 +88,17 @@ const ProjectCard = ({ project }) => {
             Technologies
           </p>
           <div className="mt-2 flex flex-wrap gap-2">
-            {project.technologies.map((tech, index) => (
+            {technologies.map((tech, index) => (
               <span
                 key={index}
                 className="flex items-center gap-1 text-text-muted"
-                title={tech.name}
+                title={typeof tech === "object" ? tech.name : String(tech)}
               >
-                {tech.icon ? (
+                {typeof tech === "object" && tech.icon ? (
                   <img src={tech.icon} className="size-8" alt={tech.name} />
                 ) : (
                   <span className="rounded bg-tag-bg px-2 py-1 text-xs text-tag-text">
-                    {tech.name}
+                    {typeof tech === "object" ? tech.name : String(tech)}
                   </span>
                 )}
               </span>
