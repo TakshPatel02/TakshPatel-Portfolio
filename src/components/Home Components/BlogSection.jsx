@@ -51,7 +51,7 @@ const BlogSection = () => {
     const fetchProjects = async () => {
       try {
         const db = getDatabase(app);
-        const projectsRef = ref(db, "projects");
+        const projectsRef = ref(db, "blogs");
         const snapshot = await get(projectsRef);
 
         if (snapshot.exists()) {
