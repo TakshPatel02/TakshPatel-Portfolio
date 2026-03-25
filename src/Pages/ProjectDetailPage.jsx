@@ -7,51 +7,65 @@ import rehypeHighlight from "rehype-highlight";
 import { ArrowLeft, Globe, Github, ExternalLink, ArrowUp } from "lucide-react";
 import "highlight.js/styles/github-dark.css";
 import SectionDivider from "../components/SectionDivider";
-import { projectsData } from "../data/projectsData";
+import { getDatabase, ref, get } from "firebase/database";
+import app from "../FireBaseConfig";
 
 const ProjectDetailPage = () => {
   const { slug } = useParams();
   const [markdownContent, setMarkdownContent] = useState("");
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [project, setProject] = useState(null);
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  // Find the project by slug
-  const project = projectsData.find((p) => p.slug === slug);
-
   useEffect(() => {
-    const fetchMarkdown = async () => {
-      if (!project) {
-        setError("Project not found");
-        setLoading(false);
-        return;
-      }
-
-      if (!project.markdownUrl) {
-        setMarkdownContent("");
-        setLoading(false);
-        return;
-      }
+    const fetchProjectAndMarkdown = async () => {
+      setLoading(true);
+      setError(null);
 
       try {
-        const response = await fetch(project.markdownUrl);
+        const db = getDatabase(app);
+        const projectsRef = ref(db, "projects");
+        const snapshot = await get(projectsRef);
+
+        if (!snapshot.exists()) {
+          throw new Error("Project not found");
+        }
+
+        const rawData = snapshot.val();
+        const projectGroup = Object.values(rawData)[0] || {};
+        const projectsArray = Object.values(projectGroup);
+        const matchedProject = projectsArray.find((p) => p.slug === slug);
+
+        if (!matchedProject) {
+          throw new Error("Project not found");
+        }
+
+        setProject(matchedProject);
+
+        if (!matchedProject.markdownUrl) {
+          setMarkdownContent("");
+          return;
+        }
+
+        const response = await fetch(matchedProject.markdownUrl);
         if (!response.ok) {
           throw new Error("Failed to fetch markdown content");
         }
         const text = await response.text();
         setMarkdownContent(text);
       } catch (err) {
-        setError(err.message);
+        setError(err.message || "Something went wrong");
       } finally {
         setLoading(false);
       }
     };
 
-    fetchMarkdown();
-  }, [slug, project]);
+    fetchProjectAndMarkdown();
+  }, [slug]);
 
   if (loading) {
     return (

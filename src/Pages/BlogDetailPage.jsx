@@ -7,53 +7,67 @@ import rehypeHighlight from "rehype-highlight";
 import { ArrowLeft, Calendar, Clock, ArrowUp } from "lucide-react";
 import "highlight.js/styles/github-dark.css";
 import SectionDivider from "../components/SectionDivider";
-import { blogsData } from "../data/blogsData";
+import { getDatabase, ref, get } from "firebase/database";
+import app from "../FireBaseConfig";
 
 const BlogDetailPage = () => {
   const { slug } = useParams();
   const [markdownContent, setMarkdownContent] = useState("");
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [post, setPost] = useState(null);
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  // Find the blog post by slug
-  const post = blogsData.find((p) => p.slug === slug);
-
   useEffect(() => {
-    const fetchMarkdown = async () => {
-      if (!post) {
-        setError("Blog post not found");
-        setLoading(false);
-        return;
-      }
-
-      if (!post.markdownUrl) {
-        setMarkdownContent(
-          "# Content Coming Soon\n\nThis blog post is currently being written.",
-        );
-        setLoading(false);
-        return;
-      }
+    const fetchPostAndMarkdown = async () => {
+      setLoading(true);
+      setError(null);
 
       try {
-        const response = await fetch(post.markdownUrl);
+        const db = getDatabase(app);
+        const blogsRef = ref(db, "blogs");
+        const snapshot = await get(blogsRef);
+
+        if (!snapshot.exists()) {
+          throw new Error("Blog post not found");
+        }
+
+        const rawData = snapshot.val();
+        const blogGroup = Object.values(rawData)[0] || {};
+        const blogsArray = Object.values(blogGroup);
+        const matchedPost = blogsArray.find((p) => p.slug === slug);
+
+        if (!matchedPost) {
+          throw new Error("Blog post not found");
+        }
+
+        setPost(matchedPost);
+
+        if (!matchedPost.markdownUrl) {
+          setMarkdownContent(
+            "# Content Coming Soon\n\nThis blog post is currently being written.",
+          );
+          return;
+        }
+
+        const response = await fetch(matchedPost.markdownUrl);
         if (!response.ok) {
           throw new Error("Failed to fetch markdown content");
         }
         const text = await response.text();
         setMarkdownContent(text);
       } catch (err) {
-        setError(err.message);
+        setError(err.message || "Something went wrong");
       } finally {
         setLoading(false);
       }
     };
 
-    fetchMarkdown();
-  }, [slug, post]);
+    fetchPostAndMarkdown();
+  }, [slug]);
 
   if (loading) {
     return (
@@ -125,12 +139,14 @@ const BlogDetailPage = () => {
             <div className="px-4 sm:px-8">
               {/* Article Header */}
               <header className="mb-8 border-b border-border pb-8">
-                <img
-                  src={post.image}
-                  alt={post.title}
-                  loading="lazy"
-                  className="w-full rounded-lg mb-4"
-                />
+                {post.image && (
+                  <img
+                    src={post.image}
+                    alt={post.title}
+                    loading="lazy"
+                    className="mb-4 w-full rounded-lg"
+                  />
+                )}
                 <h1 className="font-display text-lg font-bold text-text-primary sm:text-2xl md:text-4xl lg:text-5xl">
                   {post.title}
                 </h1>
