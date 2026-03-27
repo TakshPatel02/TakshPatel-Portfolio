@@ -69,7 +69,6 @@ const App = () => {
           <Route path="*" element={<PageNotFound />} />
         </Routes>
         <Footer />
-        <NewFooter />
       </div>
     </ThemeProvider>
   );
