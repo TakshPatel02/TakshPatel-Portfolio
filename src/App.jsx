@@ -9,6 +9,7 @@ const BlogPage = lazy(() => import("./Pages/BlogPage"));
 const BlogDetailPage = lazy(() => import("./Pages/BlogDetailPage"));
 import Footer from "./components/Footer";
 import PageNotFound from "./Pages/PageNotFound";
+import NewFooter from "./components/Home Components/NewFooter";
 
 const App = () => {
   return (
@@ -68,6 +69,7 @@ const App = () => {
           <Route path="*" element={<PageNotFound />} />
         </Routes>
         <Footer />
+        <NewFooter />
       </div>
     </ThemeProvider>
   );

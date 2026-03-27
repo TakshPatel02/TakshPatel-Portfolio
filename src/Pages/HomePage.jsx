@@ -9,6 +9,7 @@ const AboutSection = lazy(
   () => import("../components/Home Components/AboutSection"),
 );
 import GithubActivity from "../components/Home Components/GithubActivity";
+import NewFooter from "../components/Home Components/NewFooter";
 const BlogSection = lazy(
   () => import("../components/Home Components/BlogSection"),
 );
