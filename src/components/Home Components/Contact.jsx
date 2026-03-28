@@ -17,7 +17,7 @@ const Contact = () => {
                 Resume / CV
               </a>
               <a
-                href="mailto:hello@ncdai.dev"
+                href="mailto:takshpatel022@gmail.com"
                 className="font-display py-3 px-6 text-center text-xs font-semibold uppercase tracking-widest text-text-primary transition hover:bg-hover-bg sm:text-sm"
               >
                 Get in Touch

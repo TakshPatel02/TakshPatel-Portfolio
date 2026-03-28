@@ -26,7 +26,7 @@ const HomePage = () => {
       <ProjectsSection />
       <SectionDivider />
       <Suspense fallback={<h3>Loading ...</h3>}><AboutSection /></Suspense>
-      {/* <GithubActivity /> */}
+      <GithubActivity />
       <SectionDivider />
       <Suspense fallback={<h3>Loading ...</h3>}><BlogSection /></Suspense>
       <SectionDivider />
