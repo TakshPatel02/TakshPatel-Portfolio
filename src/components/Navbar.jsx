@@ -19,7 +19,7 @@ const Navbar = () => {
         <div className="grid h-16 grid-cols-2 items-center border-x border-border px-4">
           <Link
             to="/"
-            className="font-space-mono text-lg font-bold tracking-tight text-text-primary sm:text-3xl"
+            className="tiny5-font text-lg font-bold tracking-tight text-text-primary sm:text-5xl"
             aria-label="Go to homepage"
           >
             TP

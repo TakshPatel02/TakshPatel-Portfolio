@@ -19,9 +19,9 @@ const HeroPanel = () => {
             <motion.span
               className="tiny5-font text-5xl font-bold tracking-tight text-text-primary sm:text-5xl lg:text-8xl lg:text-[96px] cursor-pointer"
               initial={{ scale: 0.5, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 0.3, ease: "easeOut"}}
-              whileHover={{ scale: 1.05 }}
+              animate={{ scale: 1.5, opacity: 1 }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
+              whileHover={{ scale: 1.55 }}
               whileTap={{ scale: 1 }}
             >
               TP
