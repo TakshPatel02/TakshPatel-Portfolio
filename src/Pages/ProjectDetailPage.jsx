@@ -373,7 +373,7 @@ const ProjectDetailPage = () => {
       {/* Floating Scroll to Top Button */}
       <button
         onClick={scrollToTop}
-        className="fixed bottom-8 right-8 inline-flex items-center gap-2 rounded-lg border border-border bg-bg-card px-4 py-3 font-medium text-text-secondary shadow-lg transition hover:bg-bg-secondary hover:text-text-primary"
+        className="fixed bottom-8 right-8 z-50 inline-flex items-center gap-2 rounded-lg border border-border bg-bg-card px-4 py-3 font-medium text-text-secondary shadow-lg transition hover:bg-bg-secondary hover:text-text-primary"
         title="Back to Top"
       >
         <ArrowUp className="h-5 w-5" />
