@@ -1,11 +1,5 @@
 @import "tailwindcss";
 
-@layer components {
-  .font-space-mono {
-    font-family: "Space Mono", monospace;
-  }
-}
-
 /* ── Font Configuration ── */
 :root {
   --font-display: "Inter Tight", system-ui, sans-serif;
@@ -200,8 +194,15 @@ button:active {
   scrollbar-color: #3b82f6 #18181b;
 }
 
-.tiny5-font{
+.tiny5-font {
   font-family: "Tiny5", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.playwrite-us-trad {
+  font-family: "Playwrite US Trad", cursive;
+  font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
 }
