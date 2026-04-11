@@ -20,7 +20,7 @@ const HeroPanel = () => {
     path.getBoundingClientRect();
 
     // Phase 1: draw the stroke
-    path.style.transition = "stroke-dashoffset 4s cubic-bezier(0.4, 0, 0.2, 1)";
+    path.style.transition = "stroke-dashoffset 6s cubic-bezier(0.4, 0, 0.2, 1)";
     path.style.strokeDashoffset = "0";
 
     // Phase 2: flood fill, kill stroke
@@ -28,7 +28,7 @@ const HeroPanel = () => {
       path.style.transition = "fill 0.6s ease, stroke-width 0.5s ease";
       path.style.fill = "currentColor";
       path.style.strokeWidth = "0";
-    }, 1200);
+    }, 1500);
 
     return () => clearTimeout(timer);
   }, []);
@@ -46,7 +46,7 @@ const HeroPanel = () => {
           >
             <svg
               viewBox="0 0 74 13"
-              className="w-[min(50%,500px)] h-auto overflow-visible"
+              className="w-[min(60%,500px)] h-auto overflow-visible"
               xmlns="http://www.w3.org/2000/svg"
             >
               <path
