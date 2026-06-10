@@ -1,43 +1,102 @@
 @import "tailwindcss";
 
-/* ── Font Configuration ── */
+/* ══════════════════════════════════════════════
+   RAYCAST DESIGN SYSTEM — Style Tokens
+   Inter + ss03 · Dark surface ladder · No shadows
+   ══════════════════════════════════════════════ */
+
 :root {
-  --font-display: "Inter Tight", system-ui, sans-serif;
-  --font-body: "Inter", system-ui, sans-serif;
+  /* Typography — Inter with ss03 alternate g (Raycast's signature) */
+  --font-display: "Inter", "Inter Fallback", system-ui, -apple-system, sans-serif;
+  --font-body: "Inter", "Inter Fallback", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", "Fira Code", monospace;
+
+  /* ── Light mode surfaces (polarity-flipped Raycast) ── */
   --color-bg-primary: #ffffff;
-  --color-bg-secondary: #f4f4f5;
-  --color-bg-card: #ffffff;
-  --color-text-primary: #09090b;
-  --color-text-secondary: #52525b;
-  --color-text-muted: #71717a;
-  --color-border: rgba(23, 22, 22, 0.1);
-  --color-divider-pattern: rgba(0, 0, 0, 0.035);
+  --color-bg-secondary: #f7f7f8;
+  --color-bg-card: #ffffff;          /* same as primary — no visible banding */
+  --color-surface-elevated: #f0f0f1;
+  --color-surface-card: #eaeaeb;
+
+  /* ── Text Colors ── */
+  --color-text-primary: #07080a;
+  --color-text-secondary: #434345;
+  --color-text-muted: #6a6b6c;
+
+  /* ── Borders — Hairline system (no shadows) ── */
+  --color-border: #d8d8da;
+  --color-border-strong: rgba(0, 0, 0, 0.16);
+  --color-border-soft: rgba(0, 0, 0, 0.08);
+  --color-divider-pattern: rgba(0, 0, 0, 0.04);
+
+  /* ── Interactive States ── */
   --color-hover-bg: rgba(0, 0, 0, 0.04);
-  --color-btn-bg: rgba(0, 0, 0, 0.05);
+  --color-btn-bg: rgba(0, 0, 0, 0.08);
+  --color-btn-text: #07080a;
   --color-tag-bg: rgba(0, 0, 0, 0.06);
-  --color-tag-text: #3f3f46;
-  --color-dot-pattern: rgba(0, 0, 0, 0.12);
+  --color-tag-text: #434345;
+  --color-dot-pattern: rgba(0, 0, 0, 0.10);
   --color-hero-overlay: rgba(0, 0, 0, 0.03);
+
+  /* ── Semantic Accents ── */
+  --color-accent-blue: #57c1ff;
+  --color-accent-red: #ff6161;
+  --color-accent-green: #59d499;
+  --color-accent-yellow: #ffc533;
+  --color-link: #57c1ff;
+  --color-error: #ff6161;
+  --color-success: #59d499;
+  --color-warning: #ffc533;
+
+  /* ── Hero Stripe ── */
+  --color-hero-stripe-start: #ff5757;
+  --color-hero-stripe-end: #a1131a;
+
+  /* ── Keycap gradient ── */
+  --color-key-bg-start: #e8e8e8;
+  --color-key-bg-end: #d8d8d8;
 }
 
-/* ── Dark theme ── */
+/* ══════════════════════════════════════════════
+   DARK MODE — Raycast's unified dark canvas
+   KEY FIX: bg-card = bg-primary for flush cards.
+   The hairline borders define card edges, NOT
+   background contrast.
+   ══════════════════════════════════════════════ */
 .dark {
-  --color-bg-primary: #09090b;
-  --color-bg-secondary: #18181b;
-  --color-bg-card: #09090b;
-  --color-text-primary: #ffffff;
-  --color-text-secondary: #a1a1aa;
-  --color-text-muted: #71717a;
-  --color-border: rgba(255, 255, 255, 0.08);
-  --color-divider-pattern: rgba(255, 255, 255, 0.035);
+  /* ── Unified dark canvas — all primary surfaces share the same tone ── */
+  --color-bg-primary: #0a0a0b;       /* canvas — page body */
+  --color-bg-secondary: #0f1011;    /* subtle step for inset regions only */
+  --color-bg-card: #0a0a0b;         /* SAME as primary — cards sit flush */
+  --color-surface-elevated: #141516; /* button/input fills, active tab */
+  --color-surface-card: #181919;     /* keycap fill, tile bg */
+
+  /* ── Text — Raycast's off-white ink ── */
+  --color-text-primary: #f4f4f6;
+  --color-text-secondary: #9c9c9d;
+  --color-text-muted: #6a6b6c;
+
+  /* ── Borders — solid hairlines, consistent everywhere ── */
+  --color-border: #232425;
+  --color-border-strong: rgba(255, 255, 255, 0.16);
+  --color-border-soft: rgba(255, 255, 255, 0.08);
+  --color-divider-pattern: rgba(255, 255, 255, 0.04);
+
+  /* ── Interactive States ── */
   --color-hover-bg: rgba(255, 255, 255, 0.05);
-  --color-btn-bg: rgba(255, 255, 255, 0.05);
-  --color-tag-bg: rgba(255, 255, 255, 0.10);
-  --color-tag-text: #d4d4d8;
-  --color-dot-pattern: rgba(255, 255, 255, 0.18);
-  --color-hero-overlay: rgba(255, 255, 255, 0.03);
+  --color-btn-bg: rgba(255, 255, 255, 0.08);
+  --color-btn-text: #f4f4f6;
+  --color-tag-bg: rgba(255, 255, 255, 0.08);
+  --color-tag-text: #9c9c9d;
+  --color-dot-pattern: rgba(255, 255, 255, 0.08);
+  --color-hero-overlay: rgba(255, 255, 255, 0.02);
+
+  /* ── Keycap gradient (dark mode) ── */
+  --color-key-bg-start: #141516;
+  --color-key-bg-end: #0f1011;
 }
 
+/* ── Tailwind v4 Theme Bridge ── */
 @theme inline {
   --color-bg-primary: var(--color-bg-primary);
   --color-bg-secondary: var(--color-bg-secondary);
@@ -57,18 +116,28 @@
   --font-body: var(--font-body);
 }
 
+/* ══════════════════════════════════════════════
+   BASE STYLES
+   ══════════════════════════════════════════════ */
+
 body {
   background-color: var(--color-bg-primary);
   color: var(--color-text-primary);
   font-family: var(--font-body);
-  font-size: 1rem;
+  font-size: 16px;
   line-height: 1.6;
+  font-weight: 400;
+  /* Raycast's signature: ss03 alternate g */
+  font-feature-settings: "calt", "kern", "liga", "ss03";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  transition: background-color 0.4s ease, color 0.4s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Typography Hierarchy */
+/* ══════════════════════════════════════════════
+   TYPOGRAPHY — Raycast's positive-spaced hierarchy
+   ══════════════════════════════════════════════ */
+
 h1,
 h2,
 h3,
@@ -76,123 +145,169 @@ h4,
 h5,
 h6 {
   font-family: var(--font-display);
-  font-weight: 600;
-  line-height: 1.2;
-  letter-spacing: -0.01em;
+  font-feature-settings: "calt", "kern", "liga", "ss03";
+  font-weight: 500;
+  line-height: 1.17;
+  letter-spacing: 0.2px;
 }
 
+/* display-xl: 64px / 600 / 1.1 */
 h1 {
-  font-size: 2rem;
-  font-weight: 700;
-  letter-spacing: -0.02em;
+  font-size: 2.25rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  line-height: 1.1;
 }
 
 @media (min-width: 640px) {
-  h1 {
-    font-size: 2.25rem;
-  }
-}
-
-@media (min-width: 768px) {
-  h1 {
-    font-size: 2.25rem;
-  }
-}
-
-@media (min-width: 1024px) {
   h1 {
     font-size: 2.75rem;
   }
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 768px) {
   h1 {
-    font-size: 3rem;
+    font-size: 3.5rem;
   }
 }
 
+@media (min-width: 1024px) {
+  h1 {
+    font-size: 3.5rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  h1 {
+    font-size: 4rem;
+  }
+}
+
+/* display-lg: 56px / 500 / 1.17 / 0.2px */
 h2 {
-  font-size: 2.25rem;
-  font-weight: 700;
-  letter-spacing: -0.01em;
-}
-
-h3 {
   font-size: 1.5rem;
-  font-weight: 600;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  line-height: 1.6;
 }
 
+@media (min-width: 640px) {
+  h2 {
+    font-size: 1.75rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  h2 {
+    font-size: 2rem;
+  }
+}
+
+/* heading-md: 20px / 500 / 1.4 / 0.2px */
+h3 {
+  font-size: 1.25rem;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  line-height: 1.4;
+}
+
+/* body paragraphs: 16px / 400 / 1.6 / 0 */
 p {
   font-family: var(--font-body);
-  line-height: 1.7;
+  font-feature-settings: "calt", "kern", "liga", "ss03";
+  line-height: 1.6;
+  letter-spacing: 0;
 }
 
 .font-display {
   font-family: var(--font-display);
+  font-feature-settings: "calt", "kern", "liga", "ss03";
 }
 
 .font-body {
   font-family: var(--font-body);
+  font-feature-settings: "calt", "kern", "liga", "ss03";
 }
 
-/* Smooth transitions for theme changes and interactive elements */
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* ══════════════════════════════════════════════
+   INTERACTIONS
+   ══════════════════════════════════════════════ */
+
 button,
 a {
-  transition: all 0.3s ease-out;
-  transition-property: background-color, border-color, color, transform;
+  transition: all 0.15s ease;
+  transition-property: background-color, border-color, color, transform, opacity;
 }
 
 button:active {
   transform: scale(0.98);
 }
 
-/* ── Fancy Scrollbars ── */
-/* Webkit browsers (Chrome, Edge, Safari) */
+/* ══════════════════════════════════════════════
+   SCROLLBAR — minimal, theme-consistent
+   ══════════════════════════════════════════════ */
+
 ::-webkit-scrollbar {
-  width: 12px;
-  height: 12px;
+  width: 6px;
+  height: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--color-bg-secondary);
-  border-radius: 10px;
+  background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
-  border-radius: 10px;
-  border: 2px solid var(--color-bg-secondary);
-  transition: all 0.3s ease;
+  background: var(--color-border);
+  border-radius: 100px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
-  box-shadow: 0 0 12px rgba(59, 130, 246, 0.4);
+  background: var(--color-text-muted);
 }
 
 ::-webkit-scrollbar-corner {
-  background: var(--color-bg-secondary);
-}
-
-/* Dark theme scrollbar */
-.dark ::-webkit-scrollbar-track {
-  background: #18181b;
+  background: transparent;
 }
 
 .dark ::-webkit-scrollbar-thumb {
-  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
-  border-color: #18181b;
+  background: #232425;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #434345;
 }
 
 /* Firefox */
 * {
   scrollbar-width: thin;
-  scrollbar-color: #3b82f6 var(--color-bg-secondary);
+  scrollbar-color: var(--color-border) transparent;
 }
 
 .dark {
-  scrollbar-color: #3b82f6 #18181b;
+  scrollbar-color: #232425 transparent;
 }
+
+/* ══════════════════════════════════════════════
+   SELECTION
+   ══════════════════════════════════════════════ */
+
+::selection {
+  background-color: rgba(87, 193, 255, 0.3);
+  color: inherit;
+}
+
+.dark ::selection {
+  background-color: rgba(87, 193, 255, 0.2);
+  color: #f4f4f6;
+}
+
+/* ══════════════════════════════════════════════
+   CUSTOM FONT CLASSES (preserved from original)
+   ══════════════════════════════════════════════ */
 
 .tiny5-font {
   font-family: "Tiny5", sans-serif;

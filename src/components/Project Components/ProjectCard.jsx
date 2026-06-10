@@ -47,7 +47,7 @@ const ProjectCard = ({ project }) => {
             target="_blank"
             rel="noopener noreferrer"
             onClick={(e) => e.stopPropagation()}
-            className="rounded-full bg-white/90 p-2 text-zinc-800 shadow-lg transition hover:scale-110 hover:bg-white"
+            className="rounded-full bg-bg-card/90 border border-border p-2 text-text-primary transition hover:scale-110 hover:bg-bg-card"
             aria-label="Visit website"
           >
             <Globe className="h-4 w-4" />
@@ -59,7 +59,7 @@ const ProjectCard = ({ project }) => {
             target="_blank"
             rel="noopener noreferrer"
             onClick={(e) => e.stopPropagation()}
-            className="rounded-full bg-white/90 p-2 text-zinc-800 shadow-lg transition hover:scale-110 hover:bg-white"
+            className="rounded-full bg-bg-card/90 border border-border p-2 text-text-primary transition hover:scale-110 hover:bg-bg-card"
             aria-label="View source code"
           >
             <Github className="h-4 w-4" />
@@ -73,7 +73,7 @@ const ProjectCard = ({ project }) => {
         className="mt-4 block flex-1 flex flex-col"
       >
         <div className="flex items-start justify-between gap-3">
-          <h3 className="font-display text-lg font-bold text-text-primary transition group-hover:text-blue-400 sm:text-xl">
+          <h3 className="font-display text-lg font-bold text-text-primary transition group-hover:text-[#57c1ff] sm:text-xl">
             {project.title}
           </h3>
         </div>

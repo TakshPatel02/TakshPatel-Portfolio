@@ -304,7 +304,7 @@ const ProjectDetailPage = () => {
                           href={href}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-blue-400 underline decoration-blue-400/30 underline-offset-2 transition hover:decoration-blue-400"
+                          className="text-[#57c1ff] underline decoration-[#57c1ff]/30 underline-offset-2 transition hover:decoration-[#57c1ff]"
                         >
                           {children}
                         </a>
@@ -338,7 +338,7 @@ const ProjectDetailPage = () => {
                         return <code className={className}>{children}</code>;
                       },
                       pre: ({ children }) => (
-                        <pre className="my-6 overflow-x-auto rounded-lg bg-[#0d1117] p-4">
+                        <pre className="my-6 overflow-x-auto rounded-lg bg-bg-secondary border border-border p-4">
                           {children}
                         </pre>
                       ),
@@ -373,7 +373,7 @@ const ProjectDetailPage = () => {
       {/* Floating Scroll to Top Button */}
       <button
         onClick={scrollToTop}
-        className="fixed bottom-8 right-8 z-50 inline-flex items-center gap-2 rounded-lg border border-border bg-bg-card px-4 py-3 font-medium text-text-secondary shadow-lg transition hover:bg-bg-secondary hover:text-text-primary"
+        className="fixed bottom-8 right-8 z-50 inline-flex items-center gap-2 rounded-lg border border-border bg-bg-card px-4 py-3 font-medium text-text-secondary transition hover:bg-bg-secondary hover:text-text-primary"
         title="Back to Top"
       >
         <ArrowUp className="h-5 w-5" />

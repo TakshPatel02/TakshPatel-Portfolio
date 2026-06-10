@@ -53,7 +53,7 @@ const AboutSection = () => {
                       src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
                       alt="JavaScript"
                     />
-                    <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden rounded bg-gray-900 px-2 py-1 text-xs text-white whitespace-nowrap group-hover:block dark:bg-gray-100 dark:text-gray-900 pointer-events-none z-10">
+                    <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden rounded border border-border bg-bg-secondary px-2 py-1 text-xs text-text-primary whitespace-nowrap group-hover:block pointer-events-none z-10">
                       JavaScript
                     </span>
                   </div>
@@ -63,7 +63,7 @@ const AboutSection = () => {
                       src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
                       alt="React"
                     />
-                    <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden rounded bg-gray-900 px-2 py-1 text-xs text-white whitespace-nowrap group-hover:block dark:bg-gray-100 dark:text-gray-900 pointer-events-none z-10">
+                    <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden rounded border border-border bg-bg-secondary px-2 py-1 text-xs text-text-primary whitespace-nowrap group-hover:block pointer-events-none z-10">
                       React
                     </span>
                   </div>
@@ -73,7 +73,7 @@ const AboutSection = () => {
                       src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg"
                       alt="Tailwind CSS"
                     />
-                    <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden rounded bg-gray-900 px-2 py-1 text-xs text-white whitespace-nowrap group-hover:block dark:bg-gray-100 dark:text-gray-900 pointer-events-none z-10">
+                    <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden rounded border border-border bg-bg-secondary px-2 py-1 text-xs text-text-primary whitespace-nowrap group-hover:block pointer-events-none z-10">
                       Tailwind CSS
                     </span>
                   </div>
@@ -83,7 +83,7 @@ const AboutSection = () => {
                       src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg"
                       alt="Node.js"
                     />
-                    <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden rounded bg-gray-900 px-2 py-1 text-xs text-white whitespace-nowrap group-hover:block dark:bg-gray-100 dark:text-gray-900 pointer-events-none z-10">
+                    <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden rounded border border-border bg-bg-secondary px-2 py-1 text-xs text-text-primary whitespace-nowrap group-hover:block pointer-events-none z-10">
                       Node.js
                     </span>
                   </div>
@@ -93,7 +93,7 @@ const AboutSection = () => {
                       src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
                       alt="MongoDB"
                     />
-                    <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden rounded bg-gray-900 px-2 py-1 text-xs text-white whitespace-nowrap group-hover:block dark:bg-gray-100 dark:text-gray-900 pointer-events-none z-10">
+                    <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden rounded border border-border bg-bg-secondary px-2 py-1 text-xs text-text-primary whitespace-nowrap group-hover:block pointer-events-none z-10">
                       MongoDB
                     </span>
                   </div>
@@ -103,7 +103,7 @@ const AboutSection = () => {
                       src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"
                       alt="PostgreSQL"
                     />
-                    <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden rounded bg-gray-900 px-2 py-1 text-xs text-white whitespace-nowrap group-hover:block dark:bg-gray-100 dark:text-gray-900 pointer-events-none z-10">
+                    <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden rounded border border-border bg-bg-secondary px-2 py-1 text-xs text-text-primary whitespace-nowrap group-hover:block pointer-events-none z-10">
                       PostgreSQL
                     </span>
                   </div>
@@ -113,7 +113,7 @@ const AboutSection = () => {
                       src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/greensock.svg"
                       alt="GSAP"
                     />
-                    <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden rounded bg-gray-900 px-2 py-1 text-xs text-white whitespace-nowrap group-hover:block dark:bg-gray-100 dark:text-gray-900 pointer-events-none z-10">
+                    <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden rounded border border-border bg-bg-secondary px-2 py-1 text-xs text-text-primary whitespace-nowrap group-hover:block pointer-events-none z-10">
                       GSAP
                     </span>
                   </div>

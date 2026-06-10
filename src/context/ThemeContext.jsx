@@ -21,9 +21,9 @@ export const ThemeProvider = ({ children }) => {
       root.classList.remove("dark");
     }
     localStorage.setItem("theme", theme);
-    // Smooth color transition with GSAP
-    const bgColor = theme === "dark" ? "#09090b" : "#ffffff";
-    const textColor = theme === "dark" ? "#ffffff" : "#09090b";
+    // Smooth color transition with GSAP — matches CSS custom properties exactly
+    const bgColor = theme === "dark" ? "#0a0a0b" : "#ffffff";
+    const textColor = theme === "dark" ? "#f4f4f6" : "#07080a";
 
     gsap.to("body", {
       backgroundColor: bgColor,

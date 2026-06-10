@@ -71,7 +71,7 @@ const Navbar = () => {
 
       {isOpen ? (
         <div className="md:hidden">
-          <div className="mx-4 mb-4 rounded-2xl border border-border bg-bg-secondary/90 p-4 shadow-lg">
+          <div className="mx-4 mb-4 rounded-2xl border border-border bg-bg-secondary/90 p-4 backdrop-blur">
             <div className="flex flex-col gap-3 text-sm font-medium text-text-secondary">
               {navItems.map((item) => (
                 <NavLink

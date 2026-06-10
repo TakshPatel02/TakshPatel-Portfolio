@@ -44,7 +44,7 @@ const ProjectCard = ({ project }) => {
 
       <div className="mt-4 flex items-start justify-between gap-3">
         <Link to={`/project/${project.slug}`} className="flex-1">
-          <h3 className="font-display text-sm font-bold text-text-primary transition group-hover:text-blue-400 sm:text-lg lg:text-xl">
+          <h3 className="font-display text-sm font-bold text-text-primary transition group-hover:text-[#57c1ff] sm:text-lg lg:text-xl">
             {project.title}
           </h3>
           <p className="mt-1 text-sm leading-relaxed text-text-secondary sm:text-base">
@@ -107,8 +107,8 @@ const ProjectCard = ({ project }) => {
         <span
           className={`rounded-full px-3 py-1 text-xs font-semibold ${
             project.status === "operational"
-              ? "bg-emerald-500/15 text-emerald-600 dark:text-emerald-600"
-              : "bg-amber-500/15 text-amber-600 dark:text-amber-300"
+              ? "bg-[rgba(89,212,153,0.12)] text-[#59d499]"
+              : "bg-[rgba(255,197,51,0.12)] text-[#ffc533]"
           }`}
         >
           {project.status === "operational"

@@ -34,11 +34,11 @@ const BlogCard = ({ post }) => {
 
         {/* Blog Post Info */}
         <div className="mt-3 flex items-start gap-2 flex-1">
-          <h3 className="font-display text-lg font-bold text-text-primary transition group-hover:text-blue-400 sm:text-2xl md:text-3xl lg:text-3xl">
+          <h3 className="font-display text-lg font-bold text-text-primary transition group-hover:text-[#57c1ff] sm:text-2xl md:text-3xl lg:text-3xl">
             {post.title}
           </h3>
           {post.isNew && (
-            <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-blue-500" />
+            <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-[#57c1ff]" />
           )}
         </div>
         <p className="mt-auto pt-2 text-xs uppercase tracking-widest text-text-muted">
