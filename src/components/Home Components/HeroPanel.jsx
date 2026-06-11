@@ -221,7 +221,7 @@ const Guides = ({ cx, cy, span }) => {
     );
   }
 
-  return <g opacity="0.45">{lines}</g>;
+  return <g opacity="0.15">{lines}</g>;
 };
 
 // ── Compute viewBox from letter bounds ──
@@ -245,11 +245,15 @@ const computeBounds = () => {
 };
 
 const { minX, maxX, minY, maxY } = computeBounds();
-const PAD = 55;
-const VBX = minX - PAD;
-const VBY = minY - PAD;
-const VBW = maxX - minX + PAD * 2;
-const VBH = maxY - minY + PAD * 2;
+const PAD_TOP = 25;
+const PAD_BOTTOM = -15; // Padding below letters so they do not overlap
+const PAD_LEFT = 40;
+const PAD_RIGHT = 40;
+
+const VBX = minX - PAD_LEFT;
+const VBY = minY - PAD_TOP;
+const VBW = maxX - minX + PAD_LEFT + PAD_RIGHT;
+const VBH = maxY - minY + PAD_TOP + PAD_BOTTOM;
 const CX = (minX + maxX) / 2;
 const CY = (minY + maxY) / 2;
 
@@ -294,28 +298,32 @@ const FlipLink = ({ children }) => (
 // ── Combined Hero Panel + Info Card ──
 const HeroPanel = () => {
   return (
-    <div className="w-full border-b border-border">
-      <section className="mx-auto w-full max-w-4xl px-4 sm:px-6">
+    <div className="w-full">
+      {/* Top border line spanning full screen width */}
+      <div className="h-px w-full bg-border" />
+      
+      <section className="mx-auto w-full max-w-4xl px-4 sm:px-6 relative z-10">
         <div className="border-x border-border bg-bg-card">
           
-          {/* Hero area with isometric TP logo (letters shifted up by transform to sit above the overlapping avatar) */}
+          {/* Hero area with isometric TP logo */}
           <div
-            className="relative grid place-items-center overflow-hidden"
-            style={{ height: "clamp(300px, 48vh, 460px)" }}
+            className="relative flex flex-col items-center justify-start z-10 w-full"
+            style={{ aspectRatio: `${VBW} / ${VBH}`, maxHeight: "330px", padding: 0, margin: 0 }}
           >
             <svg
               viewBox={`${VBX} ${VBY} ${VBW} ${VBH}`}
-              className="w-full h-full"
-              preserveAspectRatio="xMidYMid meet"
+              className="w-full h-full overflow-visible"
+              style={{ overflow: "visible" }}
+              preserveAspectRatio="xMidYMin meet"
               xmlns="http://www.w3.org/2000/svg"
             >
               <Guides cx={CX} cy={CY} span={Math.max(VBW, VBH)} />
-              <g transform="translate(0, -38)">
+              <g transform="translate(0, 10)">
                 <Letter cells={T_CELLS} off={0} />
                 <Letter cells={P_CELLS} off={P_OFF} />
               </g>
               <text
-                x={maxX + 10}
+                x={maxX - 20}
                 y={maxY - 43}
                 className="iso-fig-label"
                 opacity="0.6"
@@ -324,29 +332,39 @@ const HeroPanel = () => {
               </text>
             </svg>
           </div>
+        </div>
+      </section>
 
-          {/* Info card — avatar overlaps into hero exactly as originally designed */}
-          <div className="flex items-start border-border">
-            <div
-              className="border-r border-border flex-shrink-0"
-              style={{ marginTop: "-40px", position: "relative", zIndex: 10 }}
-            >
+      {/* Horizontal divider line spanning full screen width */}
+      <div className="h-px w-full bg-border" />
+
+      <section className="mx-auto w-full max-w-4xl px-4 sm:px-6 relative z-5">
+        <div className="border-x border-border bg-bg-card">
+          
+          {/* Info card — avatar placed inside a square box in the left column */}
+          <div className="flex items-stretch bg-bg-card relative z-0" style={{ height: "140px" }}>
+            <div className="w-[140px] shrink-0 border-r border-border flex items-center justify-center">
               <img
                 src="https://res.cloudinary.com/portfolioblog/image/upload/v1772124137/ghibli_by7gu7.webp"
                 alt="Taksh Patel"
-                fetchPriority="high"
-                className="h-[125px] w-[125px] rounded-full border border-border object-cover sm:h-[150px] sm:w-[150px]"
+                className="h-full w-full rounded-full object-cover"
               />
             </div>
-            <div className="flex flex-1 flex-col mt-4 sm:mt-6">
-              <div className="flex items-center gap-2 border-y border-border">
-                <h2 className="font-display text-lg font-bold text-text-primary sm:text-2xl lg:text-4xl py-2">
+            <div className="flex-1 flex flex-col">
+              {/* Row 1: Empty spacer row for letters overlap */}
+              <div className="border-b border-border h-[60px]" />
+              
+              {/* Row 2: Name row */}
+              <div className="border-b border-border h-[40px] flex items-center px-2">
+                <h2 className="font-display text-lg font-bold text-text-primary sm:text-2xl lg:text-3xl">
                   <FlipLink>Taksh Patel</FlipLink>
                 </h2>
               </div>
-              <p className="text-sm leading-relaxed text-text-secondary sm:text-base py-2">
+              
+              {/* Row 3: Tagline row */}
+              <div className="h-[40px] flex items-center px-2 text-sm text-text-secondary font-mono">
                 Creating with code. Small details matter.
-              </p>
+              </div>
             </div>
           </div>
 
