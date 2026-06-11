@@ -1,4 +1,4 @@
-import { motion} from 'motion/react'
+import { motion } from "motion/react";
 
 const InfoCard = () => {
   return (
@@ -6,18 +6,22 @@ const InfoCard = () => {
       <div className="mx-auto w-full max-w-4xl px-4 sm:px-6">
         <div className="border-x border-border bg-bg-card">
           <div className="flex items-start">
-            {/* Circular Avatar */}
-            <div className="border-r border-border">
+            {/* Circular Avatar — overlaps into HeroPanel above */}
+            <div className="border-r border-border info-avatar" style={{ marginTop: "-40px" }}>
               <img
                 src="https://res.cloudinary.com/portfolioblog/image/upload/v1772124137/ghibli_by7gu7.webp"
                 alt="Taksh Patel"
                 fetchPriority="high"
                 className="h-[125px] w-[125px] flex-shrink-0 rounded-full border border-border object-cover sm:h-[150px] sm:w-[150px]"
+                style={{
+                  position: "relative",
+                  zIndex: 10,
+                }}
               />
             </div>
 
             {/* Content */}
-            <div className="flex flex-1 flex-col mt-8 sm:mt-20">
+            <div className="flex flex-1 flex-col mt-8 sm:mt-10">
               {/* Name */}
               <div className="flex items-center gap-2 border-y border-border">
                 <h2 className="font-display text-lg font-bold text-text-primary sm:text-2xl lg:text-4xl py-2">

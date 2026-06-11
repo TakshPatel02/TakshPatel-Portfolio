@@ -14,7 +14,8 @@
   /* ── Light mode surfaces (polarity-flipped Raycast) ── */
   --color-bg-primary: #ffffff;
   --color-bg-secondary: #f7f7f8;
-  --color-bg-card: #ffffff;          /* same as primary — no visible banding */
+  --color-bg-card: #ffffff;
+  /* same as primary — no visible banding */
   --color-surface-elevated: #f0f0f1;
   --color-surface-card: #eaeaeb;
 
@@ -65,11 +66,16 @@
    ══════════════════════════════════════════════ */
 .dark {
   /* ── Unified dark canvas — all primary surfaces share the same tone ── */
-  --color-bg-primary: #0a0a0b;       /* canvas — page body */
-  --color-bg-secondary: #0f1011;    /* subtle step for inset regions only */
-  --color-bg-card: #0a0a0b;         /* SAME as primary — cards sit flush */
-  --color-surface-elevated: #141516; /* button/input fills, active tab */
-  --color-surface-card: #181919;     /* keycap fill, tile bg */
+  --color-bg-primary: #0a0a0b;
+  /* canvas — page body */
+  --color-bg-secondary: #0f1011;
+  /* subtle step for inset regions only */
+  --color-bg-card: #0a0a0b;
+  /* SAME as primary — cards sit flush */
+  --color-surface-elevated: #141516;
+  /* button/input fills, active tab */
+  --color-surface-card: #181919;
+  /* keycap fill, tile bg */
 
   /* ── Text — Raycast's off-white ink ── */
   --color-text-primary: #f4f4f6;
@@ -320,4 +326,69 @@ button:active {
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
+}
+
+/* ══════════════════════════════════════════════
+   3D ISOMETRIC TP LOGO — Blueprint Style
+   ══════════════════════════════════════════════ */
+
+.iso-face-top {
+  fill: none;
+  stroke: rgba(0, 0, 0, 0.4);
+  stroke-width: 0.8;
+}
+
+.iso-face-right {
+  fill: none;
+  stroke: rgba(0, 0, 0, 0.3);
+  stroke-width: 0.8;
+}
+
+.iso-face-left {
+  fill: none;
+  stroke: rgba(0, 0, 0, 0.3);
+  stroke-width: 0.8;
+}
+
+.iso-hatch {
+  stroke: rgba(0, 0, 0, 0.18);
+  stroke-width: 0.5;
+}
+
+.iso-guide {
+  stroke: rgba(0, 0, 0, 0.06);
+  stroke-width: 0.5;
+  stroke-dasharray: 6 4;
+}
+
+.iso-fig-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  fill: rgba(0, 0, 0, 0.35);
+  letter-spacing: 1px;
+}
+
+/* ── Dark mode ── */
+.dark .iso-face-top {
+  stroke: rgba(255, 255, 255, 0.35);
+}
+
+.dark .iso-face-right {
+  stroke: rgba(255, 255, 255, 0.22);
+}
+
+.dark .iso-face-left {
+  stroke: rgba(255, 255, 255, 0.22);
+}
+
+.dark .iso-hatch {
+  stroke: rgba(255, 255, 255, 0.15);
+}
+
+.dark .iso-guide {
+  stroke: rgba(255, 255, 255, 0.05);
+}
+
+.dark .iso-fig-label {
+  fill: rgba(255, 255, 255, 0.25);
 }

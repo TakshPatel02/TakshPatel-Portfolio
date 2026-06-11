@@ -1,6 +1,5 @@
 import { lazy, Suspense } from "react";
 import HeroPanel from "../components/Home Components/HeroPanel";
-import InfoCard from "../components/Home Components/InfoCard";
 import Bio from "../components/Home Components/Bio";
 import SectionDivider from "../components/SectionDivider";
 import Contact from "../components/Home Components/Contact";
@@ -18,7 +17,6 @@ const HomePage = () => {
   return (
     <div>
       <HeroPanel />
-      <InfoCard />
       <Bio />
       <SectionDivider />
       <Contact />
