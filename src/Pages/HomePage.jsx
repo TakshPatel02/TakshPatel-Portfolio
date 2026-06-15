@@ -3,6 +3,8 @@ import HeroPanel from "../components/Home Components/HeroPanel";
 import SectionDivider from "../components/SectionDivider";
 import Contact from "../components/Home Components/Contact";
 import ProjectsSection from "../components/Home Components/ProjectsSection";
+import IntroSection from "../components/Home Components/IntroSection";
+import StackSection from "../components/Home Components/StackSection";
 const AboutSection = lazy(
   () => import("../components/Home Components/AboutSection"),
 );
@@ -17,13 +19,17 @@ const HomePage = () => {
     <div>
       <HeroPanel />
       <SectionDivider />
-      <Contact />
+      <IntroSection />
       <SectionDivider />
+      <StackSection />
+      <SectionDivider />
+      {/* <Contact /> */}
+      {/* <SectionDivider /> */}
       <ProjectsSection />
       <SectionDivider />
-      <Suspense fallback={<h3>Loading ...</h3>}><AboutSection /></Suspense>
-      <GithubActivity />
-      <SectionDivider />
+      {/* <Suspense fallback={<h3>Loading ...</h3>}><AboutSection /></Suspense> */}
+      {/* <GithubActivity /> */}
+      {/* <SectionDivider /> */}
       <Suspense fallback={<h3>Loading ...</h3>}><BlogSection /></Suspense>
       <SectionDivider />
     </div>
