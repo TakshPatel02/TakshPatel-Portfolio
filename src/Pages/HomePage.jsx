@@ -6,6 +6,7 @@ import Contact from "../components/Home Components/Contact";
 import ProjectsSection from "../components/Home Components/ProjectsSection";
 import IntroSection from "../components/Home Components/IntroSection";
 import StackSection from "../components/Home Components/StackSection";
+import ComponentsSection from "../components/Home Components/ComponentsSection";
 const AboutSection = lazy(
   () => import("../components/Home Components/AboutSection"),
 );
@@ -40,6 +41,8 @@ const HomePage = () => {
       {/* <Contact /> */}
       {/* <SectionDivider /> */}
       <ProjectsSection />
+      <SectionDivider />
+      <ComponentsSection />
       <SectionDivider />
       {/* <Suspense fallback={<h3>Loading ...</h3>}><AboutSection /></Suspense> */}
       {/* <GithubActivity /> */}

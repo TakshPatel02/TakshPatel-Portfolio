@@ -46,7 +46,7 @@ const IntroSection = () => {
                   >
                     ComponentLabs
                   </a>
-                  , an open-source React component library with 40+ animated UI components
+                  , an open-source React component library with 60+ animated UI components
                 </p>
               </li>
               <li className="flex items-start gap-3">

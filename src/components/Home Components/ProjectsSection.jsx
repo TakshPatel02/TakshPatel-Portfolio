@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { getDatabase, ref, get } from "firebase/database";
 import app from "../../FireBaseConfig.js";
 
-const ProjectAccordionItem = ({ project, isOpen, onToggle }) => {
+const ProjectAccordionItem = ({ project, isOpen, onToggle, index }) => {
   const technologies = Array.isArray(project?.technologies)
     ? project.technologies
     : [];
@@ -37,7 +37,7 @@ const ProjectAccordionItem = ({ project, isOpen, onToggle }) => {
   };
 
   return (
-    <div className="border-b border-border last:border-b-0 flex flex-col bg-bg-card">
+    <div id={`project-row-${index}`} className="border-b border-border last:border-b-0 flex flex-col bg-bg-card">
       {/* Header Row (Toggles Accordion) */}
       <div
         className="flex items-center justify-between p-4 cursor-pointer hover:bg-hover-bg transition-colors select-none"
@@ -161,6 +161,22 @@ const ProjectsSection = () => {
   const [expandedIndex, setExpandedIndex] = useState(0);
   const [showAll, setShowAll] = useState(false);
 
+  const handleToggle = (index) => {
+    const isOpening = expandedIndex !== index;
+    setExpandedIndex(isOpening ? index : -1);
+
+    if (isOpening) {
+      setTimeout(() => {
+        const el = document.getElementById(`project-row-${index}`);
+        if (el) {
+          const yOffset = -96; // clears sticky navbar (64px) + breathing room (32px)
+          const y = el.getBoundingClientRect().top + window.scrollY + yOffset;
+          window.scrollTo({ top: y, behavior: "smooth" });
+        }
+      }, 300); // Wait 300ms for other collapsibles to fully close to prevent layout shift calculation mismatch
+    }
+  };
+
   useEffect(() => {
     const fetchProjects = async () => {
       try {
@@ -201,7 +217,7 @@ const ProjectsSection = () => {
   const visibleProjects = showAll ? projects : projects.slice(0, 4);
 
   return (
-    <section id="projects" className="w-full">
+    <section id="projects" className="w-full scroll-mt-24">
       {/* Header Box */}
       <div className="w-full border-b border-border">
         <div className="mx-auto w-full max-w-4xl px-4 sm:px-6">
@@ -224,27 +240,41 @@ const ProjectsSection = () => {
               <ProjectAccordionItem
                 key={project.slug || index}
                 project={project}
+                index={index}
                 isOpen={expandedIndex === index}
-                onToggle={() =>
-                  setExpandedIndex(expandedIndex === index ? -1 : index)
-                }
+                onToggle={() => handleToggle(index)}
               />
             ))}
           </div>
         </div>
       </div>
 
-      {/* Load All Projects Button Box */}
-      {!showAll && projects.length > 4 && (
+      {/* Show More / Show Less Button Box */}
+      {projects.length > 4 && (
         <div className="w-full border-b border-border">
           <div className="mx-auto w-full max-w-4xl px-4 sm:px-6">
             <div className="border-x border-border bg-bg-card">
               <button
                 type="button"
-                onClick={() => setShowAll(true)}
+                onClick={() => {
+                  if (showAll) {
+                    const el = document.getElementById("projects");
+                    if (el) {
+                      const yOffset = -96;
+                      const y = el.getBoundingClientRect().top + window.scrollY + yOffset;
+                      window.scrollTo({ top: y, behavior: "smooth" });
+                    }
+                    setTimeout(() => {
+                      setShowAll(false);
+                      setExpandedIndex(0);
+                    }, 500);
+                  } else {
+                    setShowAll(true);
+                  }
+                }}
                 className="font-display block w-full py-4 text-center text-sm font-semibold uppercase tracking-widest text-text-primary transition hover:bg-hover-bg cursor-pointer"
               >
-                Load All Projects
+                {showAll ? "Show Less" : "Show More"}
               </button>
             </div>
           </div>
