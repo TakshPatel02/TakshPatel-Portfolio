@@ -392,3 +392,12 @@ button:active {
 .dark .iso-fig-label {
   fill: rgba(255, 255, 255, 0.25);
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background-color: var(--color-text-primary);
+  color: var(--color-bg-primary);
+}
