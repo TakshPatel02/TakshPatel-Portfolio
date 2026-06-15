@@ -3,8 +3,6 @@ import { Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "./context/ThemeContext";
 import Navbar from "./components/Navbar";
 import HomePage from "./Pages/HomePage";
-const ProjectsPage = lazy(() => import("./Pages/ProjectsPage"));
-const ProjectDetailPage = lazy(() => import("./Pages/ProjectDetailPage"));
 const BlogPage = lazy(() => import("./Pages/BlogPage"));
 const BlogDetailPage = lazy(() => import("./Pages/BlogDetailPage"));
 import Footer from "./components/Footer";
@@ -18,30 +16,6 @@ const App = () => {
         <Navbar />
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route
-            path="/project"
-            element={
-              <Suspense
-                fallback={
-                  <h3 className="text-xl text-center">Loading Projects ...</h3>
-                }
-              >
-                <ProjectsPage />
-              </Suspense>
-            }
-          />
-          <Route
-            path="/project/:slug"
-            element={
-              <Suspense
-                fallback={
-                  <h3 className="text-xl text-center">Loading Project ...</h3>
-                }
-              >
-                <ProjectDetailPage />
-              </Suspense>
-            }
-          />
           <Route
             path="/blog"
             element={

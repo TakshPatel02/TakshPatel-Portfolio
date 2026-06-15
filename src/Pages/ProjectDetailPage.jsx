@@ -100,7 +100,7 @@ const ProjectDetailPage = () => {
                   Project not found
                 </h1>
                 <Link
-                  to="/project"
+                  to="/#projects"
                   className="mt-4 inline-flex items-center gap-2 text-text-secondary hover:text-text-primary"
                 >
                   <ArrowLeft className="h-4 w-4" />
@@ -123,7 +123,7 @@ const ProjectDetailPage = () => {
           <div className="border-x border-border bg-bg-card py-4">
             <div className="px-4 sm:px-8">
               <Link
-                to="/project"
+                to="/#projects"
                 className="inline-flex items-center gap-2 text-sm text-text-secondary transition hover:text-text-primary"
               >
                 <ArrowLeft className="h-4 w-4" />

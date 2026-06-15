@@ -5,7 +5,7 @@ import { useTheme } from "../context/ThemeContext";
 
 const navItems = [
   { label: "Portfolio", to: "/" },
-  { label: "Project", to: "/project" },
+  { label: "Projects", to: "/#projects" },
   { label: "Blog", to: "/blog" },
 ];
 
@@ -27,17 +27,24 @@ const Navbar = () => {
 
           <div className="flex items-center justify-end gap-3">
             <nav className="hidden items-center gap-6 text-sm font-medium text-text-secondary md:flex">
-              {navItems.map((item) => (
-                <NavLink
-                  key={item.to}
-                  to={item.to}
-                  className={({ isActive }) =>
-                    `transition ${isActive ? "text-text-primary" : "hover:text-text-primary"}`
-                  }
-                >
-                  {item.label}
-                </NavLink>
-              ))}
+              {navItems.map((item) => {
+                return (
+                  <NavLink
+                    key={item.to}
+                    to={item.to}
+                    className={({ isActive }) => {
+                      const isProjects = item.to.includes("#projects");
+                      const hasHash = window.location.hash === "#projects";
+                      const isMatch = isProjects ? hasHash : isActive && !hasHash;
+                      return `transition ${
+                        isMatch ? "text-text-primary font-semibold" : "hover:text-text-primary text-text-secondary"
+                      }`;
+                    }}
+                  >
+                    {item.label}
+                  </NavLink>
+                );
+              })}
             </nav>
 
             <button
@@ -73,22 +80,27 @@ const Navbar = () => {
         <div className="md:hidden">
           <div className="mx-4 mb-4 rounded-2xl border border-border bg-bg-secondary/90 p-4 backdrop-blur">
             <div className="flex flex-col gap-3 text-sm font-medium text-text-secondary">
-              {navItems.map((item) => (
-                <NavLink
-                  key={item.to}
-                  to={item.to}
-                  onClick={() => setIsOpen(false)}
-                  className={({ isActive }) =>
-                    `rounded-lg px-3 py-2 transition ${
-                      isActive
-                        ? "bg-hover-bg text-text-primary"
-                        : "hover:bg-hover-bg hover:text-text-primary"
-                    }`
-                  }
-                >
-                  {item.label}
-                </NavLink>
-              ))}
+              {navItems.map((item) => {
+                return (
+                  <NavLink
+                    key={item.to}
+                    to={item.to}
+                    onClick={() => setIsOpen(false)}
+                    className={({ isActive }) => {
+                      const isProjects = item.to.includes("#projects");
+                      const hasHash = window.location.hash === "#projects";
+                      const isMatch = isProjects ? hasHash : isActive && !hasHash;
+                      return `rounded-lg px-3 py-2 transition ${
+                        isMatch
+                          ? "bg-hover-bg text-text-primary font-semibold"
+                          : "hover:bg-hover-bg hover:text-text-primary text-text-secondary"
+                      }`;
+                    }}
+                  >
+                    {item.label}
+                  </NavLink>
+                );
+              })}
             </div>
           </div>
         </div>

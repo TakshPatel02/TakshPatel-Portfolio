@@ -1,4 +1,5 @@
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import HeroPanel from "../components/Home Components/HeroPanel";
 import SectionDivider from "../components/SectionDivider";
 import Contact from "../components/Home Components/Contact";
@@ -15,6 +16,19 @@ const BlogSection = lazy(
 );
 
 const HomePage = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const element = document.getElementById(location.hash.slice(1));
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: "smooth" });
+        }, 100);
+      }
+    }
+  }, [location]);
+
   return (
     <div>
       <HeroPanel />
