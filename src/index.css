@@ -157,9 +157,9 @@ h6 {
   letter-spacing: 0.2px;
 }
 
-/* display-xl: 64px / 600 / 1.1 */
+/* display-xl */
 h1 {
-  font-size: 2.25rem;
+  font-size: 1.75rem;
   font-weight: 600;
   letter-spacing: 0;
   line-height: 1.1;
@@ -167,51 +167,51 @@ h1 {
 
 @media (min-width: 640px) {
   h1 {
-    font-size: 2.75rem;
+    font-size: 2rem;
   }
 }
 
 @media (min-width: 768px) {
   h1 {
-    font-size: 3.5rem;
+    font-size: 2.25rem;
   }
 }
 
 @media (min-width: 1024px) {
   h1 {
-    font-size: 3.5rem;
+    font-size: 2.25rem;
   }
 }
 
 @media (min-width: 1280px) {
   h1 {
-    font-size: 4rem;
+    font-size: 2.5rem;
   }
 }
 
-/* display-lg: 56px / 500 / 1.17 / 0.2px */
+/* display-lg */
 h2 {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   font-weight: 500;
   letter-spacing: 0.2px;
-  line-height: 1.6;
+  line-height: 1.4;
 }
 
 @media (min-width: 640px) {
   h2 {
-    font-size: 1.75rem;
+    font-size: 1.375rem;
   }
 }
 
 @media (min-width: 1024px) {
   h2 {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 }
 
-/* heading-md: 20px / 500 / 1.4 / 0.2px */
+/* heading-md */
 h3 {
-  font-size: 1.25rem;
+  font-size: 1rem;
   font-weight: 500;
   letter-spacing: 0.2px;
   line-height: 1.4;

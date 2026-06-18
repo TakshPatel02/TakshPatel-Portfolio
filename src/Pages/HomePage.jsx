@@ -1,4 +1,4 @@
-import { lazy, Suspense, useEffect } from "react";
+import { lazy, Suspense, useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
 import HeroPanel from "../components/Home Components/HeroPanel";
 import SectionDivider from "../components/SectionDivider";
@@ -18,8 +18,16 @@ const BlogSection = lazy(
 
 const HomePage = () => {
   const location = useLocation();
+  const isFirstMount = useRef(true);
 
   useEffect(() => {
+    // Skip scroll on initial page load / refresh — let the browser
+    // handle its own scroll restoration. Only scroll on in-app navigation.
+    if (isFirstMount.current) {
+      isFirstMount.current = false;
+      return;
+    }
+
     if (location.hash) {
       const element = document.getElementById(location.hash.slice(1));
       if (element) {

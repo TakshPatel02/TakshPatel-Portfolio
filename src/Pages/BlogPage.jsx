@@ -31,7 +31,7 @@ const BlogPage = () => {
           // STEP 2: convert numeric keys to array
           const blogsArray = Object.values(blogGroup);
 
-          setBlogsData(blogsArray);
+          setBlogsData(blogsArray.reverse());
           console.log("Fetched blogs data:", blogsArray);
         } else {
           console.log("No blog data available");

@@ -8,38 +8,45 @@ const BlogGrid = ({ posts }) => {
   }
 
   return (
-    <div className="w-full">
-      {rows.map((row, rowIndex) => (
-        <div key={rowIndex} className="w-full">
-          {/* Double horizontal border with gap */}
-          <div className="flex w-full flex-col gap-[16px]">
-            <div className="h-px w-full bg-border"></div>
-            <div className="h-px w-full bg-border"></div>
-          </div>
-
-          <div className="mx-auto w-full max-w-4xl px-4 sm:px-6">
-            <div className="border-x border-border bg-bg-card">
-              <div className="relative grid grid-cols-1 sm:grid-cols-2">
-                {/* Double vertical divider */}
-                <div className="absolute left-1/2 top-0 hidden h-full -translate-x-1/2 sm:flex">
-                  <div className="h-full w-px bg-border"></div>
-                  <div className="ml-4 h-full w-px bg-border"></div>
+    <div className="w-full border-b border-border">
+      <div className="mx-auto w-full max-w-4xl px-4 sm:px-6">
+        <div className="border-x border-border bg-bg-card">
+          {rows.map((row, rowIndex) => (
+            <div
+              key={rowIndex}
+              className={`grid grid-cols-1 sm:grid-cols-2 ${
+                rowIndex < rows.length - 1 ? "border-b border-border" : ""
+              }`}
+            >
+              {/* First card */}
+              {row[0] && (
+                <div className="border-b border-border sm:border-b-0 sm:border-r">
+                  <BlogCard post={row[0]} index={rowIndex * 2} />
                 </div>
+              )}
 
-                {/* Blog Cards */}
-                {row.map((post, index) => (
-                  <div
-                    key={post.id}
-                    className={`${index === 0 ? "sm:pr-2" : "sm:pl-2"}`}
-                  >
-                    <BlogCard post={post} />
-                  </div>
-                ))}
-              </div>
+              {/* Second card */}
+              {row[1] && (
+                <div>
+                  <BlogCard post={row[1]} index={rowIndex * 2 + 1} />
+                </div>
+              )}
+
+              {/* Empty cell if odd card in row */}
+              {!row[1] && <div className="hidden sm:block" />}
             </div>
-          </div>
+          ))}
+
+          {/* Empty state */}
+          {posts.length === 0 && (
+            <div className="flex items-center justify-center py-16">
+              <p className="font-mono text-sm text-text-muted uppercase tracking-widest">
+                No posts found
+              </p>
+            </div>
+          )}
         </div>
-      ))}
+      </div>
     </div>
   );
 };

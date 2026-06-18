@@ -1,46 +1,64 @@
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { blogsData } from "../../data/blogsData";
 import { useEffect, useState } from "react";
 import { getDatabase, ref, get } from "firebase/database";
 import app from "../../FireBaseConfig.js";
 
-const BlogCard = ({ post }) => (
-  <Link to={`/blog/${post.slug}`} className="h-full">
+const BlogCard = ({ post, index }) => (
+  <Link to={`/blog/${post.slug}`} className="block h-full">
     <motion.div
-      className="group p-4 sm:p-5 rounded-xl flex flex-col h-full"
-      whileHover={{ y: -4 }}
-      transition={{ duration: 0.3 }}
+      className="group relative flex flex-col h-full p-3 sm:p-4 transition-colors duration-300 hover:bg-hover-bg"
+      initial={{ opacity: 0, y: 16 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-40px" }}
+      transition={{ duration: 0.5, delay: index * 0.08, ease: [0.25, 0.46, 0.45, 0.94] }}
     >
+      {/* Image Container */}
       <motion.div
-        className="relative aspect-[16/9] overflow-hidden rounded-2xl bg-bg-secondary border border-border"
-        whileHover={{ scale: 1.02 }}
-        transition={{ duration: 0.3 }}
+        className="relative aspect-video overflow-hidden rounded-md bg-bg-secondary border border-border"
       >
         <img
           src={post.image}
           alt={post.title}
           loading="lazy"
           decoding="async"
-          className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+          className="h-full w-full object-cover"
           onError={(e) => {
             e.target.style.display = "none";
           }}
         />
+
+        {/* Subtle overlay on hover */}
+        <div className="absolute inset-0 bg-black/0 transition-all duration-500 group-hover:bg-black/3 dark:group-hover:bg-white/2" />
       </motion.div>
 
-      <div className="mt-3 flex items-start gap-2 flex-1">
-        <h3 className="font-display text-sm font-bold text-text-primary transition group-hover:text-[#57c1ff] sm:text-lg">
-          {post.title}
-        </h3>
-        {post.isNew && (
-          <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-[#57c1ff]" />
-        )}
+      {/* Content */}
+      <div className="mt-2.5 flex flex-col flex-1 gap-1">
+        <div className="flex items-start gap-2">
+          <h3 className="font-display text-sm font-semibold text-text-primary leading-snug sm:text-[15px] tracking-[0.01em]">
+            {post.title}
+          </h3>
+          {post.isNew && (
+            <motion.span
+              className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#57c1ff]"
+              animate={{ opacity: [1, 0.4, 1] }}
+              transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
+            />
+          )}
+        </div>
+        <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-text-muted">
+          {post.date}
+        </p>
       </div>
-      <p className="mt-auto pt-2 text-xs uppercase tracking-widest text-text-muted">
-        {post.date}
-      </p>
+
+      {/* Hover arrow indicator */}
+      <motion.div
+        className="absolute bottom-3 right-3 sm:bottom-4 sm:right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+        initial={false}
+      >
+        <ArrowRight className="h-3.5 w-3.5 text-text-muted" />
+      </motion.div>
     </motion.div>
   </Link>
 );
@@ -72,7 +90,7 @@ const BlogSection = () => {
             projectsArray = values;
           }
 
-          setBlogsData(projectsArray.filter(Boolean));
+          setBlogsData(projectsArray.filter(Boolean).reverse());
         } else {
           console.log("No project data available");
         }
@@ -84,13 +102,16 @@ const BlogSection = () => {
     fetchProjects();
   }, []);
 
+  // Show only latest 4 blogs on homepage
+  const visibleBlogs = blogsData.slice(0, 4);
+
   const rows = [];
-  for (let i = 0; i < blogsData.length; i += 2) {
-    rows.push(blogsData.slice(i, i + 2));
+  for (let i = 0; i < visibleBlogs.length; i += 2) {
+    rows.push(visibleBlogs.slice(i, i + 2));
   }
 
   return (
-    <section className="w-full">
+    <section id="blog" className="w-full scroll-mt-24">
       {/* Header */}
       <div className="w-full border-b border-border">
         <div className="mx-auto w-full max-w-4xl px-4 sm:px-6">
@@ -105,58 +126,51 @@ const BlogSection = () => {
         </div>
       </div>
 
-      {/* Blog rows */}
-      {rows.map((row, rowIndex) => (
-        <div key={rowIndex} className="w-full">
-          {/* Double horizontal border with gap */}
-          <div className="flex w-full flex-col gap-[16px]">
-            <div className="h-px w-full bg-border"></div>
-            <div className="h-px w-full bg-border"></div>
-          </div>
-
-          <div className="mx-auto w-full max-w-4xl px-4 sm:px-6">
-            <div className="border-x border-border bg-bg-card">
-              <div className="relative grid grid-cols-1 sm:grid-cols-2">
-                {/* Double vertical divider */}
-                <div
-                  className="pointer-events-none absolute left-1/2 hidden -translate-x-[9px] sm:flex sm:gap-[16px]"
-                  style={{ top: "-18px", bottom: "-18px" }}
-                >
-                  <div className="h-full w-px bg-border"></div>
-                  <div className="h-full w-px bg-border"></div>
-                </div>
-
-                {row[0] && <BlogCard post={row[0]} />}
-
-                {/* Double divider (mobile between cards) */}
-                {row[1] && (
-                  <div className="flex flex-col gap-[16px] sm:hidden">
-                    <div className="h-px w-full bg-border"></div>
-                    <div className="h-px w-full bg-border"></div>
+      {/* Blog Grid */}
+      <div className="w-full border-b border-border">
+        <div className="mx-auto w-full max-w-4xl px-4 sm:px-6">
+          <div className="border-x border-border bg-bg-card">
+            {rows.map((row, rowIndex) => (
+              <div
+                key={rowIndex}
+                className={`grid grid-cols-1 sm:grid-cols-2 ${
+                  rowIndex < rows.length - 1 ? "border-b border-border" : ""
+                }`}
+              >
+                {/* First card */}
+                {row[0] && (
+                  <div className="border-b border-border sm:border-b-0 sm:border-r">
+                    <BlogCard post={row[0]} index={rowIndex * 2} />
                   </div>
                 )}
 
-                {row[1] && <BlogCard post={row[1]} />}
+                {/* Second card */}
+                {row[1] && (
+                  <div className={row.length === 1 ? "sm:border-r border-border" : ""}>
+                    <BlogCard post={row[1]} index={rowIndex * 2 + 1} />
+                  </div>
+                )}
+
+                {/* Empty cell if odd card in row */}
+                {!row[1] && (
+                  <div className="hidden sm:block" />
+                )}
               </div>
-            </div>
+            ))}
           </div>
         </div>
-      ))}
+      </div>
 
-      {/* All Posts */}
-      <div className="w-full">
-        <div className="flex w-full flex-col gap-[16px]">
-          <div className="h-px w-full bg-border"></div>
-          <div className="h-px w-full bg-border"></div>
-        </div>
+      {/* All Posts Footer */}
+      <div className="w-full border-b border-border">
         <div className="mx-auto w-full max-w-4xl px-4 sm:px-6">
           <div className="border-x border-border bg-bg-card">
             <Link
               to="/blog"
-              className="font-display flex items-center justify-center gap-2 py-4 text-sm font-semibold uppercase tracking-widest text-text-primary transition hover:bg-hover-bg"
+              className="font-mono group flex w-full items-center justify-center gap-2 py-4 text-center text-xs sm:text-sm font-semibold uppercase tracking-[0.12em] text-text-muted hover:text-text-primary hover:bg-hover-bg transition-all duration-200"
             >
-              All Posts
-              <ArrowRight className="h-4 w-4" />
+              <span>All Posts</span>
+              <ArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
             </Link>
           </div>
         </div>

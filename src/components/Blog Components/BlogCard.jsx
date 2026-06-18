@@ -1,49 +1,63 @@
-import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
-const BlogCard = ({ post }) => {
+const BlogCard = ({ post, index }) => {
   return (
-    <Link to={`/blog/${post.slug}`} className="h-full">
+    <Link to={`/blog/${post.slug}`} className="block h-full">
       <motion.div
-        className="group p-4 sm:p-5 flex flex-col h-full"
-        whileHover={{ y: -4 }}
-        transition={{ duration: 0.3 }}
+        className="group relative flex flex-col h-full p-3 sm:p-4 transition-colors duration-300 hover:bg-hover-bg"
+        initial={{ opacity: 0, y: 16 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-40px" }}
+        transition={{ duration: 0.5, delay: (index % 4) * 0.08, ease: [0.25, 0.46, 0.45, 0.94] }}
       >
-        {/* Blog Post Image */}
-        <motion.div
-          className="relative aspect-video overflow-hidden rounded-2xl border border-border bg-bg-secondary"
-          whileHover={{ scale: 1.02 }}
-          transition={{ duration: 0.3 }}
-        >
+        {/* Image Container */}
+        <div className="relative aspect-video overflow-hidden rounded-md bg-bg-secondary border border-border">
           {post.image ? (
             <img
               src={post.image}
               alt={post.title}
               loading="lazy"
-              className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+              decoding="async"
+              className="h-full w-full object-cover"
               onError={(e) => {
                 e.target.style.display = "none";
               }}
             />
           ) : (
             <div className="flex h-full w-full items-center justify-center text-text-muted">
-              <span className="text-sm">No Image</span>
+              <span className="font-mono text-xs uppercase tracking-widest">No Image</span>
             </div>
           )}
-        </motion.div>
 
-        {/* Blog Post Info */}
-        <div className="mt-3 flex items-start gap-2 flex-1">
-          <h3 className="font-display text-lg font-bold text-text-primary transition group-hover:text-[#57c1ff] sm:text-2xl md:text-3xl lg:text-3xl">
-            {post.title}
-          </h3>
-          {post.isNew && (
-            <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-[#57c1ff]" />
-          )}
+          {/* Subtle overlay on hover */}
+          <div className="absolute inset-0 bg-black/0 transition-all duration-500 group-hover:bg-black/3 dark:group-hover:bg-white/2" />
         </div>
-        <p className="mt-auto pt-2 text-xs uppercase tracking-widest text-text-muted">
-          {post.date}
-        </p>
+
+        {/* Content */}
+        <div className="mt-2.5 flex flex-col flex-1 gap-1">
+          <div className="flex items-start gap-2">
+            <h3 className="font-display text-sm font-semibold text-text-primary leading-snug sm:text-[15px] tracking-[0.01em]">
+              {post.title}
+            </h3>
+            {post.isNew && (
+              <motion.span
+                className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#57c1ff]"
+                animate={{ opacity: [1, 0.4, 1] }}
+                transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
+              />
+            )}
+          </div>
+          <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-text-muted">
+            {post.date}
+          </p>
+        </div>
+
+        {/* Hover arrow indicator */}
+        <div className="absolute bottom-3 right-3 sm:bottom-4 sm:right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          <ArrowRight className="h-3.5 w-3.5 text-text-muted" />
+        </div>
       </motion.div>
     </Link>
   );
