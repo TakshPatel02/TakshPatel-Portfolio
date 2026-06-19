@@ -7,7 +7,7 @@ const PageNotFound = () => {
     <div className="flex flex-col bg-bg-primary">
       {/* Hero Section with Dot Pattern */}
       <div className="w-full border-b border-border">
-        <section className="mx-auto w-full max-w-4xl px-4 sm:px-6">
+        <section className="mx-auto w-full max-w-[800px] px-4 sm:px-6">
           <div className="border-x border-border bg-bg-card">
             <div
               className="grid h-[200px] place-items-center sm:h-[220px]"
@@ -37,7 +37,7 @@ const PageNotFound = () => {
 
       {/* Message Section */}
       <div className="w-full border-b border-border">
-        <section className="mx-auto w-full max-w-4xl px-4 sm:px-6">
+        <section className="mx-auto w-full max-w-[800px] px-4 sm:px-6">
           <div className="border-x border-border bg-bg-card">
             <div className="p-6 sm:p-8">
               <motion.div
@@ -56,7 +56,7 @@ const PageNotFound = () => {
 
       {/* Description Section */}
       <div className="w-full border-b border-border">
-        <section className="mx-auto w-full max-w-4xl px-4 sm:px-6">
+        <section className="mx-auto w-full max-w-[800px] px-4 sm:px-6">
           <div className="border-x border-border bg-bg-card">
             <div className="p-6 sm:p-8">
               <motion.p
@@ -76,7 +76,7 @@ const PageNotFound = () => {
 
       {/* CTA Section */}
       <div className="w-full border-b border-border flex-grow">
-        <section className="mx-auto w-full max-w-4xl px-4 sm:px-6">
+        <section className="mx-auto w-full max-w-[800px] px-4 sm:px-6">
           <div className="border-x border-border bg-bg-card h-full flex flex-col">
             <div className="p-6 sm:p-8">
               <motion.div

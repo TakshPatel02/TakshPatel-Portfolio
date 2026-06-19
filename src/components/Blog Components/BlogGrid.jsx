@@ -9,7 +9,7 @@ const BlogGrid = ({ posts }) => {
 
   return (
     <div className="w-full border-b border-border">
-      <div className="mx-auto w-full max-w-4xl px-4 sm:px-6">
+      <div className="mx-auto w-full max-w-[800px] px-4 sm:px-6">
         <div className="border-x border-border bg-bg-card">
           {rows.map((row, rowIndex) => (
             <div

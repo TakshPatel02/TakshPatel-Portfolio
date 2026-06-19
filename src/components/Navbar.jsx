@@ -15,7 +15,7 @@ const Navbar = () => {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border bg-bg-primary/80 backdrop-blur transition-colors duration-300">
-      <div className="mx-auto w-full max-w-4xl px-4 sm:px-6">
+      <div className="mx-auto w-full max-w-[800px] px-4 sm:px-6">
         <div className="grid h-16 grid-cols-2 items-center border-x border-border px-4">
           <Link
             to="/"

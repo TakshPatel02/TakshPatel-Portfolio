@@ -220,7 +220,7 @@ const ProjectsSection = () => {
     <section id="projects" className="w-full scroll-mt-24">
       {/* Header Box */}
       <div className="w-full border-b border-border">
-        <div className="mx-auto w-full max-w-4xl px-4 sm:px-6">
+        <div className="mx-auto w-full max-w-[800px] px-4 sm:px-6">
           <div className="border-x border-border bg-bg-card py-4 p-2">
             <h2 className="font-display text-lg font-bold text-text-primary sm:text-2xl lg:text-4xl">
               Projects{" "}
@@ -234,7 +234,7 @@ const ProjectsSection = () => {
 
       {/* Projects List Box */}
       <div className="w-full border-b border-border">
-        <div className="mx-auto w-full max-w-4xl px-4 sm:px-6">
+        <div className="mx-auto w-full max-w-[800px] px-4 sm:px-6">
           <div className="border-x border-border bg-bg-card">
             {visibleProjects.map((project, index) => (
               <ProjectAccordionItem
@@ -252,7 +252,7 @@ const ProjectsSection = () => {
       {/* Show More / Show Less Button Box */}
       {projects.length > 4 && (
         <div className="w-full border-b border-border">
-          <div className="mx-auto w-full max-w-4xl px-4 sm:px-6">
+          <div className="mx-auto w-full max-w-[800px] px-4 sm:px-6">
             <div className="border-x border-border bg-bg-card">
               <button
                 type="button"

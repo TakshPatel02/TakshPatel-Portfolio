@@ -3,7 +3,7 @@ import { motion } from "motion/react";
 const InfoCard = () => {
   return (
     <section className="w-full border-b border-border">
-      <div className="mx-auto w-full max-w-4xl px-4 sm:px-6">
+      <div className="mx-auto w-full max-w-[800px] px-4 sm:px-6">
         <div className="border-x border-border bg-bg-card">
           <div className="flex items-start">
             {/* Circular Avatar — overlaps into HeroPanel above */}

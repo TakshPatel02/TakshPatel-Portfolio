@@ -32,7 +32,6 @@ const BlogPage = () => {
           const blogsArray = Object.values(blogGroup);
 
           setBlogsData(blogsArray.reverse());
-          console.log("Fetched blogs data:", blogsArray);
         } else {
           console.log("No blog data available");
         }

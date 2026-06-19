@@ -74,7 +74,7 @@ const ProjectDetailPage = () => {
           <div className="h-px w-full bg-border"></div>
           <div className="h-px w-full bg-border"></div>
         </div>
-        <div className="mx-auto w-full max-w-4xl px-4 sm:px-6">
+        <div className="mx-auto w-full max-w-[800px] px-4 sm:px-6">
           <div className="border-x border-border bg-bg-card py-16">
             <div className="flex items-center justify-center">
               <div className="h-8 w-8 animate-spin rounded-full border-4 border-border border-t-text-primary"></div>
@@ -92,7 +92,7 @@ const ProjectDetailPage = () => {
           <div className="h-px w-full bg-border"></div>
           <div className="h-px w-full bg-border"></div>
         </div>
-        <div className="mx-auto w-full max-w-4xl px-4 sm:px-6">
+        <div className="mx-auto w-full max-w-[800px] px-4 sm:px-6">
           <div className="border-x border-border bg-bg-card py-16">
             <div className="px-4 sm:px-8">
               <div className="text-center">
@@ -119,7 +119,7 @@ const ProjectDetailPage = () => {
       <SectionDivider />
       {/* Back Button */}
       <div className="w-full border-b border-border">
-        <div className="mx-auto w-full max-w-4xl px-4 sm:px-6">
+        <div className="mx-auto w-full max-w-[800px] px-4 sm:px-6">
           <div className="border-x border-border bg-bg-card py-4">
             <div className="px-4 sm:px-8">
               <Link
@@ -136,7 +136,7 @@ const ProjectDetailPage = () => {
 
       {/* Hero Image with Borders */}
       <div className="w-full border-b border-border">
-        <div className="mx-auto w-full max-w-4xl px-4 sm:px-6">
+        <div className="mx-auto w-full max-w-[800px] px-4 sm:px-6">
           <div className="border-x border-border bg-bg-card py-8 sm:py-10">
             <div className="px-4 sm:px-8">
               <div
@@ -162,7 +162,7 @@ const ProjectDetailPage = () => {
 
       {/* Project Header Info with Borders */}
       <div className="w-full border-b border-border">
-        <div className="mx-auto w-full max-w-4xl px-4 sm:px-6">
+        <div className="mx-auto w-full max-w-[800px] px-4 sm:px-6">
           <div className="border-x border-border bg-bg-card py-8 sm:py-10">
             <div className="px-4 sm:px-8">
               {/* Tags */}

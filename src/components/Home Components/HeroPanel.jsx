@@ -302,7 +302,7 @@ const HeroPanel = () => {
       {/* Top border line spanning full screen width */}
       <div className="h-px w-full bg-border" />
       
-      <section className="mx-auto w-full max-w-4xl px-4 sm:px-6 relative z-10">
+      <section className="mx-auto w-full max-w-[800px] px-4 sm:px-6 relative z-10">
         <div className="border-x border-border bg-bg-card">
           
           {/* Hero area with isometric TP logo */}
@@ -338,7 +338,7 @@ const HeroPanel = () => {
       {/* Horizontal divider line spanning full screen width */}
       <div className="h-px w-full bg-border" />
 
-      <section className="mx-auto w-full max-w-4xl px-4 sm:px-6 relative z-5">
+      <section className="mx-auto w-full max-w-[800px] px-4 sm:px-6 relative z-5">
         <div className="border-x border-border bg-bg-card">
           
           {/* Info card — avatar placed inside a square box in the left column */}

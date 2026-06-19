@@ -12,7 +12,7 @@ const GithubActivity = () => {
   return (
     <section className="w-full border-b border-border">
       <div className="w-full border-b border-border">
-        <div className="mx-auto w-full max-w-4xl px-4 sm:px-6">
+        <div className="mx-auto w-full max-w-[800px] px-4 sm:px-6">
           <div className="border-x border-border bg-bg-card py-4 p-2">
             <p className="text-xs font-semibold uppercase tracking-widest text-text-muted">
               Featured
@@ -24,7 +24,7 @@ const GithubActivity = () => {
         </div>
       </div>
 
-      <div className="mx-auto w-full max-w-4xl px-4 sm:px-6">
+      <div className="mx-auto w-full max-w-[800px] px-4 sm:px-6">
         <div className="border-x border-border bg-bg-card py-4 p-2">
           <div className="flex justify-center overflow-x-auto">
             <GitHubCalendar

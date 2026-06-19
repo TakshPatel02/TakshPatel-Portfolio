@@ -61,7 +61,7 @@ const NewFooter = () => {
 
   return (
     <footer className="w-full bg-bg-primary pb-8 relative">
-      <div className="mx-auto w-full max-w-4xl px-4 sm:px-6">
+      <div className="mx-auto w-full max-w-[800px] px-4 sm:px-6">
         <div className="border border-border bg-bg-card relative">
           
           {/* FIG. 02 Label */}

@@ -108,7 +108,7 @@ const StackSection = () => {
     <section className="w-full">
       {/* Header Box */}
       <div className="w-full border-b border-border">
-        <div className="mx-auto w-full max-w-4xl px-4 sm:px-6">
+        <div className="mx-auto w-full max-w-[800px] px-4 sm:px-6">
           <div className="border-x border-border bg-bg-card p-2">
             <h2 className="font-display text-lg font-bold text-text-primary sm:text-2xl lg:text-4xl">
               Stack
@@ -119,7 +119,7 @@ const StackSection = () => {
 
       {/* Content Box */}
       <div className="w-full border-b border-border">
-        <div className="mx-auto w-full max-w-4xl px-4 sm:px-6">
+        <div className="mx-auto w-full max-w-[800px] px-4 sm:px-6">
           <div className="border-x border-border bg-bg-card">
             {categories.map((category) => (
               <div

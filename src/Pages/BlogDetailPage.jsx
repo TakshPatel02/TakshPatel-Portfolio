@@ -319,7 +319,7 @@ const BlogDetailPage = () => {
     return (
       <div className="w-full">
         <div className="w-full border-b border-border">
-          <div className="mx-auto w-full max-w-4xl px-4 sm:px-6">
+          <div className="mx-auto w-full max-w-[800px] px-4 sm:px-6">
             <div className="border-x border-border bg-bg-card py-20">
               <div className="flex items-center justify-center">
                 <div className="h-6 w-6 animate-spin rounded-full border-2 border-border border-t-text-primary"></div>
@@ -335,7 +335,7 @@ const BlogDetailPage = () => {
   if (error || !post) {
     return (
       <div className="w-full border-b border-border">
-        <div className="mx-auto w-full max-w-4xl px-4 sm:px-6">
+        <div className="mx-auto w-full max-w-[800px] px-4 sm:px-6">
           <div className="border-x border-border bg-bg-card py-20">
             <div className="text-center">
               <h1 className="font-display text-xl font-bold text-text-primary">
@@ -359,7 +359,7 @@ const BlogDetailPage = () => {
     <>
       {/* ─── Breadcrumb / Back ─── */}
       <div className="w-full border-b border-border">
-        <div className="mx-auto w-full max-w-4xl px-4 sm:px-6">
+        <div className="mx-auto w-full max-w-[800px] px-4 sm:px-6">
           <div className="border-x border-border bg-bg-card py-3 px-4 sm:px-6">
             <Link
               to="/blog"
@@ -374,7 +374,7 @@ const BlogDetailPage = () => {
 
       {/* ─── Article Header ─── */}
       <div className="w-full border-b border-border">
-        <div className="mx-auto w-full max-w-4xl px-4 sm:px-6">
+        <div className="mx-auto w-full max-w-[800px] px-4 sm:px-6">
           <div className="border-x border-border bg-bg-card py-6 sm:py-8 px-4 sm:px-6">
             {/* Hero Image — constrained height */}
             {post.image && (
@@ -427,7 +427,7 @@ const BlogDetailPage = () => {
 
       {/* ─── Article Body ─── */}
       <div className="w-full border-b border-border">
-        <div className="mx-auto w-full max-w-4xl px-4 sm:px-6">
+        <div className="mx-auto w-full max-w-[800px] px-4 sm:px-6">
           <article className="border-x border-border bg-bg-card py-6 sm:py-8 px-4 sm:px-6">
             <div className="prose prose-invert max-w-none">
               <ReactMarkdown
@@ -500,7 +500,7 @@ const BlogDetailPage = () => {
 
       {/* ─── Back to Blog footer ─── */}
       <div className="w-full border-b border-border">
-        <div className="mx-auto w-full max-w-4xl px-4 sm:px-6">
+        <div className="mx-auto w-full max-w-[800px] px-4 sm:px-6">
           <div className="border-x border-border bg-bg-card">
             <Link
               to="/blog"

@@ -3,7 +3,7 @@ import React from "react";
 const Footer = () => {
   return (
     <footer className="w-full border-t border-b border-border bg-bg-primary">
-      <div className="mx-auto w-full max-w-4xl px-4 sm:px-6">
+      <div className="mx-auto w-full max-w-[800px] px-4 sm:px-6">
         <div className="border-x border-border bg-bg-card">
           <div className="grid grid-cols-1 md:grid-cols-4 w-full">
             {/* Column 1 (Left - blank on desktop) */}

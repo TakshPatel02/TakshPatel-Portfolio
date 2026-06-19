@@ -13,7 +13,7 @@ const SectionDivider = ({ className = "" }) => {
         }}
       ></div>
       {/* Vertical border-x overlay connecting the section borders */}
-      <div className="absolute inset-0 mx-auto w-full max-w-4xl px-4 sm:px-6 pointer-events-none z-10">
+      <div className="absolute inset-0 mx-auto w-full max-w-[800px] px-4 sm:px-6 pointer-events-none z-10">
         <div className="h-full border-x border-border"></div>
       </div>
 

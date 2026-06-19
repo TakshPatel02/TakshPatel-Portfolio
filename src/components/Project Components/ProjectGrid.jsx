@@ -17,7 +17,7 @@ const ProjectGrid = ({ projects }) => {
             <div className="h-px w-full bg-border"></div>
           </div>
 
-          <div className="mx-auto w-full max-w-4xl px-4 sm:px-6">
+          <div className="mx-auto w-full max-w-[800px] px-4 sm:px-6">
             <div className="border-x border-border bg-bg-card">
               <div className="relative grid grid-cols-1 sm:grid-cols-2">
                 {/* Double vertical divider */}

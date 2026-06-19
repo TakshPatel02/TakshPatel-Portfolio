@@ -14,7 +14,7 @@ const IntroSection = () => {
     <section className="w-full">
       {/* Header Box */}
       <div className="w-full border-b border-border">
-        <div className="mx-auto w-full max-w-4xl px-4 sm:px-6">
+        <div className="mx-auto w-full max-w-[800px] px-4 sm:px-6">
           <div className="border-x border-border bg-bg-card p-2">
             <h2 className="font-display text-lg font-bold text-text-primary sm:text-2xl lg:text-4xl">
               Hello
@@ -25,7 +25,7 @@ const IntroSection = () => {
 
       {/* Bullets List Box */}
       <div className="w-full border-b border-border">
-        <div className="mx-auto w-full max-w-4xl px-4 sm:px-6">
+        <div className="mx-auto w-full max-w-[800px] px-4 sm:px-6">
           <div className="border-x border-border bg-bg-card p-3">
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
@@ -62,7 +62,7 @@ const IntroSection = () => {
 
       {/* Social Links Box */}
       <div className="w-full border-b border-border">
-        <div className="mx-auto w-full max-w-4xl px-4 sm:px-6">
+        <div className="mx-auto w-full max-w-[800px] px-4 sm:px-6">
           <div className="border-x border-border bg-bg-card p-4 px-3 flex items-center gap-3">
             <a
               href="https://github.com/takshpatel02"
@@ -106,7 +106,7 @@ const IntroSection = () => {
           </div>
         </div>
       </div>
-      <div className="mx-auto w-full max-w-4xl px-4 sm:px-6">
+      <div className="mx-auto w-full max-w-[800px] px-4 sm:px-6">
               <div className="border-x border-border bg-bg-card py-4 p-2">
                 <div className="flex justify-center overflow-x-auto">
                   <GitHubCalendar

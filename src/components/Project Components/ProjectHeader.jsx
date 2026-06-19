@@ -12,7 +12,7 @@ const ProjectHeader = ({
     <div className="w-full">
       {/* Title Section */}
       <div className="w-full border-b border-border">
-        <div className="mx-auto w-full max-w-4xl px-4 sm:px-6">
+        <div className="mx-auto w-full max-w-[800px] px-4 sm:px-6">
           <div className="border-x border-border bg-bg-card p-2">
             <div className="">
               <div className="flex items-start justify-between">
@@ -27,7 +27,7 @@ const ProjectHeader = ({
 
       {/* Description Section */}
       <div className="w-full border-b border-border">
-        <div className="mx-auto w-full max-w-4xl px-4 sm:px-6">
+        <div className="mx-auto w-full max-w-[800px] px-4 sm:px-6">
           <div className="border-x border-border bg-bg-card p-2">
             <div className="">
               <p className="text-sm text-text-secondary sm:text-lg">
@@ -40,7 +40,7 @@ const ProjectHeader = ({
 
       {/* Search Bar Section */}
       <div className="w-full border-b border-border">
-        <div className="mx-auto w-full max-w-4xl px-4 sm:px-6">
+        <div className="mx-auto w-full max-w-[800px] px-4 sm:px-6">
           <div className="border-x border-border bg-bg-card p-2">
             <div className="">
               <div className="relative">
@@ -60,7 +60,7 @@ const ProjectHeader = ({
 
       {/* Filter Section */}
       <div className="w-full border-b border-border">
-        <div className="mx-auto w-full max-w-4xl px-4 sm:px-6">
+        <div className="mx-auto w-full max-w-[800px] px-4 sm:px-6">
           <div className="border-x border-border bg-bg-card p-2">
             <div className="">
               <h2 className="text-sm font-semibold text-text-primary sm:text-base">
@@ -159,7 +159,7 @@ const ProjectHeader = ({
 
       {/* All Projects Count Section */}
       <div className="w-full border-b border-border">
-        <div className="mx-auto w-full max-w-4xl px-4 sm:px-6">
+        <div className="mx-auto w-full max-w-[800px] px-4 sm:px-6">
           <div className="border-x border-border bg-bg-card p-2">
             <div className="">
               <h2 className="font-display text-2xl font-bold text-text-primary sm:text-3xl">

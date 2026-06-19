@@ -28,7 +28,6 @@ const ProjectsPage = () => {
           const projectsArray = Object.values(projectGroup);
 
           setProjectData(projectsArray);
-          console.log("Fetched projects data:", projectsArray);
         } else {
           console.log("No project data available");
         }

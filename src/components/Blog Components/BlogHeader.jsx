@@ -6,7 +6,7 @@ const BlogHeader = ({ postCount, searchQuery, setSearchQuery }) => {
     <div className="w-full">
       {/* Title + Count */}
       <div className="w-full border-b border-border">
-        <div className="mx-auto w-full max-w-4xl px-4 sm:px-6">
+        <div className="mx-auto w-full max-w-[800px] px-4 sm:px-6">
           <div className="border-x border-border bg-bg-card py-6 p-2">
             <motion.h1
               className="font-display text-3xl font-bold text-text-primary sm:text-4xl lg:text-5xl"
@@ -25,7 +25,7 @@ const BlogHeader = ({ postCount, searchQuery, setSearchQuery }) => {
 
       {/* Search Bar */}
       <div className="w-full border-b border-border">
-        <div className="mx-auto w-full max-w-4xl px-4 sm:px-6">
+        <div className="mx-auto w-full max-w-[800px] px-4 sm:px-6">
           <div className="border-x border-border bg-bg-card p-2">
             <div className="relative">
               <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-text-muted pointer-events-none" />
