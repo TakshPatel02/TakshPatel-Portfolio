@@ -1,5 +1,7 @@
 import React from "react";
 import { ArrowRight } from "lucide-react";
+import MagneticCursorField from "../Component Section Components/MagneticCursorField";
+import ParticleTextReveal from "../Component Section Components/ParticleTextReveal";
 
 const GridBox = ({ label, className = "", spanStyles = "", heightStyles = "h-[120px] md:h-auto" }) => {
   return (
@@ -33,13 +35,8 @@ const ComponentsSection = () => {
         <div className="mx-auto w-full px-4 sm:px-6">
           <div className="border-x border-border bg-bg-card">
             <div className="grid grid-cols-1 md:grid-cols-3 md:grid-rows-6 md:h-[900px] w-full">
-              {/* Box 1: Col 1, Rows 1-2 (2 box) */}
-              <GridBox 
-                label="box 1" 
-                spanStyles="md:col-start-1 md:col-span-1 md:row-start-1 md:row-span-2" 
-                heightStyles="h-[200px] md:h-auto"
-                className="border-b md:border-r" 
-              />
+              {/* Box 1: Col 1, Rows 1-2 (2 box) — Magnetic Cursor Field */}
+              <MagneticCursorField />
               
               {/* Box 3: Col 2, Row 1 (1 box) */}
               <GridBox 
@@ -49,13 +46,8 @@ const ComponentsSection = () => {
                 className="border-b md:border-r" 
               />
               
-              {/* Box 4: Col 2, Rows 2-3 (2 box) */}
-              <GridBox 
-                label="box 4" 
-                spanStyles="md:col-start-2 md:col-span-1 md:row-start-2 md:row-span-2" 
-                heightStyles="h-[200px] md:h-auto"
-                className="border-b md:border-r" 
-              />
+              {/* Box 4: Col 2, Rows 2-3 (2 box) — Particle Text Reveal */}
+              <ParticleTextReveal />
               
               {/* Box 2: Col 1, Rows 3-4 (2 box) */}
               <GridBox 
