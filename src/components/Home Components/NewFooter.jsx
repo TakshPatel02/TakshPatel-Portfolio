@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Github, Linkedin, Twitter, Mail, ArrowUp } from "lucide-react";
+import { Github, Linkedin, Twitter, Mail, ArrowUp, FileText } from "lucide-react";
 
 // ── FlipLink animation settings matching HeroPanel ──
 const DURATION = 0.25;
@@ -93,6 +93,17 @@ const NewFooter = () => {
               >
                 <Github size={14} className="text-text-muted group-hover:text-[#ff3366] transition-colors duration-200" />
                 <span>GitHub</span>
+              </a>
+
+              {/* LLMs.txt */}
+              <a
+                href="/llms.txt"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-text-secondary hover:text-[#ff3366] transition-colors duration-200 group"
+              >
+                <FileText size={14} className="text-text-muted group-hover:text-[#ff3366] transition-colors duration-200" />
+                <span>llms</span>
               </a>
 
               {/* LinkedIn */}

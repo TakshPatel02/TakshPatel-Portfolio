@@ -7,6 +7,9 @@ Disallow: /private
 
 Sitemap: https://takshpatel.vercel.app/sitemap.xml
 
+# LLM friendly index: https://takshpatel.vercel.app/llms.txt
+
+
 # Crawl delay
 Crawl-delay: 1
 

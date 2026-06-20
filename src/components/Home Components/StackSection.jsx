@@ -1,5 +1,6 @@
 import React from "react";
 import { Boxes } from "lucide-react";
+import { useTheme } from "../../context/ThemeContext";
 
 const categories = [
   {
@@ -35,7 +36,7 @@ const categories = [
       {
         name: "Redux Toolkit",
         icon: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/redux.svg",
-        invertInDark: false,
+        invertInDark: true,
       },
       {
         name: "Motion",
@@ -61,7 +62,7 @@ const categories = [
       {
         name: "Postgres",
         icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
-        invertInDark: false,
+        invertInDark: true,
       },
       {
         name: "Prisma",
@@ -104,6 +105,8 @@ const categories = [
 ];
 
 const StackSection = () => {
+  const { theme } = useTheme();
+
   return (
     <section className="w-full">
       {/* Header Box */}
@@ -150,7 +153,7 @@ const StackSection = () => {
                           src={skill.icon}
                           alt=""
                           className={`h-3.5 w-3.5 object-contain ${
-                            skill.invertInDark ? "dark:invert" : ""
+                            skill.invertInDark && theme === "dark" ? "invert" : ""
                           }`}
                           onError={(e) => {
                             e.target.style.display = "none";

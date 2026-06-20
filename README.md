@@ -132,52 +132,37 @@ Portfolio/
 
 ---
 
-## 📝 Content Management
+## 📝 Content Management & Dynamic Data
 
-### Adding Blog Posts
+The portfolio website features **dynamic content management** powered by **Firebase Realtime Database**. Projects and blog posts are loaded live from the database, eliminating the need for rebuilding the site when content changes.
 
-Edit `src/data/blogsData.js`:
+### 🗄️ Reference Schema & Seed Data
 
-```javascript
-{
-    id: 3,
-    slug: "your-blog-slug",
-    title: "Your Blog Title",
-    date: "DD.MM.YYYY",
-    readTime: "X min read",
-    image: "https://your-image-url.png",
-    markdownUrl: "https://your-markdown-url.md",
-    isNew: true,
-}
+The schema and reference dataset are located in:
+- [latest-portfolio-data.json](file:///c:/Users/Taksh%20Patel/Desktop/Portfolio/latest-portfolio-data.json)
+
+To update projects or blogs, you can edit the JSON structure in the Firebase Console under the `projects` and `blogs` keys, or import/update them using `latest-portfolio-data.json`.
+
+### 🔑 Environment Setup
+
+Configure the following Firebase environment variables in your `.env` file (or Vercel deployment dashboard):
+
+```env
+VITE_FIREBASE_API_KEY=your_api_key
+VITE_FIREBASE_AUTH_DOMAIN=your_auth_domain
+VITE_FIREBASE_DATABASE_URL=your_database_url
+VITE_FIREBASE_PROJECT_ID=your_project_id
+VITE_FIREBASE_STORAGE_BUCKET=your_storage_bucket
+VITE_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
+VITE_FIREBASE_APP_ID=your_app_id
+VITE_FIREBASE_MEASUREMENT_ID=your_measurement_id
 ```
 
-### Adding Projects
+### 🤖 LLM Crawler Support (llms.txt)
 
-Edit `src/data/projectsData.js`:
-
-```javascript
-{
-    id: 3,
-    slug: "project-slug",
-    title: "Project Title",
-    description: "Project description",
-    status: "building", // or "working"
-    accent: "from-blue-200 via-purple-200 to-pink-200",
-    timeline: "Duration",
-    tech: "Frontend/Backend/Full Stack",
-    role: "Your Role",
-    technologies: [
-        {
-            name: "Technology Name",
-            icon: "https://icon-url.svg",
-        },
-    ],
-    website: "https://project-website.com",
-    github: "https://github.com/username/repo",
-    markdownUrl: "https://markdown-file-url.md",
-    image: "https://project-image-url.png",
-}
-```
+We support the `/llms.txt` convention for clean, token-efficient parsing by AI crawlers and assistants:
+- Located at [public/llms.txt](file:///c:/Users/Taksh%20Patel/Desktop/Portfolio/public/llms.txt) (served at domain root).
+- Linked inside [index.html](file:///c:/Users/Taksh%20Patel/Desktop/Portfolio/index.html) and [public/robots.txt](file:///c:/Users/Taksh%20Patel/Desktop/Portfolio/public/robots.txt).
 
 ---
 

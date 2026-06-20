@@ -1,4 +1,4 @@
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "./context/ThemeContext";
 import Navbar from "./components/Navbar";
@@ -8,8 +8,33 @@ const BlogDetailPage = lazy(() => import("./Pages/BlogDetailPage"));
 import Footer from "./components/Footer";
 import PageNotFound from "./Pages/PageNotFound";
 import NewFooter from "./components/Home Components/NewFooter";
+import Lenis from "lenis";
+import "lenis/dist/lenis.css";
 
 const App = () => {
+  useEffect(() => {
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      orientation: "vertical",
+      gestureOrientation: "vertical",
+      smoothWheel: true,
+      wheelMultiplier: 1,
+      touchMultiplier: 2,
+    });
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+
+    return () => {
+      lenis.destroy();
+    };
+  }, []);
+
   return (
     <ThemeProvider>
       <div className="min-h-screen bg-bg-primary text-text-primary">

@@ -159,7 +159,7 @@ const Footer = () => {
             <div className="hidden md:block md:col-span-1 border-r border-border" />
 
             {/* Social box grid (Middle) */}
-            <div className="col-span-1 md:col-span-2 grid grid-cols-3 w-full font-mono text-xs sm:text-sm">
+            <div className="col-span-1 md:col-span-2 grid grid-cols-4 w-full font-mono text-xs sm:text-sm">
               <a
                 href="https://x.com/TakshPatel02"
                 target="_blank"
@@ -180,9 +180,17 @@ const Footer = () => {
                 href="https://github.com/takshpatel02"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center py-4 hover:bg-hover-bg hover:text-text-primary text-text-muted transition-colors cursor-pointer group"
+                className="flex items-center justify-center py-4 border-r border-border hover:bg-hover-bg hover:text-text-primary text-text-muted transition-colors cursor-pointer group"
               >
                 <span className="transition-colors duration-200 group-hover:text-text-primary">github</span>
+              </a>
+              <a
+                href="/llms.txt"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center py-4 hover:bg-hover-bg hover:text-text-primary text-text-muted transition-colors cursor-pointer group"
+              >
+                <span className="transition-colors duration-200 group-hover:text-text-primary">llms</span>
               </a>
             </div>
 

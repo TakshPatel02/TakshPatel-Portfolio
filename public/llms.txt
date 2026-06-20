@@ -1,0 +1,69 @@
+# Taksh Patel
+
+> Portfolio website, project showcase, and technical blog of Taksh Patel, a Full Stack Developer.
+
+Taksh Patel is an India-based full-stack developer experienced in building scalable, well-designed web applications. He utilizes React, Node.js, Express, MongoDB, PostgreSQL, Tailwind CSS, GSAP, and Framer Motion. His portfolio features dynamically managed projects and blogs synced via Firebase.
+
+## Contact & Links
+
+- **Website**: [takshpatel.vercel.app](https://takshpatel.vercel.app)
+- **GitHub**: [github.com/TakshPatel02](https://github.com/TakshPatel02)
+- **LinkedIn**: [linkedin.com/in/taksh-patel20](https://linkedin.com/in/taksh-patel20)
+- **Twitter/X**: [x.com/TakshPatel02](https://x.com/TakshPatel02)
+- **Email**: [takshpatel022@gmail.com](mailto:takshpatel022@gmail.com)
+
+## Tech Stack
+
+- **Frontend**: React JS, Tailwind CSS, Motion (Framer Motion), GSAP, HTML5, CSS3, JavaScript, Vite
+- **Backend & Databases**: Node JS, Express JS, MongoDB, PostgreSQL, Firebase Realtime Database
+- **Package Managers & Tools**: npm Package Distribution, Git, ESLint
+
+## Projects
+
+- [ComponentLab](https://component-labs.vercel.app/) - [Repository](https://github.com/TakshPatel02/ComponentLabs)
+  - A modern React component library with 60+ ready-to-use, animated UI components built with Tailwind CSS and Motion.
+  - **Role**: Frontend Developer | **Status**: Operational (05.2026 – ∞)
+  - **Technologies**: React JS, Tailwind CSS, Motion, npm Package
+- [AI Code Reviewer](https://ai-code-reviewer-eight-smoky.vercel.app/) - [Repository](https://github.com/TakshPatel02/AI-Code-Reviewer)
+  - An AI-powered code review tool that analyzes code quality, identifies potential issues, and provides actionable feedback using the Gemini API.
+  - **Role**: Full Stack Developer | **Status**: Operational (04.2026 – 05.2026)
+  - **Technologies**: React JS, Node JS, Express JS, MongoDB, Tailwind CSS, Gemini API
+- [Link Shortener](https://github.com/TakshPatel02/Link-Shortener)
+  - A simple link shortening service allowing users to create and manage shortened URLs.
+  - **Role**: Full Stack Developer | **Status**: Building (03.2026 – 04.2026)
+  - **Technologies**: React JS, Node JS, Express JS, PostgreSQL, Tailwind CSS
+- [Book store Inventory Management System](https://github.com/TakshPatel02/BookStore-Inventory-Orders-API)
+  - A comprehensive inventory management system featuring real-time stock tracking and sales analytics.
+  - **Role**: Backend Developer | **Status**: Operational (02.2026 – 03.2026)
+  - **Technologies**: Node JS, Express JS, PostgreSQL
+- [Task Master](https://github.com/TakshPatel02/TaskMaster)
+  - An Employee management system with task assignment and progress tracking.
+  - **Role**: Lead Developer | **Status**: Building (01.2026 – Ongoing)
+  - **Technologies**: React JS, Tailwind CSS, Node JS, PostgreSQL, Express JS
+- [FurnishHub - Modern Furniture Showcase](https://furnish-hub-coral.vercel.app/) - [Repository](https://github.com/TakshPatel02/Furnish-Hub)
+  - A responsive furniture e-commerce platform featuring categorized collections, new arrivals, and trending items with an elegant user interface.
+  - **Role**: Frontend Developer | **Status**: Operational (11.2025 – 12.2025)
+  - **Technologies**: React, Vite, JavaScript, CSS3, HTML5
+- [Terminal Portfolio v3.1.0](https://terminal-portfolio-nu-three.vercel.app) - [Repository](https://github.com/TakshPatel02/Terminal-Portfolio)
+  - Interactive terminal-style portfolio with command-based navigation and smooth animations.
+  - **Role**: Frontend Developer | **Status**: Operational (10.2025 – 11.2025)
+  - **Technologies**: HTML5, CSS3, JavaScript
+- [GTA VI Parallax Landing Page](https://github.com/TakshPatel02/GTA-VI-Animated-Landing)
+  - Immersive animated landing page with parallax effects and GSAP animations, inspired by Grand Theft Auto VI.
+  - **Role**: Frontend Developer | **Status**: Operational (09.2025 – 09.2025)
+  - **Technologies**: React, Vite, GSAP, Tailwind CSS, JavaScript
+- [FinFlow - Financial Dashboard](https://fin-flow-dashboard.vercel.app) - [Repository](https://github.com/TakshPatel02/FinFlow-Dashboard)
+  - A sleek financial dashboard featuring interactive charts and real-time data visualization.
+  - **Role**: Frontend Developer | **Status**: Operational (08.2025 – 09.2025)
+  - **Technologies**: React, Tailwind CSS, Chart.js
+- [Movie App v2.0](https://movie-app-react-phi.vercel.app) - [Repository](https://github.com/TakshPatel02/Movies-App-React)
+  - A modern, responsive movie browsing application powered by TMDB API.
+  - **Role**: Frontend Developer | **Status**: Operational (07.2025 – 08.2025)
+  - **Technologies**: React, Tailwind CSS, TMDB API
+
+## Blogs
+
+- [JavaScript Part 1: Introduction to JavaScript](https://takshpatel.vercel.app/blog/javascript-part-1-introduction-to-javascript) (20.12.2025) - 1 hour read
+- [My Web Development Learning Journey: From Tutorial Hell to Independent Developer](https://takshpatel.vercel.app/blog/Why-Building-Projects-Changed-Everything) (26.02.2026) - 5 min read
+- [Session vs JWT Authentication in Node.js + MongoDB: What I Actually Ship in Production](https://takshpatel.vercel.app/blog/Session-vs-JWT-Authentication-in-Node.js+MongoDB:-What-I-Actually-Ship-in-Production) (11.04.2026) - 15 min read
+- [How to Configure Redux Toolkit in a React Application](https://takshpatel.vercel.app/blog/how-to-configure-redux-toolkit-in-a-react-application) (19.06.2026) - 10 min read
