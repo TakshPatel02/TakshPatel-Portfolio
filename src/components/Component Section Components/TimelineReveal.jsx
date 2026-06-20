@@ -55,13 +55,13 @@ const TimelineReveal = () => {
       <div className="relative w-full px-6 py-8 flex flex-col">
         {/* Vertical line — background track */}
         <div
-          className="absolute left-[30px] top-6 bottom-6 w-[1px]"
+          className="absolute left-[30px] top-6 bottom-6 w-px"
           style={{ backgroundColor: "var(--color-border)" }}
         />
 
         {/* Vertical line — progress fill */}
         <div
-          className="absolute left-[30px] top-6 bottom-6 w-[1px] origin-top"
+          className="absolute left-[30px] top-6 bottom-6 w-px origin-top"
           style={{
             backgroundColor: "#ff3366",
             transform: `scaleY(${progress})`,

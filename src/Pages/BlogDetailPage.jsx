@@ -49,93 +49,152 @@ const extractHeadings = (markdown) => {
 const AnimatedH1 = ({ children }) => {
   const text = typeof children === "string" ? children : children?.toString?.() || "";
   return (
-    <Reveal>
-      <h1
-        id={slugify(text)}
-        className="mb-4 mt-8 font-display text-lg font-bold text-text-primary sm:text-xl tracking-[0.01em]"
-      >
-        {children}
-      </h1>
-    </Reveal>
+    <h1
+      id={slugify(text)}
+      className="mb-4 mt-8 font-display text-lg font-bold text-text-primary sm:text-xl tracking-[0.01em]"
+    >
+      {children}
+    </h1>
   );
 };
 
 const AnimatedH2 = ({ children }) => {
   const text = typeof children === "string" ? children : children?.toString?.() || "";
   return (
-    <Reveal>
-      <h2
-        id={slugify(text)}
-        className="mb-3 mt-8 font-display text-base font-bold text-text-primary sm:text-lg tracking-[0.01em]"
-      >
-        {children}
-      </h2>
-    </Reveal>
+    <h2
+      id={slugify(text)}
+      className="mb-3 mt-8 font-display text-base font-bold text-text-primary sm:text-lg tracking-[0.01em]"
+    >
+      {children}
+    </h2>
   );
 };
 
 const AnimatedH3 = ({ children }) => {
   const text = typeof children === "string" ? children : children?.toString?.() || "";
   return (
-    <Reveal>
-      <h3
-        id={slugify(text)}
-        className="mb-2.5 mt-6 font-display text-[15px] font-semibold text-text-primary tracking-[0.01em]"
-      >
-        {children}
-      </h3>
-    </Reveal>
+    <h3
+      id={slugify(text)}
+      className="mb-2.5 mt-6 font-display text-[15px] font-semibold text-text-primary tracking-[0.01em]"
+    >
+      {children}
+    </h3>
   );
 };
 
 const AnimatedP = ({ children }) => (
-  <Reveal>
-    <p className="mb-4 text-[15px] leading-[1.8] text-text-secondary">{children}</p>
-  </Reveal>
+  <p className="mb-4 text-[15px] leading-[1.8] text-text-secondary">{children}</p>
 );
 
 const AnimatedBlockquote = ({ children }) => (
-  <Reveal>
-    <blockquote className="my-6 border-l-2 border-text-muted/40 pl-4 italic text-text-secondary text-[15px] leading-[1.8]">
-      {children}
-    </blockquote>
-  </Reveal>
+  <blockquote className="my-6 border-l-2 border-text-muted/40 pl-4 italic text-text-secondary text-[15px] leading-[1.8]">
+    {children}
+  </blockquote>
 );
 
 const AnimatedUl = ({ children }) => (
-  <Reveal>
-    <ul className="mb-4 ml-5 list-disc space-y-1.5 text-[15px] text-text-secondary marker:text-text-muted/50">
-      {children}
-    </ul>
-  </Reveal>
+  <ul className="mb-4 ml-5 list-disc space-y-1.5 text-[15px] text-text-secondary marker:text-text-muted/50">
+    {children}
+  </ul>
 );
 
 const AnimatedOl = ({ children }) => (
-  <Reveal>
-    <ol className="mb-4 ml-5 list-decimal space-y-1.5 text-[15px] text-text-secondary marker:text-text-muted/50">
-      {children}
-    </ol>
-  </Reveal>
+  <ol className="mb-4 ml-5 list-decimal space-y-1.5 text-[15px] text-text-secondary marker:text-text-muted/50">
+    {children}
+  </ol>
 );
 
 const AnimatedImg = ({ src, alt }) => (
-  <Reveal>
-    <img
-      src={src}
-      alt={alt}
-      loading="lazy"
-      className="my-6 w-full rounded-md border border-border"
-    />
-  </Reveal>
+  <img
+    src={src}
+    alt={alt}
+    loading="lazy"
+    className="my-6 w-full rounded-md border border-border"
+  />
 );
 
 const AnimatedPre = ({ children }) => (
-  <Reveal>
-    <pre className="my-6 overflow-x-auto rounded-md bg-bg-secondary border border-border p-4 text-sm">
-      {children}
-    </pre>
-  </Reveal>
+  <pre className="my-6 overflow-x-auto rounded-md bg-[#0d1117] border border-[#30363d] p-4 text-sm font-mono text-[#c9d1d9]">
+    {children}
+  </pre>
 );
+
+const MarkdownA = ({ href, children }) => (
+  <a
+    href={href}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-text-primary underline decoration-text-muted/30 underline-offset-[3px] transition hover:decoration-text-primary/60"
+  >
+    {children}
+  </a>
+);
+
+const MarkdownLi = ({ children }) => (
+  <li className="leading-[1.8] pl-1">{children}</li>
+);
+
+const MarkdownCode = ({ inline, children, className }) => {
+  if (inline) {
+    return (
+      <code className="rounded-[4px] bg-bg-secondary border border-border/50 px-1.5 py-0.5 text-[13px] text-text-primary font-mono">
+        {children}
+      </code>
+    );
+  }
+  return (
+    <code
+      className={`font-mono ${className || ""}`}
+      style={{ background: "transparent", padding: 0 }}
+    >
+      {children}
+    </code>
+  );
+};
+
+const MarkdownHr = () => (
+  <hr className="my-8 border-border" />
+);
+
+const MarkdownTable = ({ children }) => (
+  <div className="my-6 overflow-x-auto rounded-md border border-border">
+    <table className="w-full text-sm text-text-secondary">{children}</table>
+  </div>
+);
+
+const MarkdownThead = ({ children }) => (
+  <thead className="border-b border-border bg-bg-secondary text-left text-xs font-semibold uppercase tracking-wider text-text-muted">
+    {children}
+  </thead>
+);
+
+const MarkdownTh = ({ children }) => (
+  <th className="px-4 py-2.5">{children}</th>
+);
+
+const MarkdownTd = ({ children }) => (
+  <td className="border-t border-border/50 px-4 py-2.5">{children}</td>
+);
+
+const markdownComponents = {
+  h1: AnimatedH1,
+  h2: AnimatedH2,
+  h3: AnimatedH3,
+  p: AnimatedP,
+  a: MarkdownA,
+  ul: AnimatedUl,
+  ol: AnimatedOl,
+  li: MarkdownLi,
+  blockquote: AnimatedBlockquote,
+  code: MarkdownCode,
+  pre: AnimatedPre,
+  img: AnimatedImg,
+  hr: MarkdownHr,
+  table: MarkdownTable,
+  thead: MarkdownThead,
+  th: MarkdownTh,
+  td: MarkdownTd,
+};
 
 /* ─── Table of Contents Panel ─── */
 const TableOfContents = ({ headings, isOpen, onClose, activeId }) => {
@@ -165,7 +224,7 @@ const TableOfContents = ({ headings, isOpen, onClose, activeId }) => {
 
           {/* Panel */}
           <motion.div
-            className="fixed bottom-16 left-1/2 z-50 w-[90vw] max-w-sm -translate-x-1/2 rounded-lg border border-border bg-bg-primary/95 backdrop-blur-sm shadow-lg overflow-hidden"
+            className="fixed bottom-22 left-1/2 z-50 w-[90vw] max-w-sm -translate-x-1/2 rounded-lg border border-border bg-bg-primary/95 backdrop-blur-sm shadow-lg overflow-hidden"
             initial={{ opacity: 0, y: 20, scale: 0.96 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.96 }}
@@ -428,73 +487,22 @@ const BlogDetailPage = () => {
       {/* ─── Article Body ─── */}
       <div className="w-full border-b border-border">
         <div className="mx-auto w-full max-w-[800px] px-4 sm:px-6">
-          <article className="border-x border-border bg-bg-card py-6 sm:py-8 px-4 sm:px-6">
+          <motion.article 
+            className="border-x border-border bg-bg-card py-6 sm:py-8 px-4 sm:px-6"
+            initial={{ opacity: 0, y: 14 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
+          >
             <div className="prose prose-invert max-w-none">
               <ReactMarkdown
                 remarkPlugins={[remarkGfm]}
                 rehypePlugins={[rehypeRaw, rehypeHighlight]}
-                components={{
-                  h1: AnimatedH1,
-                  h2: AnimatedH2,
-                  h3: AnimatedH3,
-                  p: AnimatedP,
-                  a: ({ href, children }) => (
-                    <a
-                      href={href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-text-primary underline decoration-text-muted/30 underline-offset-[3px] transition hover:decoration-text-primary/60"
-                    >
-                      {children}
-                    </a>
-                  ),
-                  ul: AnimatedUl,
-                  ol: AnimatedOl,
-                  li: ({ children }) => (
-                    <li className="leading-[1.8] pl-1">{children}</li>
-                  ),
-                  blockquote: AnimatedBlockquote,
-                  code: ({ inline, children, className }) => {
-                    if (inline) {
-                      return (
-                        <code className="rounded-[4px] bg-bg-secondary border border-border/50 px-1.5 py-0.5 text-[13px] text-text-primary font-mono">
-                          {children}
-                        </code>
-                      );
-                    }
-                    return <code className={className}>{children}</code>;
-                  },
-                  pre: AnimatedPre,
-                  img: AnimatedImg,
-                  hr: () => (
-                    <Reveal>
-                      <hr className="my-8 border-border" />
-                    </Reveal>
-                  ),
-                  table: ({ children }) => (
-                    <Reveal>
-                      <div className="my-6 overflow-x-auto rounded-md border border-border">
-                        <table className="w-full text-sm text-text-secondary">{children}</table>
-                      </div>
-                    </Reveal>
-                  ),
-                  thead: ({ children }) => (
-                    <thead className="border-b border-border bg-bg-secondary text-left text-xs font-semibold uppercase tracking-wider text-text-muted">
-                      {children}
-                    </thead>
-                  ),
-                  th: ({ children }) => (
-                    <th className="px-4 py-2.5">{children}</th>
-                  ),
-                  td: ({ children }) => (
-                    <td className="border-t border-border/50 px-4 py-2.5">{children}</td>
-                  ),
-                }}
+                components={markdownComponents}
               >
                 {markdownContent}
               </ReactMarkdown>
             </div>
-          </article>
+          </motion.article>
         </div>
       </div>
 
@@ -527,7 +535,7 @@ const BlogDetailPage = () => {
       <AnimatePresence>
         {showScrollTop && headings.length > 0 && (
           <motion.div
-            className="fixed bottom-4 left-1/2 z-40 flex -translate-x-1/2 items-center gap-2"
+            className="fixed bottom-18 left-1/2 z-40 flex -translate-x-1/2 items-center gap-2"
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 16 }}
@@ -566,7 +574,7 @@ const BlogDetailPage = () => {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 10 }}
               transition={{ duration: 0.25 }}
-              className="fixed bottom-4 right-4 z-50 flex h-8 w-8 items-center justify-center rounded-md border border-border bg-bg-primary/90 backdrop-blur-sm text-text-muted transition-colors hover:bg-hover-bg hover:text-text-primary cursor-pointer"
+              className="fixed bottom-10 right-4 z-50 flex h-8 w-8 items-center justify-center rounded-md border border-border bg-bg-primary/90 backdrop-blur-sm text-text-muted transition-colors hover:bg-hover-bg hover:text-text-primary cursor-pointer"
               title="Back to Top"
             >
               <ArrowUp className="h-3.5 w-3.5" />
