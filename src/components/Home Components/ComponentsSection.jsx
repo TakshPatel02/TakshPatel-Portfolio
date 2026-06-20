@@ -1,7 +1,16 @@
 import React from "react";
 import { ArrowRight } from "lucide-react";
 import MagneticCursorField from "../Component Section Components/MagneticCursorField";
-import ParticleTextReveal from "../Component Section Components/ParticleTextReveal";
+import TimelineReveal from "../Component Section Components/TimelineReveal";
+import SpotlightReveal from "../Component Section Components/SpotlightReveal";
+import TextScrambleReveal from "../Component Section Components/TextScrambleReveal";
+import GlowBorder from "../Component Section Components/GlowBorder";
+import UnderlineDrawLink from "../Component Section Components/UnderlineDrawLink";
+import OdometerCounter from "../Component Section Components/OdometerCounter";
+import CommandBar from "../Component Section Components/CommandBar";
+import CopyButton from "../Component Section Components/CopyButton";
+import ToggleSwitch from "../Component Section Components/ToggleSwitch";
+import InfiniteMarquee from "../Component Section Components/InfiniteMarquee";
 
 const GridBox = ({ label, className = "", spanStyles = "", heightStyles = "h-[120px] md:h-auto" }) => {
   return (
@@ -38,80 +47,35 @@ const ComponentsSection = () => {
               {/* Box 1: Col 1, Rows 1-2 (2 box) — Magnetic Cursor Field */}
               <MagneticCursorField />
               
-              {/* Box 3: Col 2, Row 1 (1 box) */}
-              <GridBox 
-                label="box 3" 
-                spanStyles="md:col-start-2 md:col-span-1 md:row-start-1 md:row-span-1" 
-                heightStyles="h-[120px] md:h-auto"
-                className="border-b md:border-r" 
-              />
+              {/* Box 3: Col 2, Row 1 (1 box) — Text Scramble Reveal */}
+              <TextScrambleReveal />
               
-              {/* Box 4: Col 2, Rows 2-3 (2 box) — Particle Text Reveal */}
-              <ParticleTextReveal />
+              {/* Box 4: Col 2, Rows 2-3 (2 box) — Timeline Reveal */}
+              <TimelineReveal />
               
-              {/* Box 2: Col 1, Rows 3-4 (2 box) */}
-              <GridBox 
-                label="box 2" 
-                spanStyles="md:col-start-1 md:col-span-1 md:row-start-3 md:row-span-2" 
-                heightStyles="h-[200px] md:h-auto"
-                className="border-b md:border-r" 
-              />
+              {/* Box 2: Col 1, Rows 3-4 (2 box) — Spotlight Reveal */}
+              <SpotlightReveal />
               
-              {/* Box 5: Col 2, Row 4 (1 box) */}
-              <GridBox 
-                label="box 5" 
-                spanStyles="md:col-start-2 md:col-span-1 md:row-start-4 md:row-span-1" 
-                heightStyles="h-[120px] md:h-auto"
-                className="border-b md:border-r" 
-              />
+              {/* Box 5: Col 2, Row 4 (1 box) — Glow Border */}
+              <GlowBorder />
               
-              {/* Box 8: Col 1-2, Rows 5-6 (2 box, 2 columns) */}
-              <GridBox 
-                label="box 8" 
-                spanStyles="md:col-start-1 md:col-span-2 md:row-start-5 md:row-span-2" 
-                heightStyles="h-[200px] md:h-auto"
-                className="border-b md:border-b-0 md:border-r" 
-              />
+              {/* Box 8: Col 1-2, Rows 5-6 (2 box, 2 columns) — Infinite Marquee */}
+              <InfiniteMarquee />
               
-              {/* Box 6: Col 3, Row 1 (1 box) */}
-              <GridBox 
-                label="box 6" 
-                spanStyles="md:col-start-3 md:col-span-1 md:row-start-1 md:row-span-1" 
-                heightStyles="h-[120px] md:h-auto"
-                className="border-b" 
-              />
+              {/* Box 6: Col 3, Row 1 (1 box) — Underline Draw Link */}
+              <UnderlineDrawLink />
               
-              {/* Box 7: Col 3, Row 2 (1 box) */}
-              <GridBox 
-                label="box 7" 
-                spanStyles="md:col-start-3 md:col-span-1 md:row-start-2 md:row-span-1" 
-                heightStyles="h-[120px] md:h-auto"
-                className="border-b" 
-              />
+              {/* Box 7: Col 3, Row 2 (1 box) — Odometer Counter */}
+              <OdometerCounter />
               
-              {/* Box 9: Col 3, Rows 3-4 (2 box) */}
-              <GridBox 
-                label="box 9" 
-                spanStyles="md:col-start-3 md:col-span-1 md:row-start-3 md:row-span-2" 
-                heightStyles="h-[200px] md:h-auto"
-                className="border-b" 
-              />
+              {/* Box 9: Col 3, Rows 3-4 (2 box) — Command Bar */}
+              <CommandBar />
               
-              {/* Box 10: Col 3, Row 5 (1 box) */}
-              <GridBox 
-                label="box 10" 
-                spanStyles="md:col-start-3 md:col-span-1 md:row-start-5 md:row-span-1" 
-                heightStyles="h-[120px] md:h-auto"
-                className="border-b" 
-              />
+              {/* Box 10: Col 3, Row 5 (1 box) — Copy Button */}
+              <CopyButton />
 
-              {/* Box 11: Col 3, Row 6 (1 box) */}
-              <GridBox 
-                label="box 11" 
-                spanStyles="md:col-start-3 md:col-span-1 md:row-start-6 md:row-span-1" 
-                heightStyles="h-[120px] md:h-auto"
-                className="border-0" 
-              />
+              {/* Box 11: Col 3, Row 6 (1 box) — Toggle Switch */}
+              <ToggleSwitch />
             </div>
           </div>
         </div>
