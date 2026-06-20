@@ -337,22 +337,11 @@ button:active {
 /* ══════════════════════════════════════════════
    3D ISOMETRIC TP LOGO — Blueprint Style
    ══════════════════════════════════════════════ */
-
-.iso-face-top {
-  fill: none;
-  stroke: rgba(0, 0, 0, 0.4);
-  stroke-width: 0.8;
-}
-
-.iso-face-right {
-  fill: none;
-  stroke: rgba(0, 0, 0, 0.3);
-  stroke-width: 0.8;
-}
-
+.iso-face-top,
+.iso-face-right,
 .iso-face-left {
   fill: none;
-  stroke: rgba(0, 0, 0, 0.3);
+  stroke: rgba(0, 0, 0, 0.4);
   stroke-width: 0.8;
 }
 
@@ -375,16 +364,10 @@ button:active {
 }
 
 /* ── Dark mode ── */
-.dark .iso-face-top {
-  stroke: rgba(255, 255, 255, 0.35);
-}
-
-.dark .iso-face-right {
-  stroke: rgba(255, 255, 255, 0.22);
-}
-
+.dark .iso-face-top,
+.dark .iso-face-right,
 .dark .iso-face-left {
-  stroke: rgba(255, 255, 255, 0.22);
+  stroke: rgba(255, 255, 255, 0.35);
 }
 
 .dark .iso-hatch {

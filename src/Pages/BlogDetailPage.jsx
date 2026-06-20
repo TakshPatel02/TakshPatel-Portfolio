@@ -535,7 +535,7 @@ const BlogDetailPage = () => {
       <AnimatePresence>
         {showScrollTop && headings.length > 0 && (
           <motion.div
-            className="fixed bottom-18 left-1/2 z-40 flex -translate-x-1/2 items-center gap-2"
+            className="fixed bottom-14 left-1/2 z-40 flex -translate-x-1/2 items-center gap-2"
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 16 }}

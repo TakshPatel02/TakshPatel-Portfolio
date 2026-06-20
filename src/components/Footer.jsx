@@ -103,6 +103,23 @@ const Footer = () => {
                   </div>
                 </div>
 
+                {/* Deployed on */}
+                <div className="flex w-full">
+                  <div className="w-[110px] sm:w-[130px] shrink-0 text-right pr-4 text-text-muted font-mono text-xs sm:text-sm">
+                    deployed on
+                  </div>
+                  <div className="text-left text-text-secondary font-mono text-xs sm:text-sm">
+                    <a
+                      href="https://vercel.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-text-primary transition-colors underline decoration-border/60 hover:decoration-text-primary"
+                    >
+                      vercel
+                    </a>
+                  </div>
+                </div>
+
                 {/* Source code */}
                 <div className="flex w-full">
                   <div className="w-[110px] sm:w-[130px] shrink-0 text-right pr-4 text-text-muted font-mono text-xs sm:text-sm">
@@ -110,7 +127,7 @@ const Footer = () => {
                   </div>
                   <div className="text-left text-text-secondary font-mono text-xs sm:text-sm">
                     <a
-                      href="https://github.com/TakshPatel02/Portfolio"
+                      href="https://github.com/TakshPatel02/TakshPatel-Portfolio"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="hover:text-text-primary transition-colors underline decoration-border/60 hover:decoration-text-primary"
@@ -144,7 +161,7 @@ const Footer = () => {
             {/* Social box grid (Middle) */}
             <div className="col-span-1 md:col-span-2 grid grid-cols-3 w-full font-mono text-xs sm:text-sm">
               <a
-                href="https://x.com/taksh_patel20"
+                href="https://x.com/TakshPatel02"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center py-4 border-r border-border hover:bg-hover-bg hover:text-text-primary text-text-muted transition-colors cursor-pointer group"

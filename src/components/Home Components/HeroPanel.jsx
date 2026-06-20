@@ -1,4 +1,5 @@
-import { motion } from "framer-motion";
+import { useState, useCallback, useRef } from "react";
+import { motion, animate } from "framer-motion";
 
 // ── Isometric projection constants ──
 const CELL = 52;
@@ -44,13 +45,13 @@ const getActiveBlocks = () => {
 const activeBlocks = getActiveBlocks();
 
 // ── Occlusion detection: returns true if the grid point (gc, gr, gz) is blocked by any solid cell ──
-const isPointBlocked = (gc, gr, gz) => {
+const isPointBlocked = (gc, gr, gz, zTop = 0) => {
   for (const [cr, cc] of activeBlocks) {
     // Intersect the ray from the point towards the camera with the cell C.
     // Ray(t) = (gc - t, gr + t, gz - t * CELL)
-    // Cell covers: [cc, cc + 1] x [cr, cr + 1] x [0, DEPTH]
+    // Cell covers: [cc, cc + 1] x [cr, cr + 1] x [zTop, DEPTH]
     const t_min = Math.max(gc - cc - 1, cr - gr, (gz - DEPTH) / CELL);
-    const t_max = Math.min(gc - cc, cr - gr + 1, gz / CELL);
+    const t_max = Math.min(gc - cc, cr - gr + 1, (gz - zTop) / CELL);
     if (t_min + 0.001 < t_max && t_max > 0.001) {
       return true;
     }
@@ -59,7 +60,7 @@ const isPointBlocked = (gc, gr, gz) => {
 };
 
 // ── Segmented line rendering to handle partial occlusion ──
-const renderSegmentedLine = (gc1, gr1, gz1, gc2, gr2, gz2, className, keyPrefix) => {
+const renderSegmentedLine = (gc1, gr1, gz1, gc2, gr2, gz2, className, keyPrefix, zTop = 0) => {
   const segments = [];
   const steps = 4;
   for (let i = 0; i < steps; i++) {
@@ -78,7 +79,7 @@ const renderSegmentedLine = (gc1, gr1, gz1, gc2, gr2, gz2, className, keyPrefix)
     const midR = (r1 + r2) / 2;
     const midZ = (z1 + z2) / 2;
     
-    if (!isPointBlocked(midC, midR, midZ)) {
+    if (!isPointBlocked(midC, midR, midZ, zTop)) {
       const p1 = pt(c1, r1);
       const p2 = pt(c2, r2);
       segments.push(
@@ -159,7 +160,7 @@ const Hatch = ({ r, c, off = 0 }) => {
 };
 
 // ── Wireframe letter (no page load animation, only visible 3D lines) ──
-const Letter = ({ cells, off = 0 }) => {
+const Letter = ({ cells, off = 0, zTop = 0 }) => {
   const edges = getOutline(cells, off);
   const verts = getVisibleCorners(edges);
 
@@ -167,23 +168,26 @@ const Letter = ({ cells, off = 0 }) => {
     <g>
       {/* Floor outline (bottom of extrusion for visible sides only) */}
       {edges.filter(e => e.visible).map(({ ga, gb }, i) => (
-        renderSegmentedLine(ga[0], ga[1], DEPTH, gb[0], gb[1], DEPTH, "iso-face-left", `f-${i}`)
+        renderSegmentedLine(ga[0], ga[1], DEPTH, gb[0], gb[1], DEPTH, "iso-face-left", `f-${i}`, zTop)
       ))}
       {/* Vertical drops at visible corners only */}
       {verts.map(([gc, gr], i) => (
-        renderSegmentedLine(gc, gr, 0, gc, gr, DEPTH, "iso-face-right", `d-${i}`)
+        renderSegmentedLine(gc, gr, zTop, gc, gr, DEPTH, "iso-face-right", `d-${i}`, zTop)
       ))}
-      {/* Top face outline (all outer edges of top faces are visible) */}
-      {edges.map(({ a, b }, i) => (
-        <line key={`t${i}`}
-          x1={a.x} y1={a.y} x2={b.x} y2={b.y}
-          className="iso-face-top"
-        />
-      ))}
-      {/* Top face hatching */}
-      {cells.map(([r, c], i) => (
-        <Hatch key={`h${i}`} r={r} c={c} off={off} />
-      ))}
+      {/* Top face outlines & hatching translated down by zTop */}
+      <g transform={`translate(0, ${zTop})`}>
+        {/* Top face outline (all outer edges of top faces are visible and same color) */}
+        {edges.map(({ a, b }, i) => (
+          <line key={`t${i}`}
+            x1={a.x} y1={a.y} x2={b.x} y2={b.y}
+            className="iso-face-top"
+          />
+        ))}
+        {/* Top face hatching */}
+        {cells.map(([r, c], i) => (
+          <Hatch key={`h${i}`} r={r} c={c} off={off} />
+        ))}
+      </g>
     </g>
   );
 };
@@ -295,8 +299,45 @@ const FlipLink = ({ children }) => (
   </motion.div>
 );
 
+
 // ── Combined Hero Panel + Info Card ──
 const HeroPanel = () => {
+  const [zTop, setZTop] = useState(0);
+  const [isPressed, setIsPressed] = useState(false);
+  const animRef = useRef(null);
+
+  const handlePress = useCallback(() => {
+    if (isPressed) return; // Prevent re-trigger while animating
+    setIsPressed(true);
+
+    if (animRef.current) {
+      animRef.current.stop();
+    }
+
+    // Animate zTop from 0 to DEPTH * 0.5 (sinks 50% down, height shrinks by 50%)
+    animRef.current = animate(0, DEPTH * 0.5, {
+      type: "tween",
+      duration: 0.18,
+      ease: "easeOut",
+      onUpdate: (latest) => setZTop(latest),
+      onComplete: () => {
+        // Hold briefly and animate back up
+        setTimeout(() => {
+          animRef.current = animate(DEPTH * 0.5, 0, {
+            type: "tween",
+            duration: 0.3,
+            ease: [0.25, 1, 0.5, 1],
+            onUpdate: (latest) => setZTop(latest),
+            onComplete: () => {
+              setIsPressed(false);
+              animRef.current = null;
+            }
+          });
+        }, 120);
+      }
+    });
+  }, [isPressed]);
+
   return (
     <div className="w-full">
       {/* Top border line spanning full screen width */}
@@ -313,14 +354,15 @@ const HeroPanel = () => {
             <svg
               viewBox={`${VBX} ${VBY} ${VBW} ${VBH}`}
               className="w-full h-full overflow-visible"
-              style={{ overflow: "visible" }}
+              style={{ overflow: "visible", cursor: "pointer" }}
               preserveAspectRatio="xMidYMin meet"
               xmlns="http://www.w3.org/2000/svg"
+              onClick={handlePress}
             >
               <Guides cx={CX} cy={CY} span={Math.max(VBW, VBH)} />
               <g transform="translate(0, 10)">
-                <Letter cells={T_CELLS} off={0} />
-                <Letter cells={P_CELLS} off={P_OFF} />
+                <Letter cells={T_CELLS} off={0} zTop={zTop} />
+                <Letter cells={P_CELLS} off={P_OFF} zTop={zTop} />
               </g>
               <text
                 x={maxX - 20}

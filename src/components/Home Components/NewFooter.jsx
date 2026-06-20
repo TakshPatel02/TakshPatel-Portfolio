@@ -108,7 +108,7 @@ const NewFooter = () => {
 
               {/* X (Twitter) */}
               <a
-                href="https://x.com/taksh_patel20"
+                href="https://x.com/TakshPatel02"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-text-secondary hover:text-[#ff3366] transition-colors duration-200 group"
@@ -152,7 +152,7 @@ const NewFooter = () => {
 
       {/* Bottom Blur Fade Overlay */}
       <div
-        className="fixed bottom-0 left-0 right-0 h-24 pointer-events-none z-45 bg-linear-to-t from-bg-primary via-bg-primary/30 to-transparent backdrop-blur-xs"
+        className="fixed bottom-0 left-0 right-0 h-12 pointer-events-none z-45 bg-linear-to-t from-bg-primary via-bg-primary/30 to-transparent backdrop-blur-xs"
         style={{
           WebkitMaskImage: "linear-gradient(to top, rgba(0,0,0,1) 15%, rgba(0,0,0,0.8) 40%, rgba(0,0,0,0))",
           maskImage: "linear-gradient(to top, rgba(0,0,0,1) 15%, rgba(0,0,0,0.8) 40%, rgba(0,0,0,0))",

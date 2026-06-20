@@ -39,7 +39,7 @@ const IntroSection = () => {
                 <p className="text-sm leading-relaxed text-text-secondary sm:text-base">
                   Currently shipping{" "}
                   <a
-                    href="https://componentlabs.site"
+                    href="https://component-labs.vercel.app"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="underline decoration-text-muted hover:decoration-text-primary hover:text-text-primary transition-all duration-200"
