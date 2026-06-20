@@ -14,10 +14,10 @@ const Footer = () => {
               <div className="w-full flex flex-col gap-4 max-w-[320px]">
                 {/* Crafted by */}
                 <div className="flex w-full">
-                  <div className="w-[110px] sm:w-[130px] shrink-0 text-right pr-4 text-text-muted font-mono text-xs sm:text-sm">
+                  <div className="w-[50%] shrink-0 text-right pr-4 text-text-muted font-mono text-xs sm:text-sm">
                     crafted by
                   </div>
-                  <div className="text-left text-text-secondary font-mono text-xs sm:text-sm">
+                  <div className="flex-1 text-left text-text-secondary font-mono text-xs sm:text-sm">
                     <a
                       href="https://github.com/takshpatel02"
                       target="_blank"
@@ -31,10 +31,10 @@ const Footer = () => {
 
                 {/* Tech Stack */}
                 <div className="flex w-full">
-                  <div className="w-[110px] sm:w-[130px] shrink-0 text-right pr-4 text-text-muted font-mono text-xs sm:text-sm">
+                  <div className="w-[50%] shrink-0 text-right pr-4 text-text-muted font-mono text-xs sm:text-sm">
                     tech stack
                   </div>
-                  <div className="text-left text-text-secondary font-mono text-xs sm:text-sm flex flex-col gap-1">
+                  <div className="flex-1 text-left text-text-secondary font-mono text-xs sm:text-sm flex flex-col gap-1">
                     <a
                       href="https://react.dev"
                       target="_blank"
@@ -64,10 +64,10 @@ const Footer = () => {
 
                 {/* Inspired by */}
                 <div className="flex w-full">
-                  <div className="w-[110px] sm:w-[130px] shrink-0 text-right pr-4 text-text-muted font-mono text-xs sm:text-sm">
+                  <div className="w-[50%] shrink-0 text-right pr-4 text-text-muted font-mono text-xs sm:text-sm">
                     inspired by
                   </div>
-                  <div className="text-left text-text-secondary font-mono text-xs sm:text-sm flex flex-col gap-1">
+                  <div className="flex-1 text-left text-text-secondary font-mono text-xs sm:text-sm flex flex-col gap-1">
                     <a
                       href="https://tailwindcss.com"
                       target="_blank"
@@ -105,10 +105,10 @@ const Footer = () => {
 
                 {/* Deployed on */}
                 <div className="flex w-full">
-                  <div className="w-[110px] sm:w-[130px] shrink-0 text-right pr-4 text-text-muted font-mono text-xs sm:text-sm">
+                  <div className="w-[50%] shrink-0 text-right pr-4 text-text-muted font-mono text-xs sm:text-sm">
                     deployed on
                   </div>
-                  <div className="text-left text-text-secondary font-mono text-xs sm:text-sm">
+                  <div className="flex-1 text-left text-text-secondary font-mono text-xs sm:text-sm">
                     <a
                       href="https://vercel.com"
                       target="_blank"
@@ -122,10 +122,10 @@ const Footer = () => {
 
                 {/* Source code */}
                 <div className="flex w-full">
-                  <div className="w-[110px] sm:w-[130px] shrink-0 text-right pr-4 text-text-muted font-mono text-xs sm:text-sm">
+                  <div className="w-[50%] shrink-0 text-right pr-4 text-text-muted font-mono text-xs sm:text-sm">
                     source code
                   </div>
-                  <div className="text-left text-text-secondary font-mono text-xs sm:text-sm">
+                  <div className="flex-1 text-left text-text-secondary font-mono text-xs sm:text-sm">
                     <a
                       href="https://github.com/TakshPatel02/TakshPatel-Portfolio"
                       target="_blank"
@@ -139,10 +139,10 @@ const Footer = () => {
 
                 {/* Licence */}
                 <div className="flex w-full">
-                  <div className="w-[110px] sm:w-[130px] shrink-0 text-right pr-4 text-text-muted font-mono text-xs sm:text-sm">
+                  <div className="w-[50%] shrink-0 text-right pr-4 text-text-muted font-mono text-xs sm:text-sm">
                     licence
                   </div>
-                  <div className="text-left text-text-secondary font-mono text-xs sm:text-sm">
+                  <div className="flex-1 text-left text-text-secondary font-mono text-xs sm:text-sm">
                     MIT license
                   </div>
                 </div>

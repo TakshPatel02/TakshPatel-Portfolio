@@ -12,6 +12,7 @@ const AboutSection = lazy(
 );
 import GithubActivity from "../components/Home Components/GithubActivity";
 import NewFooter from "../components/Home Components/NewFooter";
+import HowILearnedSection from "../components/Home Components/HowILearnedSection";
 const BlogSection = lazy(
   () => import("../components/Home Components/BlogSection"),
 );
@@ -56,6 +57,8 @@ const HomePage = () => {
       {/* <GithubActivity /> */}
       {/* <SectionDivider /> */}
       <Suspense fallback={<h3>Loading ...</h3>}><BlogSection /></Suspense>
+      <SectionDivider />
+      <HowILearnedSection />
       <SectionDivider />
     </div>
   );
