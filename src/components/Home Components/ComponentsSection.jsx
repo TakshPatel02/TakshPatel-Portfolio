@@ -85,13 +85,15 @@ const ComponentsSection = () => {
       <div className="w-full border-b border-border">
         <div className="mx-auto w-full px-4 sm:px-6">
           <div className="border-x border-border bg-bg-card">
-            <button
-              type="button"
+            <a
+              href="https://component-labs.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
               className="font-mono flex w-full items-center justify-center gap-2 py-4 text-center text-xs sm:text-sm font-semibold uppercase tracking-widest text-text-muted hover:text-text-primary hover:bg-hover-bg transition-all duration-200 cursor-pointer group"
             >
               <span>all components</span>
               <ArrowRight className="h-4.5 w-4.5 transition-transform duration-200 group-hover:translate-x-1" />
-            </button>
+            </a>
           </div>
         </div>
       </div>
