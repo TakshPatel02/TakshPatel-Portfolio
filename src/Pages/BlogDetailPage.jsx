@@ -551,15 +551,6 @@ const BlogDetailPage = () => {
                 {activeHeading ? activeHeading.text : "Table of Contents"}
               </span>
             </button>
-
-            {/* Scroll to top */}
-            <button
-              onClick={scrollToTop}
-              className="flex h-8 w-8 items-center justify-center rounded-md border border-border bg-bg-primary/90 backdrop-blur-sm text-text-muted transition-colors hover:bg-hover-bg hover:text-text-primary cursor-pointer"
-              title="Back to Top"
-            >
-              <ArrowUp className="h-3.5 w-3.5" />
-            </button>
           </motion.div>
         )}
       </AnimatePresence>
