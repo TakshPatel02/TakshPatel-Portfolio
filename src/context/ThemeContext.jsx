@@ -1,40 +1,30 @@
-import { createContext, useContext, useEffect, useState } from "react";
-import gsap from "gsap";
+import React, { createContext, useContext, useEffect, useState } from "react";
+import { flushSync } from "react-dom";
 
 const ThemeContext = createContext();
 
-export const useTheme = () => useContext(ThemeContext);
-
 export const ThemeProvider = ({ children }) => {
   const [theme, setTheme] = useState(() => {
-    if (typeof window !== "undefined") {
-      return localStorage.getItem("theme") || "dark";
-    }
-    return "dark";
+    return localStorage.getItem("theme") || "light";
   });
 
   useEffect(() => {
     const root = document.documentElement;
-    if (theme === "dark") {
-      root.classList.add("dark");
-    } else {
-      root.classList.remove("dark");
-    }
+    root.classList.toggle("dark", theme === "dark");
     localStorage.setItem("theme", theme);
-    // Smooth color transition with GSAP — matches CSS custom properties exactly
-    const bgColor = theme === "dark" ? "#0a0a0b" : "#ffffff";
-    const textColor = theme === "dark" ? "#f4f4f6" : "#07080a";
-
-    gsap.to("body", {
-      backgroundColor: bgColor,
-      color: textColor,
-      duration: 0.5,
-      ease: "power2.inOut",
-    });
   }, [theme]);
 
   const toggleTheme = () => {
-    setTheme((prev) => (prev === "dark" ? "light" : "dark"));
+    const next = theme === "light" ? "dark" : "light";
+
+    if (!document.startViewTransition) {
+      setTheme(next);
+      return;
+    }
+
+    document.startViewTransition(() => {
+      flushSync(() => setTheme(next));
+    });
   };
 
   return (
@@ -42,4 +32,10 @@ export const ThemeProvider = ({ children }) => {
       {children}
     </ThemeContext.Provider>
   );
+};
+
+export const useTheme = () => {
+  const ctx = useContext(ThemeContext);
+  if (!ctx) throw new Error("useTheme must be used within ThemeProvider");
+  return ctx;
 };
