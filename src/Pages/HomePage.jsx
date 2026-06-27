@@ -7,6 +7,7 @@ import ProjectsSection from "../components/Home Components/ProjectsSection";
 import IntroSection from "../components/Home Components/IntroSection";
 import StackSection from "../components/Home Components/StackSection";
 import ComponentsSection from "../components/Home Components/ComponentsSection";
+import NpmPackagesSection from "../components/Home Components/NpmPackagesSection";
 const AboutSection = lazy(
   () => import("../components/Home Components/AboutSection"),
 );
@@ -50,6 +51,8 @@ const HomePage = () => {
       {/* <Contact /> */}
       {/* <SectionDivider /> */}
       <ProjectsSection />
+      <SectionDivider />
+      <NpmPackagesSection />
       <SectionDivider />
       <ComponentsSection />
       <SectionDivider />
