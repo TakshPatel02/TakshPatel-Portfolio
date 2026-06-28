@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import HomePage from "./Pages/HomePage";
 const BlogPage = lazy(() => import("./Pages/BlogPage"));
 const BlogDetailPage = lazy(() => import("./Pages/BlogDetailPage"));
+const ResumePage = lazy(() => import("./Pages/ResumePage"));
 import Footer from "./components/Footer";
 import PageNotFound from "./Pages/PageNotFound";
 import NewFooter from "./components/Home Components/NewFooter";
@@ -62,6 +63,18 @@ const App = () => {
                 }
               >
                 <BlogDetailPage />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/resume"
+            element={
+              <Suspense
+                fallback={
+                  <h3 className="text-xl text-center">Loading Resume ...</h3>
+                }
+              >
+                <ResumePage />
               </Suspense>
             }
           />

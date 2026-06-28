@@ -94,9 +94,8 @@ const IntroSection = () => {
               <Linkedin className="h-4 w-4" />
             </a>
             <a
-              href="/resume.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/Taksh_Patel_Resume.pdf"
+              download
               className="flex h-9 px-4 items-center justify-center gap-2 rounded-md border border-border bg-bg-secondary text-xs font-semibold uppercase tracking-widest text-text-secondary hover:bg-hover-bg hover:text-text-primary transition-all duration-200"
               aria-label="Resume"
             >
