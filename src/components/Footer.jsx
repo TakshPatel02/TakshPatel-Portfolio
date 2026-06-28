@@ -77,7 +77,7 @@ const Footer = () => {
                       tailwind css
                     </a>
                     <a
-                      href="https://github.com/chanhdai"
+                      href="https://github.com/ncdai"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="hover:text-text-primary transition-colors"
