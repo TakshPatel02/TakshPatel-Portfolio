@@ -7,7 +7,7 @@ const packages = [
     id: "01",
     name: "component-labs",
     description:
-      "Open-source React component library with 40+ animated components",
+      "Open-source React component library with 60+ animated components",
     installCmd: "npm i component-labs",
     npmUrl: "https://www.npmjs.com/package/component-labs",
     githubUrl: "https://github.com/TakshPatel02/ComponentLabs-npm",
