@@ -10,18 +10,7 @@ import "highlight.js/styles/github-dark.css";
 import { getDatabase, ref, get } from "firebase/database";
 import app from "../FireBaseConfig";
 
-/* ─── Scroll-reveal wrapper ─── */
-const Reveal = ({ children, delay = 0, className = "" }) => (
-  <motion.div
-    initial={{ opacity: 0, y: 14 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true, margin: "-60px" }}
-    transition={{ duration: 0.5, delay, ease: [0.25, 0.46, 0.45, 0.94] }}
-    className={className}
-  >
-    {children}
-  </motion.div>
-);
+
 
 /* ─── Slugify heading text for IDs ─── */
 const slugify = (text) =>

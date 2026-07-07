@@ -1,4 +1,3 @@
-import { motion } from "motion/react";
 import { ShieldCheck } from "lucide-react";
 
 const highlights = [
@@ -53,7 +52,7 @@ const SecurityHighlights = () => {
         <div className="mx-auto w-full max-w-[800px] px-4 sm:px-6">
           <div className="border-x border-border bg-bg-card py-4 p-2">
             <h2 className="font-display text-lg font-bold text-text-primary sm:text-2xl lg:text-4xl flex items-center gap-2.5">
-              <ShieldCheck size={22} className="text-[#59d499]" />
+              <ShieldCheck size={22} className="text-text-muted" />
               Security Highlights
             </h2>
           </div>
@@ -66,23 +65,12 @@ const SecurityHighlights = () => {
           <div className="border-x border-border bg-bg-card p-5">
             <ul className="space-y-3">
               {highlights.map((item, i) => (
-                <motion.li
-                  key={i}
-                  initial={{ opacity: 0, x: -8 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true, margin: "-20px" }}
-                  transition={{
-                    duration: 0.3,
-                    delay: i * 0.05,
-                    ease: "easeOut",
-                  }}
-                  className="flex items-start gap-3"
-                >
-                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#59d499]" />
+                <li key={i} className="flex items-start gap-3">
+                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-text-muted opacity-80" />
                   <span className="text-sm text-text-secondary leading-relaxed">
                     {renderText(item.text)}
                   </span>
-                </motion.li>
+                </li>
               ))}
             </ul>
           </div>

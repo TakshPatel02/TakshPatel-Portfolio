@@ -1,4 +1,3 @@
-import { motion } from "motion/react";
 import { FolderTree } from "lucide-react";
 
 const jsTree = `├── index.js
@@ -27,10 +26,10 @@ const tsTree = `├── src/
 │   └── validations/
 ├── tsconfig.json`;
 
-const TreeBlock = ({ label, tree, accentColor }) => (
+const TreeBlock = ({ label, tree }) => (
   <div className="flex-1 min-w-[240px] rounded-lg border border-border bg-(--color-surface-elevated) overflow-hidden">
     <div className="flex items-center gap-2 px-4 py-2.5 border-b border-border">
-      <FolderTree size={12} style={{ color: accentColor }} />
+      <FolderTree size={12} className="text-text-muted" />
       <span className="font-mono text-[10px] uppercase tracking-wider text-text-muted">
         {label}
       </span>
@@ -59,16 +58,10 @@ const ProjectStructure = () => {
       <div className="w-full border-b border-border">
         <div className="mx-auto w-full max-w-[800px] px-4 sm:px-6">
           <div className="border-x border-border bg-bg-card p-5">
-            <motion.div
-              initial={{ opacity: 0, y: 12 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-40px" }}
-              transition={{ duration: 0.4, ease: "easeOut" }}
-              className="flex flex-col sm:flex-row gap-4"
-            >
-              <TreeBlock label="JavaScript" tree={jsTree} accentColor="#ffc533" />
-              <TreeBlock label="TypeScript" tree={tsTree} accentColor="#57c1ff" />
-            </motion.div>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <TreeBlock label="JavaScript" tree={jsTree} />
+              <TreeBlock label="TypeScript" tree={tsTree} />
+            </div>
           </div>
         </div>
       </div>

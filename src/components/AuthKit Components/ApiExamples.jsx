@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { motion } from "motion/react";
 import { Copy, Check, ChevronRight } from "lucide-react";
 
 const CopyButton = ({ text }) => {
@@ -161,14 +160,14 @@ const ApiExamples = () => {
         </div>
       </div>
 
-      {examples.map((example, exIdx) => (
+      {examples.map((example) => (
         <div key={example.id} className="w-full border-b border-border">
           <div className="mx-auto w-full max-w-[800px] px-4 sm:px-6">
             <div className="border-x border-border bg-bg-card">
               {/* Example Title */}
               <div className="px-5 py-3 border-b border-border">
                 <div className="flex items-center gap-2">
-                  <ChevronRight size={12} className="text-[#ff3366]" />
+                  <ChevronRight size={12} className="text-text-muted" />
                   <h3 className="font-display text-sm font-bold text-text-primary sm:text-base">
                     {example.title}
                   </h3>
@@ -177,13 +176,7 @@ const ApiExamples = () => {
 
               {/* Simple request/response example */}
               {example.request && (
-                <motion.div
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-30px" }}
-                  transition={{ duration: 0.35, delay: exIdx * 0.05 }}
-                  className="px-5 py-4 flex flex-col gap-3"
-                >
+                <div className="px-5 py-4 flex flex-col gap-3">
                   <JsonBlock
                     label={example.request.label}
                     code={example.request.code}
@@ -198,18 +191,14 @@ const ApiExamples = () => {
                       {example.note}
                     </p>
                   )}
-                </motion.div>
+                </div>
               )}
 
               {/* Multi-step flow (Forgot Password) */}
               {example.steps &&
                 example.steps.map((step, sIdx) => (
-                  <motion.div
+                  <div
                     key={sIdx}
-                    initial={{ opacity: 0, y: 10 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-30px" }}
-                    transition={{ duration: 0.35, delay: sIdx * 0.08 }}
                     className="px-5 py-4 border-b border-border last:border-b-0"
                   >
                     <span className="font-mono text-[10px] uppercase tracking-wider text-text-muted block mb-3">
@@ -226,7 +215,7 @@ const ApiExamples = () => {
                         code={step.response.code}
                       />
                     </div>
-                  </motion.div>
+                  </div>
                 ))}
             </div>
           </div>

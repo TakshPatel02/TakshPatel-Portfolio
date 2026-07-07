@@ -1,6 +1,5 @@
 import { useState } from "react";
-import { motion } from "motion/react";
-import { Terminal, Copy, Check, ChevronRight } from "lucide-react";
+import { Terminal, Copy, Check } from "lucide-react";
 
 const CopyButton = ({ text }) => {
   const [copied, setCopied] = useState(false);
@@ -65,25 +64,18 @@ const QuickStart = () => {
       <div className="w-full border-b border-border">
         <div className="mx-auto w-full max-w-[800px] px-4 sm:px-6">
           <div className="border-x border-border bg-bg-card p-5">
-            <motion.div
-              initial={{ opacity: 0, y: 12 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-40px" }}
-              transition={{ duration: 0.4, ease: "easeOut" }}
-            >
-              <div className="flex items-center gap-2 mb-3">
-                <span className="flex items-center justify-center h-5 w-5 rounded-full bg-(--color-surface-elevated) border border-border text-[10px] font-mono font-bold text-text-muted">
-                  1
-                </span>
-                <span className="font-mono text-[10px] uppercase tracking-wider text-text-muted">
-                  Scaffold
-                </span>
-              </div>
-              <CodeBlock
-                code={`npx create-express-authkit <project-name>`}
-                copyText="npx create-express-authkit my-backend"
-              />
-            </motion.div>
+            <div className="flex items-center gap-2 mb-3">
+              <span className="flex items-center justify-center h-5 w-5 rounded-full bg-(--color-surface-elevated) border border-border text-[10px] font-mono font-bold text-text-muted">
+                1
+              </span>
+              <span className="font-mono text-[10px] uppercase tracking-wider text-text-muted">
+                Scaffold
+              </span>
+            </div>
+            <CodeBlock
+              code={`npx create-express-authkit <project-name>`}
+              copyText="npx create-express-authkit my-backend"
+            />
           </div>
         </div>
       </div>
@@ -92,25 +84,18 @@ const QuickStart = () => {
       <div className="w-full border-b border-border">
         <div className="mx-auto w-full max-w-[800px] px-4 sm:px-6">
           <div className="border-x border-border bg-bg-card p-5">
-            <motion.div
-              initial={{ opacity: 0, y: 12 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-40px" }}
-              transition={{ duration: 0.4, delay: 0.08, ease: "easeOut" }}
-            >
-              <div className="flex items-center gap-2 mb-3">
-                <span className="flex items-center justify-center h-5 w-5 rounded-full bg-(--color-surface-elevated) border border-border text-[10px] font-mono font-bold text-text-muted">
-                  2
-                </span>
-                <span className="font-mono text-[10px] uppercase tracking-wider text-text-muted">
-                  Pick a language
-                </span>
-              </div>
-              <CodeBlock
-                code={`? Choose your language: ›\n❯ JavaScript\n  TypeScript`}
-                label="Prompt"
-              />
-            </motion.div>
+            <div className="flex items-center gap-2 mb-3">
+              <span className="flex items-center justify-center h-5 w-5 rounded-full bg-(--color-surface-elevated) border border-border text-[10px] font-mono font-bold text-text-muted">
+                2
+              </span>
+              <span className="font-mono text-[10px] uppercase tracking-wider text-text-muted">
+                Pick a language
+              </span>
+            </div>
+            <CodeBlock
+              code={`? Choose your language: ›\n❯ JavaScript\n  TypeScript`}
+              label="Prompt"
+            />
           </div>
         </div>
       </div>
@@ -119,30 +104,23 @@ const QuickStart = () => {
       <div className="w-full border-b border-border">
         <div className="mx-auto w-full max-w-[800px] px-4 sm:px-6">
           <div className="border-x border-border bg-bg-card p-5">
-            <motion.div
-              initial={{ opacity: 0, y: 12 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-40px" }}
-              transition={{ duration: 0.4, delay: 0.16, ease: "easeOut" }}
-            >
-              <div className="flex items-center gap-2 mb-3">
-                <span className="flex items-center justify-center h-5 w-5 rounded-full bg-(--color-surface-elevated) border border-border text-[10px] font-mono font-bold text-text-muted">
-                  3
-                </span>
-                <span className="font-mono text-[10px] uppercase tracking-wider text-text-muted">
-                  Run it
-                </span>
-              </div>
-              <CodeBlock
-                code={`cd my-backend\ncp .env.example .env      # macOS/Linux — use \`copy\` on Windows\nnpm run dev`}
-                copyText="cd my-backend && cp .env.example .env && npm run dev"
-              />
-              <p className="mt-3 text-xs text-text-muted font-mono">
-                TypeScript projects also support{" "}
-                <code className="text-text-secondary">npm run build</code> and{" "}
-                <code className="text-text-secondary">npm start</code> for production.
-              </p>
-            </motion.div>
+            <div className="flex items-center gap-2 mb-3">
+              <span className="flex items-center justify-center h-5 w-5 rounded-full bg-(--color-surface-elevated) border border-border text-[10px] font-mono font-bold text-text-muted">
+                3
+              </span>
+              <span className="font-mono text-[10px] uppercase tracking-wider text-text-muted">
+                Run it
+              </span>
+            </div>
+            <CodeBlock
+              code={`cd my-backend\ncp .env.example .env      # macOS/Linux — use \`copy\` on Windows\nnpm run dev`}
+              copyText="cd my-backend && cp .env.example .env && npm run dev"
+            />
+            <p className="mt-3 text-xs text-text-muted font-mono">
+              TypeScript projects also support{" "}
+              <code className="text-text-secondary">npm run build</code> and{" "}
+              <code className="text-text-secondary">npm start</code> for production.
+            </p>
           </div>
         </div>
       </div>

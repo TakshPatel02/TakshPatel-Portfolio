@@ -1,23 +1,14 @@
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { getDatabase, ref, get } from "firebase/database";
 import app from "../../FireBaseConfig.js";
 
-const BlogCard = ({ post, index }) => (
+const BlogCard = ({ post }) => (
   <Link to={`/blog/${post.slug}`} className="block h-full">
-    <motion.div
-      className="group relative flex flex-col h-full p-3 sm:p-4 transition-colors duration-300 hover:bg-hover-bg"
-      initial={{ opacity: 0, y: 16 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-40px" }}
-      transition={{ duration: 0.5, delay: index * 0.08, ease: [0.25, 0.46, 0.45, 0.94] }}
-    >
+    <div className="group relative flex flex-col h-full p-3 sm:p-4 transition-colors duration-300 hover:bg-hover-bg">
       {/* Image Container */}
-      <motion.div
-        className="relative aspect-video overflow-hidden rounded-md bg-bg-secondary border border-border"
-      >
+      <div className="relative aspect-video overflow-hidden rounded-md bg-bg-secondary border border-border">
         <img
           src={post.image}
           alt={post.title}
@@ -31,7 +22,7 @@ const BlogCard = ({ post, index }) => (
 
         {/* Subtle overlay on hover */}
         <div className="absolute inset-0 bg-black/0 transition-all duration-500 group-hover:bg-black/3 dark:group-hover:bg-white/2" />
-      </motion.div>
+      </div>
 
       {/* Content */}
       <div className="mt-2.5 flex flex-col flex-1 gap-1">
@@ -40,11 +31,7 @@ const BlogCard = ({ post, index }) => (
             {post.title}
           </h3>
           {post.isNew && (
-            <motion.span
-              className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#57c1ff]"
-              animate={{ opacity: [1, 0.4, 1] }}
-              transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
-            />
+            <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-text-muted" />
           )}
         </div>
         <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-text-muted">
@@ -53,13 +40,10 @@ const BlogCard = ({ post, index }) => (
       </div>
 
       {/* Hover arrow indicator */}
-      <motion.div
-        className="absolute bottom-3 right-3 sm:bottom-4 sm:right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-        initial={false}
-      >
+      <div className="absolute bottom-3 right-3 sm:bottom-4 sm:right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
         <ArrowRight className="h-3.5 w-3.5 text-text-muted" />
-      </motion.div>
-    </motion.div>
+      </div>
+    </div>
   </Link>
 );
 
@@ -140,14 +124,14 @@ const BlogSection = () => {
                 {/* First card */}
                 {row[0] && (
                   <div className="border-b border-border sm:border-b-0 sm:border-r">
-                    <BlogCard post={row[0]} index={rowIndex * 2} />
+                    <BlogCard post={row[0]} />
                   </div>
                 )}
 
                 {/* Second card */}
                 {row[1] && (
                   <div className={row.length === 1 ? "sm:border-r border-border" : ""}>
-                    <BlogCard post={row[1]} index={rowIndex * 2 + 1} />
+                    <BlogCard post={row[1]} />
                   </div>
                 )}
 

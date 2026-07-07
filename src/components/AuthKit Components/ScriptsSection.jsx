@@ -1,5 +1,3 @@
-import { motion } from "motion/react";
-
 const scripts = [
   { script: "dev", js: "node --watch index.js", ts: "tsx watch src/index.ts" },
   { script: "build", js: "—", ts: "tsc" },
@@ -25,7 +23,7 @@ const ScriptsSection = () => {
         <div className="mx-auto w-full max-w-[800px] px-4 sm:px-6">
           <div className="border-x border-border bg-bg-card">
             {/* Table Header */}
-            <div className="grid grid-cols-3 gap-0 border-b border-border px-5 py-2.5">
+            <div className="hidden sm:grid grid-cols-3 gap-0 border-b border-border px-5 py-2.5">
               {["Script", "JavaScript", "TypeScript"].map((h) => (
                 <span
                   key={h}
@@ -37,31 +35,30 @@ const ScriptsSection = () => {
             </div>
 
             {/* Rows */}
-            {scripts.map((row, i) => (
-              <motion.div
+            {scripts.map((row) => (
+              <div
                 key={row.script}
-                initial={{ opacity: 0, y: 8 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-20px" }}
-                transition={{ duration: 0.3, delay: i * 0.05, ease: "easeOut" }}
-                className="grid grid-cols-3 gap-0 px-5 py-3 border-b border-border last:border-b-0 hover:bg-hover-bg transition-colors duration-200"
+                className="flex flex-col gap-2 sm:grid sm:grid-cols-3 sm:gap-0 px-5 py-3 border-b border-border last:border-b-0 hover:bg-hover-bg transition-colors duration-200"
               >
-                <div>
+                <div className="flex items-start sm:items-center gap-2">
+                  <span className="sm:hidden font-mono text-[9px] uppercase tracking-wider text-text-muted w-24 shrink-0 mt-0.5 sm:mt-0">Script</span>
                   <code className="font-mono text-xs text-text-primary font-semibold">
                     {row.script}
                   </code>
                 </div>
-                <div>
+                <div className="flex items-start sm:items-center gap-2">
+                  <span className="sm:hidden font-mono text-[9px] uppercase tracking-wider text-text-muted w-24 shrink-0 mt-0.5 sm:mt-0">JavaScript</span>
                   <code className="font-mono text-[11px] text-text-secondary break-all">
                     {row.js}
                   </code>
                 </div>
-                <div>
+                <div className="flex items-start sm:items-center gap-2">
+                  <span className="sm:hidden font-mono text-[9px] uppercase tracking-wider text-text-muted w-24 shrink-0 mt-0.5 sm:mt-0">TypeScript</span>
                   <code className="font-mono text-[11px] text-text-secondary break-all">
                     {row.ts}
                   </code>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>

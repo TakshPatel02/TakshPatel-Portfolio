@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "motion/react";
+import { AnimatePresence, motion } from "motion/react";
 import { X } from "lucide-react";
 
 const sections = [
@@ -120,17 +120,10 @@ const AuthKitSidebar = () => {
               {/* Section Links */}
               <nav className="px-3 py-3 max-h-[60vh] overflow-y-auto">
                 {sections.map((section, i) => (
-                  <motion.button
+                  <button
                     key={section.id}
-                    initial={{ opacity: 0, x: 10 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{
-                      duration: 0.2,
-                      delay: i * 0.03,
-                      ease: "easeOut",
-                    }}
                     onClick={() => scrollToSection(section.id)}
-                    className={`group/item w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-left transition-all duration-200 cursor-pointer hover:-translate-x-1 ${
+                    className={`group/item w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-left transition-all duration-200 cursor-pointer ${
                       activeSection === section.id
                         ? "bg-hover-bg text-text-primary"
                         : "text-text-secondary hover:bg-hover-bg hover:text-text-primary"
@@ -139,14 +132,14 @@ const AuthKitSidebar = () => {
                     <span
                       className={`font-mono text-[9px] tracking-wider shrink-0 w-5 ${
                         activeSection === section.id
-                          ? "text-[#ff3366]"
+                          ? "text-text-primary"
                           : "text-text-muted"
                       }`}
                     >
                       {String(i + 1).padStart(2, "0")}
                     </span>
                     <span
-                      className={`text-sm font-medium transition-all duration-200 group-hover/item:text-base ${
+                      className={`text-sm font-medium ${
                         activeSection === section.id
                           ? "text-text-primary font-semibold"
                           : ""
@@ -155,13 +148,9 @@ const AuthKitSidebar = () => {
                       {section.label}
                     </span>
                     {activeSection === section.id && (
-                      <motion.span
-                        layoutId="active-dot"
-                        className="ml-auto h-1.5 w-1.5 rounded-full bg-[#ff3366]"
-                        transition={{ type: "spring", stiffness: 300, damping: 25 }}
-                      />
+                      <span className="ml-auto h-1.5 w-1.5 rounded-full bg-text-muted" />
                     )}
-                  </motion.button>
+                  </button>
                 ))}
               </nav>
             </motion.div>

@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { ExternalLink, Github, Terminal, Copy, Check, Package } from "lucide-react";
-import { motion } from "framer-motion";
 
 const packages = [
   {
@@ -61,15 +60,9 @@ const CopyButton = ({ text }) => {
   );
 };
 
-const NpmPackageCard = ({ pkg, index }) => {
+const NpmPackageCard = ({ pkg }) => {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 15 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-40px" }}
-      transition={{ duration: 0.4, delay: index * 0.1, ease: "easeOut" }}
-      className="flex flex-col sm:flex-row border-b border-border last:border-b-0 group hover:bg-hover-bg transition-colors duration-300"
-    >
+    <div className="flex flex-col sm:flex-row border-b border-border last:border-b-0 group hover:bg-hover-bg transition-colors duration-300">
       {/* Left Column: Package name, badge, install command */}
       <div className="w-full sm:w-[260px] shrink-0 p-5 border-b border-border sm:border-b-0 sm:border-r sm:border-border flex flex-col justify-between items-start gap-3">
         <div className="w-full">
@@ -80,7 +73,7 @@ const NpmPackageCard = ({ pkg, index }) => {
 
           {/* Package name with accent dot */}
           <div className="flex items-center gap-2 mb-2">
-            <h3 className="font-display text-base font-bold text-text-primary group-hover:text-[#ff3366] transition-colors duration-200 break-all">
+            <h3 className="font-display text-base font-bold text-text-primary group-hover:text-text-primary transition-colors duration-200 break-all">
               {pkg.name}
             </h3>
           </div>
@@ -127,7 +120,7 @@ const NpmPackageCard = ({ pkg, index }) => {
             href={pkg.npmUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 rounded-md border border-border bg-(--color-surface-elevated) px-3 py-1.5 text-[10px] font-mono font-semibold uppercase tracking-wider text-text-secondary hover:text-[#ff3366] hover:border-[#ff3366]/30 transition-colors"
+            className="inline-flex items-center gap-1.5 rounded-md border border-border bg-(--color-surface-elevated) px-3 py-1.5 text-[10px] font-mono font-semibold uppercase tracking-wider text-text-secondary hover:text-text-primary hover:border-text-muted transition-colors"
           >
             <Package size={11} />
             npm
@@ -137,7 +130,7 @@ const NpmPackageCard = ({ pkg, index }) => {
             href={pkg.githubUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 rounded-md border border-border bg-(--color-surface-elevated) px-3 py-1.5 text-[10px] font-mono font-semibold uppercase tracking-wider text-text-secondary hover:text-[#ff3366] hover:border-[#ff3366]/30 transition-colors"
+            className="inline-flex items-center gap-1.5 rounded-md border border-border bg-(--color-surface-elevated) px-3 py-1.5 text-[10px] font-mono font-semibold uppercase tracking-wider text-text-secondary hover:text-text-primary hover:border-text-muted transition-colors"
           >
             <Github size={11} />
             GitHub
@@ -145,7 +138,7 @@ const NpmPackageCard = ({ pkg, index }) => {
           </a>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 
@@ -170,8 +163,8 @@ const NpmPackagesSection = () => {
       <div className="w-full border-b border-border">
         <div className="mx-auto w-full max-w-[800px] px-4 sm:px-6">
           <div className="border-x border-border bg-bg-card">
-            {packages.map((pkg, index) => (
-              <NpmPackageCard key={pkg.id} pkg={pkg} index={index} />
+            {packages.map((pkg) => (
+              <NpmPackageCard key={pkg.id} pkg={pkg} />
             ))}
           </div>
         </div>

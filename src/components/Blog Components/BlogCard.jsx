@@ -1,17 +1,10 @@
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
 
-const BlogCard = ({ post, index }) => {
+const BlogCard = ({ post }) => {
   return (
     <Link to={`/blog/${post.slug}`} className="block h-full">
-      <motion.div
-        className="group relative flex flex-col h-full p-3 sm:p-4 transition-colors duration-300 hover:bg-hover-bg"
-        initial={{ opacity: 0, y: 16 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-40px" }}
-        transition={{ duration: 0.5, delay: (index % 4) * 0.08, ease: [0.25, 0.46, 0.45, 0.94] }}
-      >
+      <div className="group relative flex flex-col h-full p-3 sm:p-4 transition-colors duration-300 hover:bg-hover-bg">
         {/* Image Container */}
         <div className="relative aspect-video overflow-hidden rounded-md bg-bg-secondary border border-border">
           {post.image ? (
@@ -42,11 +35,7 @@ const BlogCard = ({ post, index }) => {
               {post.title}
             </h3>
             {post.isNew && (
-              <motion.span
-                className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#57c1ff]"
-                animate={{ opacity: [1, 0.4, 1] }}
-                transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
-              />
+              <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-text-muted" />
             )}
           </div>
           <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-text-muted">
@@ -58,7 +47,7 @@ const BlogCard = ({ post, index }) => {
         <div className="absolute bottom-3 right-3 sm:bottom-4 sm:right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
           <ArrowRight className="h-3.5 w-3.5 text-text-muted" />
         </div>
-      </motion.div>
+      </div>
     </Link>
   );
 };

@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { motion } from "motion/react";
 import { Terminal, Copy, Check, ExternalLink, Package, Github, Shield } from "lucide-react";
 
 const installCmd = "npx create-express-authkit my-backend";
@@ -55,24 +54,14 @@ const AuthKitHero = () => {
       <div className="w-full border-b border-border">
         <div className="mx-auto w-full max-w-[800px] px-4 sm:px-6">
           <div className="border-x border-border bg-bg-card px-5 py-6 sm:py-8">
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, ease: "easeOut" }}
-              className="font-display text-2xl sm:text-3xl lg:text-4xl font-bold text-text-primary tracking-tight"
-            >
+            <h1 className="font-display text-2xl sm:text-3xl lg:text-4xl font-bold text-text-primary tracking-tight">
               create-express-authkit
-            </motion.h1>
-            <motion.p
-              initial={{ opacity: 0, y: 15 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
-              className="mt-3 text-sm sm:text-base text-text-secondary leading-relaxed max-w-[600px]"
-            >
+            </h1>
+            <p className="mt-3 text-sm sm:text-base text-text-secondary leading-relaxed max-w-[600px]">
               Scaffold a production-ready Express + MongoDB backend with complete JWT
               authentication — access/refresh token rotation, OTP-based password reset,
               and rate limiting on every sensitive endpoint — in seconds.
-            </motion.p>
+            </p>
           </div>
         </div>
       </div>
@@ -81,16 +70,11 @@ const AuthKitHero = () => {
       <div className="w-full border-b border-border">
         <div className="mx-auto w-full max-w-[800px] px-4 sm:px-6">
           <div className="border-x border-border bg-bg-card px-5 py-4">
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: 0.2, ease: "easeOut" }}
-              className="group/cmd flex items-center gap-3 rounded-lg border border-border bg-(--color-surface-elevated) px-4 py-3 font-mono text-xs sm:text-sm text-text-secondary"
-            >
+            <div className="group/cmd flex items-center gap-3 rounded-lg border border-border bg-(--color-surface-elevated) px-4 py-3 font-mono text-xs sm:text-sm text-text-secondary">
               <Terminal size={14} className="shrink-0 text-text-muted" />
               <code className="flex-1 break-all select-all">{installCmd}</code>
               <CopyButton text={installCmd} />
-            </motion.div>
+            </div>
           </div>
         </div>
       </div>
@@ -99,12 +83,7 @@ const AuthKitHero = () => {
       <div className="w-full border-b border-border">
         <div className="mx-auto w-full max-w-[800px] px-4 sm:px-6">
           <div className="border-x border-border bg-bg-card px-5 py-4 flex flex-wrap items-center gap-3">
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.4, delay: 0.3 }}
-              className="flex flex-wrap items-center gap-3"
-            >
+            <div className="flex flex-wrap items-center gap-3">
               {/* npm badge */}
               <a
                 href="https://www.npmjs.com/package/create-express-authkit"
@@ -142,7 +121,7 @@ const AuthKitHero = () => {
                 GitHub
                 <ExternalLink size={9} className="opacity-50" />
               </a>
-            </motion.div>
+            </div>
           </div>
         </div>
       </div>

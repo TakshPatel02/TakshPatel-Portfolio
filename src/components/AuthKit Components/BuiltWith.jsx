@@ -1,5 +1,3 @@
-import { motion } from "motion/react";
-
 const techStack = [
   { name: "Express 5", category: "core" },
   { name: "Mongoose", category: "core" },
@@ -36,30 +34,16 @@ const BuiltWith = () => {
       <div className="w-full border-b border-border">
         <div className="mx-auto w-full max-w-[800px] px-4 sm:px-6">
           <div className="border-x border-border bg-bg-card p-5">
-            <motion.div
-              initial={{ opacity: 0, y: 10 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-40px" }}
-              transition={{ duration: 0.4, ease: "easeOut" }}
-              className="flex flex-wrap gap-2"
-            >
-              {techStack.map((tech, i) => (
-                <motion.span
+            <div className="flex flex-wrap gap-2">
+              {techStack.map((tech) => (
+                <span
                   key={tech.name}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{
-                    duration: 0.25,
-                    delay: i * 0.03,
-                    ease: "easeOut",
-                  }}
                   className="inline-flex items-center rounded-md border border-border bg-bg-secondary px-2.5 py-1 text-xs font-semibold text-text-primary hover:border-text-muted hover:bg-hover-bg transition-all duration-200 cursor-default"
                 >
                   {tech.name}
-                </motion.span>
+                </span>
               ))}
-            </motion.div>
+            </div>
 
             {/* TS note */}
             <div className="mt-4 flex items-center gap-2">
@@ -70,7 +54,7 @@ const BuiltWith = () => {
                 {tsAdditions.map((tech) => (
                   <span
                     key={tech.name}
-                    className="inline-flex items-center rounded-md border border-[#57c1ff]/20 bg-[#57c1ff]/5 px-2.5 py-1 text-xs font-semibold text-[#57c1ff] cursor-default"
+                    className="inline-flex items-center rounded-md border border-border bg-bg-secondary px-2.5 py-1 text-xs font-semibold text-text-secondary cursor-default"
                   >
                     {tech.name}
                   </span>

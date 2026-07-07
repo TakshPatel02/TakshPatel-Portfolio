@@ -1,6 +1,5 @@
 import React from "react";
 import { ExternalLink } from "lucide-react";
-import { motion } from "framer-motion";
 
 const resources = [
   {
@@ -66,13 +65,9 @@ const HowILearnedSection = () => {
       <div className="w-full border-b border-border">
         <div className="mx-auto w-full max-w-[800px] px-4 sm:px-6">
           <div className="border-x border-border bg-bg-card">
-            {resources.map((resource, index) => (
-              <motion.div
+            {resources.map((resource) => (
+              <div
                 key={resource.id}
-                initial={{ opacity: 0, y: 15 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-40px" }}
-                transition={{ duration: 0.4, delay: index * 0.08, ease: "easeOut" }}
                 className="flex flex-col sm:flex-row border-b border-border last:border-b-0 group hover:bg-hover-bg transition-colors duration-300"
               >
                 {/* Left Column: ID, Name, Tag & Link (Top-aligned, fixed gap) */}
@@ -81,7 +76,7 @@ const HowILearnedSection = () => {
                     <span className="font-mono text-[10px] text-text-muted tracking-wider block mb-1">
                       RESOURCE {resource.id}
                     </span>
-                    <h3 className="font-display text-base font-bold text-text-primary group-hover:text-[#ff3366] transition-colors duration-200">
+                    <h3 className="font-display text-base font-bold text-text-primary group-hover:text-text-primary transition-colors duration-200">
                       {resource.name}
                     </h3>
                   </div>
@@ -93,7 +88,7 @@ const HowILearnedSection = () => {
                       href={resource.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 text-[10px] font-mono font-semibold uppercase tracking-wider text-text-muted hover:text-[#ff3366] transition-colors"
+                      className="inline-flex items-center gap-1 text-[10px] font-mono font-semibold uppercase tracking-wider text-text-muted hover:text-text-primary transition-colors"
                     >
                       Visit Channel <ExternalLink size={10} />
                     </a>
@@ -119,7 +114,7 @@ const HowILearnedSection = () => {
                     </p>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>

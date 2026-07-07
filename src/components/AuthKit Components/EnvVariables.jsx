@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { motion } from "motion/react";
 import { Copy, Check, Info } from "lucide-react";
 
 const envContent = `PORT=8000
@@ -54,13 +53,7 @@ const EnvVariables = () => {
       <div className="w-full border-b border-border">
         <div className="mx-auto w-full max-w-[800px] px-4 sm:px-6">
           <div className="border-x border-border bg-bg-card p-5">
-            <motion.div
-              initial={{ opacity: 0, y: 12 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-40px" }}
-              transition={{ duration: 0.4, ease: "easeOut" }}
-              className="group/code relative rounded-lg border border-border bg-(--color-surface-elevated) overflow-hidden"
-            >
+            <div className="group/code relative rounded-lg border border-border bg-(--color-surface-elevated) overflow-hidden">
               <div className="flex items-center justify-between px-4 py-2 border-b border-border">
                 <span className="font-mono text-[10px] uppercase tracking-wider text-text-muted">
                   .env
@@ -80,7 +73,7 @@ const EnvVariables = () => {
               <div className="px-4 py-3 font-mono text-[11px] sm:text-xs text-text-secondary overflow-x-auto leading-relaxed">
                 <pre className="whitespace-pre">{envContent}</pre>
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
       </div>
@@ -89,14 +82,8 @@ const EnvVariables = () => {
       <div className="w-full border-b border-border">
         <div className="mx-auto w-full max-w-[800px] px-4 sm:px-6">
           <div className="border-x border-border bg-bg-card px-5 py-4">
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true, margin: "-30px" }}
-              transition={{ duration: 0.3, delay: 0.1 }}
-              className="flex items-start gap-3 rounded-lg border border-border bg-(--color-surface-elevated) px-4 py-3"
-            >
-              <Info size={14} className="shrink-0 mt-0.5 text-[#ffc533]" />
+            <div className="flex items-start gap-3 rounded-lg border border-border bg-(--color-surface-elevated) px-4 py-3">
+              <Info size={14} className="shrink-0 mt-0.5 text-text-muted" />
               <p className="text-xs text-text-secondary leading-relaxed">
                 Email delivery uses a Gmail account with an{" "}
                 <strong className="text-text-primary">App Password</strong> (not
@@ -104,7 +91,7 @@ const EnvVariables = () => {
                 Verification → App Passwords. Requires 2FA to be enabled on the
                 account.
               </p>
-            </motion.div>
+            </div>
           </div>
         </div>
       </div>

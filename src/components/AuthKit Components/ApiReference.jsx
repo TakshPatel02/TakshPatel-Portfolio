@@ -1,5 +1,3 @@
-import { motion } from "motion/react";
-
 const endpoints = [
   { method: "POST", path: "/register", auth: false, rateLimit: "✓ IP", desc: "Register a new user" },
   { method: "POST", path: "/login", auth: false, rateLimit: "✓ IP + Email", desc: "Login and receive tokens" },
@@ -13,9 +11,9 @@ const endpoints = [
 
 const MethodBadge = ({ method }) => {
   const colors = {
-    GET: "text-[#59d499] border-[#59d499]/20 bg-[#59d499]/5",
-    POST: "text-[#57c1ff] border-[#57c1ff]/20 bg-[#57c1ff]/5",
-    DELETE: "text-[#ff6161] border-[#ff6161]/20 bg-[#ff6161]/5",
+    GET: "text-text-secondary border-border bg-bg-secondary",
+    POST: "text-text-secondary border-border bg-bg-secondary",
+    DELETE: "text-text-secondary border-border bg-bg-secondary",
   };
 
   return (
@@ -74,37 +72,38 @@ const ApiReference = () => {
             </div>
 
             {/* Table Rows */}
-            {endpoints.map((ep, i) => (
-              <motion.div
+            {endpoints.map((ep) => (
+              <div
                 key={ep.path + ep.method}
-                initial={{ opacity: 0, y: 8 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-20px" }}
-                transition={{ duration: 0.3, delay: i * 0.04, ease: "easeOut" }}
-                className="grid grid-cols-1 sm:grid-cols-[70px_1fr_50px_90px_1fr] gap-1 sm:gap-0 px-5 py-3 border-b border-border last:border-b-0 hover:bg-hover-bg transition-colors duration-200"
+                className="flex flex-col gap-2 sm:grid sm:grid-cols-[70px_1fr_50px_90px_1fr] sm:gap-0 px-5 py-3 border-b border-border last:border-b-0 hover:bg-hover-bg transition-colors duration-200"
               >
-                <div className="flex items-center">
+                <div className="flex items-center gap-2">
+                  <span className="sm:hidden font-mono text-[9px] uppercase tracking-wider text-text-muted w-24 shrink-0">Method</span>
                   <MethodBadge method={ep.method} />
                 </div>
-                <div className="flex items-center">
+                <div className="flex items-center gap-2">
+                  <span className="sm:hidden font-mono text-[9px] uppercase tracking-wider text-text-muted w-24 shrink-0">Endpoint</span>
                   <code className="font-mono text-xs text-text-primary font-medium">
                     {ep.path}
                   </code>
                 </div>
-                <div className="flex items-center">
+                <div className="flex items-center gap-2">
+                  <span className="sm:hidden font-mono text-[9px] uppercase tracking-wider text-text-muted w-24 shrink-0">Auth</span>
                   <span className="text-xs text-text-muted">
                     {ep.auth ? "✓" : "✗"}
                   </span>
                 </div>
-                <div className="flex items-center">
+                <div className="flex items-center gap-2">
+                  <span className="sm:hidden font-mono text-[9px] uppercase tracking-wider text-text-muted w-24 shrink-0">Rate Limited</span>
                   <span className="font-mono text-[10px] text-text-secondary">
                     {ep.rateLimit}
                   </span>
                 </div>
-                <div className="flex items-center">
+                <div className="flex items-start sm:items-center gap-2">
+                  <span className="sm:hidden font-mono text-[9px] uppercase tracking-wider text-text-muted w-24 shrink-0 mt-0.5">Description</span>
                   <span className="text-xs text-text-secondary">{ep.desc}</span>
                 </div>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
