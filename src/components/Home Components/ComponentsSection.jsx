@@ -28,7 +28,7 @@ const ComponentsSection = () => {
       {/* Header Box */}
       <div className="w-full border-b border-border">
         <div className="mx-auto w-full px-4 sm:px-6">
-          <div className="border-x border-border bg-bg-card py-4 p-2">
+          <div className="border-x border-border bg-bg-card px-5 py-4">
             <h2 className="font-display text-lg font-bold text-text-primary sm:text-2xl lg:text-4xl">
               Components{" "}
               <span className="align-super text-xs font-normal text-text-muted sm:text-sm">
