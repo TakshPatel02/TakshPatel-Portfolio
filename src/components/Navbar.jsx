@@ -7,6 +7,7 @@ const navItems = [
   { label: "Portfolio", to: "/" },
   { label: "Projects", to: "/#projects" },
   { label: "Blog", to: "/blog" },
+  { label: "AuthKit", to: "/authkit" },
   { label: "Resume", to: "/resume" },
 ];
 

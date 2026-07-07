@@ -6,6 +6,7 @@ import HomePage from "./Pages/HomePage";
 const BlogPage = lazy(() => import("./Pages/BlogPage"));
 const BlogDetailPage = lazy(() => import("./Pages/BlogDetailPage"));
 const ResumePage = lazy(() => import("./Pages/ResumePage"));
+const AuthKitPage = lazy(() => import("./Pages/AuthKitPage"));
 import Footer from "./components/Footer";
 import PageNotFound from "./Pages/PageNotFound";
 import NewFooter from "./components/Home Components/NewFooter";
@@ -75,6 +76,18 @@ const App = () => {
                 }
               >
                 <ResumePage />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/authkit"
+            element={
+              <Suspense
+                fallback={
+                  <h3 className="text-xl text-center">Loading AuthKit ...</h3>
+                }
+              >
+                <AuthKitPage />
               </Suspense>
             }
           />
