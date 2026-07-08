@@ -12,6 +12,7 @@ import PageNotFound from "./Pages/PageNotFound";
 import NewFooter from "./components/Home Components/NewFooter";
 import Lenis from "lenis";
 import "lenis/dist/lenis.css";
+import { Analytics } from '@vercel/analytics/next';
 
 const App = () => {
   useEffect(() => {
@@ -95,6 +96,7 @@ const App = () => {
         </Routes>
         <Footer />
         <NewFooter />
+        <Analytics />
       </div>
     </ThemeProvider>
   );
