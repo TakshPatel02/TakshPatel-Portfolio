@@ -4,7 +4,7 @@ import { Menu, Moon, Sun, X } from "lucide-react";
 import { useTheme } from "../context/ThemeContext";
 
 const navItems = [
-  { label: "Portfolio", to: "/" },
+  { label: "Home", to: "/" },
   { label: "Projects", to: "/#projects" },
   { label: "Blog", to: "/blog" },
   { label: "AuthKit", to: "/authkit" },
