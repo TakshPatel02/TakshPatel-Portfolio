@@ -47,7 +47,7 @@ const Footer = () => {
                                                 href="https://nextjs.org"
                                                 target="_blank"
                                                 rel="noopener noreferrer"
-                                                className="hover:text-text-primary transition-colors"
+                                                className="hover:text-text-primary transition-colors underline decoration-border/60 hover:decoration-text-primary"
                                             >
                                                 Next JS
                                             </a>
@@ -55,7 +55,7 @@ const Footer = () => {
                                                 href="https://typescriptlang.org"
                                                 target="_blank"
                                                 rel="noopener noreferrer"
-                                                className="hover:text-text-primary transition-colors"
+                                                className="hover:text-text-primary transition-colors underline decoration-border/60 hover:decoration-text-primary"
                                             >
                                                 TypeScript
                                             </a>
@@ -63,7 +63,7 @@ const Footer = () => {
                                                 href="https://tailwindcss.com"
                                                 target="_blank"
                                                 rel="noopener noreferrer"
-                                                className="hover:text-text-primary transition-colors"
+                                                className="hover:text-text-primary transition-colors underline decoration-border/60 hover:decoration-text-primary"
                                             >
                                                 Tailwind css
                                             </a>
@@ -71,7 +71,7 @@ const Footer = () => {
                                                 href="https://motion.dev"
                                                 target="_blank"
                                                 rel="noopener noreferrer"
-                                                className="hover:text-text-primary transition-colors"
+                                                className="hover:text-text-primary transition-colors underline decoration-border/60 hover:decoration-text-primary"
                                             >
                                                 Motion
                                             </a>
@@ -88,7 +88,7 @@ const Footer = () => {
                                                 href="https://tailwindcss.com"
                                                 target="_blank"
                                                 rel="noopener noreferrer"
-                                                className="hover:text-text-primary transition-colors"
+                                                className="hover:text-text-primary transition-colors underline decoration-border/60 hover:decoration-text-primary"
                                             >
                                                 tailwind css
                                             </a>
@@ -96,7 +96,7 @@ const Footer = () => {
                                                 href="https://github.com/ncdai"
                                                 target="_blank"
                                                 rel="noopener noreferrer"
-                                                className="hover:text-text-primary transition-colors"
+                                                className="hover:text-text-primary transition-colors underline decoration-border/60 hover:decoration-text-primary"
                                             >
                                                 chanh dai
                                             </a>
@@ -104,7 +104,7 @@ const Footer = () => {
                                                 href="https://vercel.com"
                                                 target="_blank"
                                                 rel="noopener noreferrer"
-                                                className="hover:text-text-primary transition-colors"
+                                                className="hover:text-text-primary transition-colors underline decoration-border/60 hover:decoration-text-primary"
                                             >
                                                 vercel
                                             </a>
@@ -112,7 +112,7 @@ const Footer = () => {
                                                 href="https://ramx.in"
                                                 target="_blank"
                                                 rel="noopener noreferrer"
-                                                className="hover:text-text-primary transition-colors underline decoration-border/60 hover:decoration-text-primary text-text-primary font-medium"
+                                                className="hover:text-text-primary transition-colors underline decoration-border/60 hover:decoration-text-primary"
                                             >
                                                 ramx.in
                                             </a>
